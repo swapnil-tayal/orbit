@@ -47,7 +47,7 @@ const WAVES = [
 
 function ZoneLabel({ x, y, text }: { x: number; y: number; text: string }) {
   return (
-    <text x={x} y={y} textAnchor="middle" fontFamily="var(--font-mono)" fontSize="10.5" fontWeight="700" letterSpacing="1.6" fill="#8A84BA" opacity="0.9">
+    <text x={x} y={y} textAnchor="middle" fontFamily="var(--font-mono)" fontSize="10.5" fontWeight="700" letterSpacing="1.6" fill="#5B4425" opacity="0.9">
       {text}
     </text>
   );
@@ -83,11 +83,12 @@ export function IslandFloor({ layout, circles, onFloorClick, children }: IslandF
       >
         <defs>
           <pattern id="is-dots" width="26" height="26" patternUnits="userSpaceOnUse">
-            <circle cx="3" cy="3" r="1.3" fill="#FFFFFF" opacity="0.07" />
+            <circle cx="3" cy="3" r="1.3" fill="#7A5A2E" opacity="0.22" />
           </pattern>
-          <radialGradient id="is-sand" cx="0.5" cy="0.5" r="0.6">
-            <stop offset="0" stopColor="#FFD23F" stopOpacity="0.09" />
-            <stop offset="1" stopColor="#FFD23F" stopOpacity="0" />
+          <radialGradient id="is-sand" cx="0.45" cy="0.42" r="0.7">
+            <stop offset="0" stopColor="#F3D9A0" />
+            <stop offset="0.7" stopColor="#E2BF7C" />
+            <stop offset="1" stopColor="#CFA463" />
           </radialGradient>
           <radialGradient id="is-shallows" cx="0.5" cy="0.5" r="0.5">
             <stop offset="0.72" stopColor="#22E3FF" stopOpacity="0" />
@@ -98,8 +99,8 @@ export function IslandFloor({ layout, circles, onFloorClick, children }: IslandF
             <stop offset="1" stopColor="#FF3D9A" stopOpacity="0" />
           </radialGradient>
           <radialGradient id="is-grass">
-            <stop offset="0" stopColor="#3DDC97" stopOpacity="0.16" />
-            <stop offset="1" stopColor="#3DDC97" stopOpacity="0.03" />
+            <stop offset="0" stopColor="#3DDC97" stopOpacity="0.32" />
+            <stop offset="1" stopColor="#3DDC97" stopOpacity="0.1" />
           </radialGradient>
         </defs>
 
@@ -119,12 +120,12 @@ export function IslandFloor({ layout, circles, onFloorClick, children }: IslandF
 
         {/* island plate: dark like the office floor, with a glowing shoreline */}
         <path d={SHORE} fill="none" stroke="#22E3FF" strokeOpacity="0.18" strokeWidth="14" strokeLinejoin="round" />
-        <path d={SHORE} fill="#15122E" />
-        <path d={SHORE} fill="url(#is-dots)" />
         <path d={SHORE} fill="url(#is-sand)" />
+        <path d={SHORE} fill="url(#is-dots)" />
+        <path d="M430 470 C500 700 900 760 1190 520 C1150 690 950 745 860 730 C640 740 440 680 420 560 Z" fill="#000000" opacity="0.08" />
         <path d={SHORE} fill="none" stroke="#22E3FF" strokeWidth="2.5" strokeLinejoin="round" />
         <path d="M470 360 C480 280 600 250 660 290 C710 320 680 400 600 410 C520 420 465 410 470 360 Z" fill="url(#is-grass)" stroke="#3DDC97" strokeOpacity="0.35" strokeWidth="1.5" />
-        <path d="M1040 430 C1060 380 1150 380 1175 430 C1195 480 1160 560 1110 570 C1060 580 1030 480 1040 430 Z" fill="url(#is-grass)" stroke="#3DDC97" strokeOpacity="0.35" strokeWidth="1.5" />
+        <path d="M1030 405 C1050 355 1150 355 1178 405 C1192 435 1170 462 1118 466 C1062 470 1020 445 1030 405 Z" fill="url(#is-grass)" stroke="#3DDC97" strokeOpacity="0.35" strokeWidth="1.5" />
 
         {/* jetty: dark planks with a cyan edge */}
         <g transform={`rotate(${g.jetty.rotDeg} ${g.jetty.cx} ${g.jetty.cy})`}>
@@ -187,10 +188,10 @@ export function IslandFloor({ layout, circles, onFloorClick, children }: IslandF
           <circle cx="1100" cy="560" r="80" fill={hammocks ? "rgba(155,92,255,0.18)" : "rgba(155,92,255,0.08)"} stroke="#9B5CFF" strokeWidth="2.5" strokeDasharray="6 7" strokeOpacity={hammocks ? 1 : 0.7}>
             <animate attributeName="stroke-dashoffset" values="0;-26" dur="2s" repeatCount="indefinite" />
           </circle>
-          <path d="M1060 505 L1070 526 M1142 505 L1132 526" stroke="#C9C4E6" strokeWidth="1.6" strokeLinecap="round" opacity="0.8" />
-          <path d="M1070 526 C1080 552 1122 552 1132 526 C1122 540 1080 540 1070 526 Z" fill="#FF3D9A" stroke="#0E0B1F" strokeWidth="1.2" strokeLinejoin="round" />
-          <path d="M1078 531 L1082 545 M1088 535 L1090 548 M1101 537 L1101 549 M1114 535 L1112 548 M1124 531 L1120 545" stroke="#FFFFFF" strokeOpacity="0.45" strokeWidth="1" />
-          <path d="M1074 530 Q1101 546 1128 530 M1078 537 Q1101 550 1124 537" fill="none" stroke="#FFFFFF" strokeOpacity="0.35" strokeWidth="1" />
+          <path d="M1064 538 L1073 560 M1136 538 L1127 560" stroke="#6B4A2B" strokeWidth="1.8" strokeLinecap="round" />
+          <path d="M1073 560 C1083 588 1117 588 1127 560 C1117 575 1083 575 1073 560 Z" fill="#FF3D9A" stroke="#0E0B1F" strokeWidth="1.2" strokeLinejoin="round" />
+          <path d="M1080 566 L1084 580 M1090 570 L1092 583 M1100 572 L1100 584 M1110 570 L1108 583 M1120 566 L1116 580" stroke="#FFFFFF" strokeOpacity="0.5" strokeWidth="1" />
+          <path d="M1077 565 Q1100 582 1123 565 M1081 572 Q1100 586 1119 572" fill="none" stroke="#FFFFFF" strokeOpacity="0.4" strokeWidth="1" />
           <ZoneLabel x={1100} y={666} text="HAMMOCKS" />
         </g>
 
