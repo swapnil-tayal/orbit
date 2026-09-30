@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Car travel</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+a{color:#FF3D9A} a:hover{color:#FF7BBA}
+@property --c6km{syntax:'<integer>';initial-value:375;inherits:false}
+@property --c6s{syntax:'<integer>';initial-value:8;inherits:false}
+@keyframes c6fill{0%{width:60%}100%{width:100%}}
+@keyframes c6drive{0%{transform:scale(1)}100%{transform:scale(1.12)}}
+@keyframes c6km{from{--c6km:375}to{--c6km:0}}
+@keyframes c6s{from{--c6s:8}to{--c6s:0}}
+@keyframes c6shake{0%,100%{transform:translate(0,0)}25%{transform:translate(0.6px,-0.5px)}50%{transform:translate(-0.5px,0.4px)}75%{transform:translate(0.4px,0.6px)}}
+.c6-km{counter-reset:km var(--c6km);animation:c6km 8s linear infinite}
+.c6-km::after{content:counter(km)}
+.c6-s{counter-reset:s var(--c6s);animation:c6s 8s linear infinite}
+.c6-s::after{content:"0:0" counter(s)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #0B0B1A; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<div style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px; transform-origin: 873px 170px; animation: c6drive 8s linear infinite">
+<img src="/_blob/16f718ff875eb18932263020ddd664c2" alt="" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px; object-fit: cover">
+<img src="/_blob/8db81bb6fa9a8027ce3a41b301f22115" alt="Low chase view just above bright green land, a neon grid and a glowing curved horizon; the destination glows near the horizon" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px">
+</div>
+
+<svg width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<defs>
+<linearGradient id="c6-beam-up" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FFD23F" stop-opacity="0.95"></stop><stop offset="1" stop-color="#FFD23F" stop-opacity="0"></stop></linearGradient>
+<radialGradient id="c6-speed" cx="873" cy="170" r="900" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"></stop><stop offset="0.25" stop-color="#FFFFFF" stop-opacity="0.25"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.6"></stop></radialGradient>
+<clipPath id="c6-ground"><path d="M0 232 Q720 150 1440 232 V900 H0 Z"></path></clipPath>
+<linearGradient id="c6-body" x1="0" y1="-25" x2="0" y2="25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF8BC4"></stop><stop offset="0.55" stop-color="#FF3D9A"></stop><stop offset="1" stop-color="#C21A6E"></stop></linearGradient>
+<linearGradient id="c6-beam" x1="50" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF6C8" stop-opacity="0.85"></stop><stop offset="1" stop-color="#FFF6C8" stop-opacity="0"></stop></linearGradient>
+<radialGradient id="c6-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FF3D9A" stop-opacity="0.75"></stop><stop offset="1" stop-color="#FF3D9A" stop-opacity="0"></stop></radialGradient>
+<clipPath id="c6-glass"><path d="M8 -17 L18 -13 Q21.5 0 18 13 L8 17 Z"></path></clipPath>
+<linearGradient id="c6-glassg" x1="-28" y1="-18" x2="20" y2="18" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2A1B5A"></stop><stop offset="1" stop-color="#6BEBFF"></stop></linearGradient>
+</defs>
+<g clip-path="url(#c6-ground)" fill="none" stroke="url(#c6-speed)" stroke-width="2.5" stroke-linecap="round">
+<path d="M873 170 L-120 520" stroke-dasharray="60 1052" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-1112" dur="1.10s" begin="-0.00s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L-120 760" stroke-dasharray="60 1155" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-1215" dur="1.25s" begin="-0.27s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L60 1000" stroke-dasharray="60 1161" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-1221" dur="1.40s" begin="-0.54s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L330 1000" stroke-dasharray="60 991" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-1051" dur="1.55s" begin="-0.81s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L620 1000" stroke-dasharray="60 867" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-927" dur="1.10s" begin="-1.08s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L900 1000" stroke-dasharray="60 830" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-890" dur="1.25s" begin="-1.35s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L1180 1000" stroke-dasharray="60 884" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-944" dur="1.40s" begin="-1.62s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L1480 980" stroke-dasharray="60 1012" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-1072" dur="1.55s" begin="-1.89s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L1560 720" stroke-dasharray="60 880" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-940" dur="1.10s" begin="-2.16s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L1560 470" stroke-dasharray="60 749" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-809" dur="1.25s" begin="-2.43s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L1560 300" stroke-dasharray="60 699" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-759" dur="1.40s" begin="-2.70s" repeatCount="indefinite"></animate></path>
+<path d="M873 170 L-120 330" stroke-dasharray="60 1005" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="0;-1065" dur="1.55s" begin="-2.97s" repeatCount="indefinite"></animate></path>
+</g>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M475,509 L516,472 L551,440 L581,412 L607,388 L631,367 L651,349 L670,332 L686,318 L702,304 L715,292 L728,282 L739,272 L750,263 L759,255 L768,247 L776,240 L784,234 L791,228 L798,223 L804,218 L810,213 L816,209 L821,205 L826,201 L830,198 L835,195 L839,192 L843,189 L846,186 L850,184 L853,182 L856,180 L860,178 L862,176 L865,174 L868,173 L870,171 L873,170" stroke="#FFD23F" stroke-opacity="0.25" stroke-width="12"></path>
+<path d="M475,509 L516,472 L551,440 L581,412 L607,388 L631,367 L651,349 L670,332 L686,318 L702,304 L715,292 L728,282 L739,272 L750,263 L759,255 L768,247 L776,240 L784,234 L791,228 L798,223 L804,218 L810,213 L816,209 L821,205 L826,201 L830,198 L835,195 L839,192 L843,189 L846,186 L850,184 L853,182 L856,180 L860,178 L862,176 L865,174 L868,173 L870,171 L873,170" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="3" stroke-dasharray="4 12"><animate attributeName="stroke-dashoffset" values="0;32" dur="0.5s" repeatCount="indefinite"></animate></path>
+<path d="M-289,1220 L-9,958 L171,790 L297,673 L369,606 L427,553 L475,509" stroke="#FF3D9A" stroke-opacity="0.35" stroke-width="34"></path>
+<path d="M-289,1220 L-9,958 L171,790 L297,673 L369,606 L427,553 L475,509" stroke="#FF7BBA" stroke-width="6"></path>
+<path d="M-289,1220 L-9,958 L171,790 L297,673 L369,606 L427,553 L475,509" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="26 60"><animate attributeName="stroke-dashoffset" values="0;86" dur="0.45s" repeatCount="indefinite"></animate></path>
+</g>
+<rect x="867" y="10" width="12" height="160" fill="url(#c6-beam-up)"><animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"></animate></rect>
+<ellipse cx="873" cy="170" rx="34" ry="9" fill="#FFD23F" fill-opacity="0.25" stroke="#FFD23F" stroke-width="2"></ellipse>
+<ellipse cx="873" cy="170" rx="34" ry="9" fill="none" stroke="#FFD23F" stroke-width="1.5"><animate attributeName="rx" values="34;80" dur="1.6s" repeatCount="indefinite"></animate><animate attributeName="ry" values="9;20" dur="1.6s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.9;0" dur="1.6s" repeatCount="indefinite"></animate></ellipse>
+<ellipse cx="873" cy="170" rx="34" ry="9" fill="none" stroke="#FFD23F" stroke-width="1.5"><animate attributeName="rx" values="34;80" dur="1.6s" begin="0.8s" repeatCount="indefinite"></animate><animate attributeName="ry" values="9;20" dur="1.6s" begin="0.8s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.9;0" dur="1.6s" begin="0.8s" repeatCount="indefinite"></animate></ellipse>
+<g transform="translate(475 509) rotate(-41) scale(1.45)">
+<g opacity="0.55"><animate attributeName="opacity" values="0.5;0.7;0.45;0.65;0.5" dur="1.4s" repeatCount="indefinite"></animate>
+<path d="M50 -15 L320 -78 L320 6 Z" fill="url(#c6-beam)"></path><path d="M50 15 L320 -6 L320 78 Z" fill="url(#c6-beam)"></path></g>
+<ellipse cx="0" cy="0" rx="80" ry="48" fill="url(#c6-glow)"><animate attributeName="opacity" values="0.55;1;0.55" dur="1.1s" repeatCount="indefinite"></animate></ellipse>
+<g stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none">
+<path d="M-40 -36 L-200 -36" stroke-opacity="0.6" stroke-dasharray="18 46"><animate attributeName="stroke-dashoffset" values="0;64" dur="0.32s" repeatCount="indefinite"></animate></path>
+<path d="M-40 36 L-200 36" stroke-opacity="0.6" stroke-dasharray="18 46"><animate attributeName="stroke-dashoffset" values="20;84" dur="0.32s" repeatCount="indefinite"></animate></path>
+<path d="M-60 -52 L-240 -52" stroke-opacity="0.3" stroke-dasharray="10 60"><animate attributeName="stroke-dashoffset" values="0;70" dur="0.45s" repeatCount="indefinite"></animate></path>
+<path d="M-60 52 L-240 52" stroke-opacity="0.3" stroke-dasharray="10 60"><animate attributeName="stroke-dashoffset" values="30;100" dur="0.45s" repeatCount="indefinite"></animate></path>
+</g>
+<g><circle cx="-52" cy="-9" r="2" fill="#FFD23F"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="cy" values="-9;-30" dur="0.9s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="9" r="2" fill="#FF8BC4"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="cy" values="9;30" dur="0.9s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.15s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="-9" r="2" fill="#22E3FF"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.3s" repeatCount="indefinite"></animate><animate attributeName="cy" values="-9;-30" dur="0.9s" begin="0.3s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.3s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.3s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="9" r="2" fill="#FFD23F"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.45s" repeatCount="indefinite"></animate><animate attributeName="cy" values="9;30" dur="0.9s" begin="0.45s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.45s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.45s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="-9" r="2" fill="#FFFFFF"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="cy" values="-9;-30" dur="0.9s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.6s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="9" r="2" fill="#FF8BC4"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.75s" repeatCount="indefinite"></animate><animate attributeName="cy" values="9;30" dur="0.9s" begin="0.75s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.75s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.75s" repeatCount="indefinite"></animate></circle></g>
+<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -1.4;0 0;0 1;0 0" dur="0.42s" repeatCount="indefinite"></animateTransform>
+<rect x="-50" y="-25" width="104" height="54" rx="22" fill="#000000" fill-opacity="0.35" transform="translate(5 7)"></rect>
+<rect x="-43" y="-30.5" width="26" height="13" rx="4.5" fill="#140B28"></rect><path d="M-41 -24 L-19 -24" stroke="#5A4C92" stroke-width="8" stroke-dasharray="2.5 3"><animate attributeName="stroke-dashoffset" values="0;5.5" dur="0.12s" repeatCount="indefinite"></animate></path><rect x="17" y="-30.5" width="26" height="13" rx="4.5" fill="#140B28"></rect><path d="M19 -24 L41 -24" stroke="#5A4C92" stroke-width="8" stroke-dasharray="2.5 3"><animate attributeName="stroke-dashoffset" values="0;5.5" dur="0.12s" repeatCount="indefinite"></animate></path><rect x="-43" y="17.5" width="26" height="13" rx="4.5" fill="#140B28"></rect><path d="M-41 24 L-19 24" stroke="#5A4C92" stroke-width="8" stroke-dasharray="2.5 3"><animate attributeName="stroke-dashoffset" values="0;5.5" dur="0.12s" repeatCount="indefinite"></animate></path><rect x="17" y="17.5" width="26" height="13" rx="4.5" fill="#140B28"></rect><path d="M19 24 L41 24" stroke="#5A4C92" stroke-width="8" stroke-dasharray="2.5 3"><animate attributeName="stroke-dashoffset" values="0;5.5" dur="0.12s" repeatCount="indefinite"></animate></path>
+<path d="M-44 -25 L30 -25 Q50 -24 51 -10 L51 10 Q50 24 30 25 L-44 25 Q-50 25 -50 18 L-50 -18 Q-50 -25 -44 -25 Z" fill="url(#c6-body)" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"></path>
+<rect x="-50" y="-6.5" width="101" height="3.5" rx="1.5" fill="#FFD23F"></rect><rect x="-50" y="3" width="101" height="3.5" rx="1.5" fill="#FFD23F"></rect>
+<rect x="-28" y="-20" width="47" height="40" rx="12" fill="#C21A6E"></rect>
+<path d="M8 -17 L18 -13 Q21.5 0 18 13 L8 17 Z" fill="url(#c6-glassg)"></path><path d="M-19 -16 L-26 -12 Q-28.5 0 -26 12 L-19 16 Z" fill="url(#c6-glassg)"></path>
+<rect x="-17" y="-19" width="23" height="3.2" rx="1.5" fill="url(#c6-glassg)"></rect><rect x="-17" y="15.8" width="23" height="3.2" rx="1.5" fill="url(#c6-glassg)"></rect>
+<g clip-path="url(#c6-glass)"><path d="M6 -20 L10 -20 L4 20 L0 20 Z" fill="#FFFFFF" fill-opacity="0.8"><animateTransform attributeName="transform" type="translate" values="0 0;18 0;18 0" keyTimes="0;0.3;1" dur="2.4s" repeatCount="indefinite"></animateTransform></path></g>
+<rect x="-18" y="-14" width="25" height="28" rx="6" fill="url(#c6-body)"></rect>
+<rect x="-18" y="-6.5" width="25" height="3.5" fill="#FFD23F"></rect><rect x="-18" y="3" width="25" height="3.5" fill="#FFD23F"></rect>
+<ellipse cx="12" cy="-26" rx="4.5" ry="2.6" fill="#FF3D9A"></ellipse><ellipse cx="12" cy="26" rx="4.5" ry="2.6" fill="#FF3D9A"></ellipse>
+<circle cx="52" cy="-14" r="8" fill="#FFF6C8" fill-opacity="0.45"><animate attributeName="r" values="7;10;7" dur="0.9s" repeatCount="indefinite"></animate></circle><circle cx="52" cy="14" r="8" fill="#FFF6C8" fill-opacity="0.45"><animate attributeName="r" values="7;10;7" dur="0.9s" repeatCount="indefinite"></animate></circle>
+<rect x="46" y="-18" width="6" height="8" rx="2" fill="#FFFBE0"></rect><rect x="46" y="10" width="6" height="8" rx="2" fill="#FFFBE0"></rect>
+<circle cx="-50" cy="-14" r="6" fill="#FF2A4A" fill-opacity="0.55"><animate attributeName="fill-opacity" values="0.35;0.8;0.35" dur="0.8s" repeatCount="indefinite"></animate></circle><circle cx="-50" cy="14" r="6" fill="#FF2A4A" fill-opacity="0.55"><animate attributeName="fill-opacity" values="0.35;0.8;0.35" dur="0.8s" repeatCount="indefinite"></animate></circle>
+<rect x="-52" y="-19" width="4" height="9" rx="2" fill="#FF3355"></rect><rect x="-52" y="10" width="4" height="9" rx="2" fill="#FF3355"></rect>
+</g>
+</g>
+</svg>
+
+<div style="position: absolute; left: 873px; top: 18px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 10px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1.5px solid #B6FF3B; white-space: nowrap; box-shadow: 0 0 18px rgba(182,255,59,0.4)">
+<dc-import name="Avatar" mode="bust" size="22" presence="none" skin="#E0B08A" hair="long" hair-color="#3A2517" outfit="#22E3FF" hint-size="22px,22px"></dc-import>
+<div style="margin-left: -7px"><dc-import name="Avatar" mode="bust" size="22" presence="none" skin="#A06A48" hair="buzz" hair-color="#17120F" outfit="#B6FF3B" acc="headphones" hint-size="22px,22px"></dc-import></div>
+<span style="margin-left: 6px; font: 700 12px 'Unbounded', sans-serif; color: #B6FF3B">Office</span>
+</div>
+
+<div style="position: absolute; left: 50%; top: 84px; transform: translateX(-50%); width: 500px; display: flex; align-items: center; gap: 14px; padding: 12px 18px; box-sizing: border-box; border-radius: 999px; background: rgba(20,18,44,0.9); border: 1px solid rgba(255,61,154,0.4); box-shadow: 0 0 30px rgba(255,61,154,0.2)">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3D9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: c6shake 0.3s linear infinite"><path d="M4.5 16.5v-4l2.2-5.2A1.5 1.5 0 0 1 8.1 6.3h7.8a1.5 1.5 0 0 1 1.4 1l2.2 5.2v4a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1z"></path><path d="M4.5 12.5h15"></path></svg>
+<span style="font: 700 13px 'Unbounded', sans-serif; white-space: nowrap">To the Office</span>
+<div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Trip progress" style="flex-grow: 1; height: 6px; border-radius: 999px; background: rgba(190,180,255,0.14); position: relative; overflow: hidden"><div style="position: absolute; left: 0; top: 0; bottom: 0; width: 60%; border-radius: 999px; background: linear-gradient(90deg, #FF3D9A, #FFD23F); animation: c6fill 8s linear infinite"></div></div>
+<span class="c6-s" style="font: 700 14px 'Geist Mono', monospace; color: #FFD23F"></span>
+</div>
+
+<div style="position: absolute; left: 32px; top: 28px; display: flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; border-radius: 999px; background: rgba(20,18,44,0.82); border: 1px solid rgba(34,227,255,0.4)">
+<dc-import name="Avatar" mode="bust" size="30" presence="traveling" you="true" skin="#C68A62" hair="short" hair-color="#17120F" outfit="#FF3D9A" hint-size="30px,30px"></dc-import>
+<div style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 700">Driving</span><span style="font-size: 12px; color: #22E3FF">everyone sees you moving</span></div>
+</div>
+
+<div style="position: absolute; left: 32px; bottom: 32px; display: flex; align-items: center; gap: 18px; padding: 12px 20px; border-radius: 18px; background: rgba(20,18,44,0.85); border: 1px solid rgba(190,180,255,0.16)">
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="c6-km" style="min-width: 58px; font: 700 26px 'Unbounded', sans-serif; color: #FF3D9A"></span><span style="font-size: 13px; color: #BDB8E6">km to go</span></div>
+<span style="width: 1px; height: 26px; background: rgba(190,180,255,0.2)"></span>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font: 700 18px 'Geist Mono', monospace; color: #FFD23F">47</span><span style="font-size: 13px; color: #BDB8E6">km/s</span></div>
+</div>
+<a href="S08-Office.dc.html" style="position: absolute; right: 32px; bottom: 32px; padding: 12px 18px; border-radius: 999px; background: rgba(190,180,255,0.08); border: 1px solid rgba(190,180,255,0.16); color: #BDB8E6; font-size: 13px; text-decoration: none">Prototype: skip to arrival →</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

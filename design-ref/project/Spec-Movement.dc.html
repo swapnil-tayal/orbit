@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Avatar and movement spec</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+@keyframes sm-walk{0%{offset-distance:0%}45%{offset-distance:100%}72%{offset-distance:100%}100%{offset-distance:0%}}
+@keyframes sm-ring{0%,40%{stroke-opacity:.35;fill-opacity:0}41.5%,77.5%{stroke-opacity:1;fill-opacity:.14}79%,100%{stroke-opacity:.35;fill-opacity:0}}
+@keyframes sm-toast{0%,43%{opacity:0;transform:translate(-50%,6px)}45%,70%{opacity:1;transform:translate(-50%,0)}73%,100%{opacity:0;transform:translate(-50%,-4px)}}
+@keyframes wave{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1000px; box-sizing: border-box; padding: 52px 64px; background: radial-gradient(800px 520px at 100% 0%, rgba(182,255,59,0.12), rgba(11,11,26,0) 70%), radial-gradient(700px 500px at 0% 100%, rgba(255,61,154,0.12), rgba(11,11,26,0) 70%), #0B0B1A; display: flex; flex-direction: column; gap: 24px; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<header style="display: flex; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font: 700 12px/16px 'Geist Mono', monospace; letter-spacing: 0.14em; color: #B6FF3B">SPEC · MOVEMENT</div>
+<h1 style="margin: 0; font: 800 42px/46px 'Unbounded', sans-serif; letter-spacing: -0.035em">Walking over <span style="color: #B6FF3B">is</span> joining</h1>
+</div>
+<p style="margin: 0; max-width: 440px; font-size: 14px; line-height: 21px; color: #BDB8E6">The ring on the floor is the whole interface. Step in and you're together. Step out and you've left. Nothing to click, nothing to accept.</p>
+</header>
+
+<div style="display: grid; grid-template-columns: 820px 1fr; gap: 20px">
+<section style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 26px; background: rgba(20,18,44,0.75); border: 1px solid rgba(182,255,59,0.25)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Entering a personal space <span style="font-family: 'Geist', sans-serif; font-weight: 500; color: #8A84BA">· top view, 2D</span></h2>
+<div style="display: flex; gap: 22px; align-items: center">
+<div style="position: relative; width: 440px; height: 370px; flex-shrink: 0; border-radius: 20px; overflow: hidden; background: #15122E">
+<svg width="440" height="370" viewBox="0 0 440 370" style="position: absolute; left: 0; top: 0" aria-label="A visitor walks across Meera's ring; the ring lights up while they are inside">
+<defs><pattern id="sm-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.2" fill="#FFFFFF" fill-opacity="0.08"></circle></pattern></defs>
+<rect width="440" height="370" fill="url(#sm-dots)"></rect>
+<g transform="translate(0 20)">
+<circle cx="250" cy="150" r="110" fill="none" stroke="#B6FF3B" stroke-opacity="0.45" stroke-width="1.5" stroke-dasharray="4 7"><animate attributeName="stroke-dashoffset" values="0;-22" dur="1.4s" repeatCount="indefinite"></animate></circle>
+<circle cx="250" cy="150" r="84" fill="#B6FF3B" fill-opacity="0" stroke="#B6FF3B" stroke-opacity="0.35" stroke-width="2.5" style="animation: sm-ring 7s linear infinite"></circle>
+<rect x="195" y="106" width="110" height="40" rx="10" fill="#2B2658" stroke="#FFFFFF" stroke-opacity="0.08"></rect>
+<rect x="224" y="110" width="52" height="6" rx="3" fill="#22E3FF"></rect>
+<rect x="234" y="131" width="32" height="7" rx="3" fill="#3E3880"></rect>
+<path d="M40 310 L205 196" fill="none" stroke="#FF3D9A" stroke-opacity="0.5" stroke-width="2.5" stroke-dasharray="2 8" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-20" dur="0.8s" repeatCount="indefinite"></animate></path>
+<rect x="218" y="251" width="64" height="18" rx="9" fill="#15122E"></rect>
+<text x="250" y="264" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" font-weight="700" fill="#B6FF3B" fill-opacity="0.75">exit 1.3 m</text>
+<rect x="214" y="225" width="72" height="18" rx="9" fill="#15122E"></rect>
+<text x="250" y="238" text-anchor="middle" font-family="Geist Mono, monospace" font-size="11" font-weight="700" fill="#B6FF3B">enter 1.0 m</text>
+</g>
+</svg>
+<div style="position: absolute; left: 228px; top: 164px"><dc-import name="Avatar" mode="bust" size="44" presence="online" skin="#E0B08A" hair="long" hair-color="#3A2517" outfit="#22E3FF" hint-size="44px,44px"></dc-import></div>
+<div style="position: absolute; left: 250px; top: 120px; transform: translate(-50%, -100%); display: flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1px solid rgba(182,255,59,0.6); font-size: 12px; font-weight: 600; white-space: nowrap"><span style="display: flex; align-items: center; gap: 2px; height: 10px"><span style="width: 2.5px; height: 10px; border-radius: 2px; background: #B6FF3B; animation: wave 0.9s ease-in-out infinite"></span><span style="width: 2.5px; height: 10px; border-radius: 2px; background: #B6FF3B; animation: wave 0.9s ease-in-out 0.15s infinite"></span><span style="width: 2.5px; height: 10px; border-radius: 2px; background: #B6FF3B; animation: wave 0.9s ease-in-out 0.3s infinite"></span></span>Meera</div>
+<div style="position: absolute; left: 0; top: 0; width: 40px; height: 40px; offset-path: path('M40 330 L205 216'); offset-rotate: 0deg; animation: sm-walk 7s linear infinite"><dc-import name="Avatar" mode="bust" size="40" presence="online" you="true" skin="#C68A62" hair="short" hair-color="#17120F" outfit="#FF3D9A" hint-size="40px,40px"></dc-import></div>
+<div style="position: absolute; left: 250px; top: 312px; display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(20,18,44,0.95); border: 1px solid rgba(255,61,154,0.5); box-shadow: 0 0 24px rgba(255,61,154,0.3); font-size: 12px; font-weight: 600; white-space: nowrap; animation: sm-toast 7s linear infinite"><span style="width: 7px; height: 7px; border-radius: 50%; background: #B6FF3B; box-shadow: 0 0 8px #B6FF3B"></span>You're in Meera's space</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px; font-size: 13px; line-height: 19px; color: #BDB8E6">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="align-self: flex-start; padding: 2px 8px; border-radius: 7px; background: #B6FF3B; color: #0B0B1A; font: 700 11px 'Geist Mono', monospace">0 ms</span><span><span style="color: #F4F2FF">Cross the 1.0 m ring.</span> It lights up.</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="align-self: flex-start; padding: 2px 8px; border-radius: 7px; background: #22E3FF; color: #0B0B1A; font: 700 11px 'Geist Mono', monospace">0–600 ms</span><span><span style="color: #F4F2FF">Audio fades in both ways.</span> The owner hears a soft chime.</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="align-self: flex-start; padding: 2px 8px; border-radius: 7px; background: #FF3D9A; color: #1A0012; font: 700 11px 'Geist Mono', monospace">+200 ms</span><span><span style="color: #F4F2FF">Toast for 2 s,</span> then the "With Meera" capsule stays.</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="align-self: flex-start; padding: 2px 8px; border-radius: 7px; background: #FFD23F; color: #0B0B1A; font: 700 11px 'Geist Mono', monospace">exit</span><span><span style="color: #F4F2FF">Past 1.3 m, audio fades out</span> in 400 ms. The gap stops flicker at the edge.</span></div>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 26px; background: rgba(20,18,44,0.75)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Zone rules</h2>
+<div style="display: flex; flex-direction: column; gap: 20px; font-size: 13px; line-height: 19px; color: #BDB8E6">
+<div style="display: flex; gap: 12px"><span style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 2px solid #B6FF3B; box-sizing: border-box"></span><span><span style="color: #F4F2FF; font-weight: 600">Open only when the owner is at their desk.</span> Away or offline: a name tag, no ring.</span></div>
+<div style="display: flex; gap: 12px"><span style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(34,227,255,0.18); border: 2px solid #22E3FF; box-sizing: border-box"></span><span><span style="color: #F4F2FF; font-weight: 600">Everyone inside hears everyone inside.</span> Silence outside. No eavesdropping from the aisle.</span></div>
+<div style="display: flex; gap: 12px"><span style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 2px dashed #9B5CFF; box-sizing: border-box"></span><span><span style="color: #F4F2FF; font-weight: 600">Same mechanic, no owner.</span> Meeting areas and shared circles work like desk rings, always open.</span></div>
+<div style="display: flex; gap: 12px"><span style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #FFD23F; box-sizing: border-box"></span><span><span style="color: #F4F2FF; font-weight: 600">One zone at a time.</span> Rings never overlap. Stepping into a new ring leaves the old one.</span></div>
+<div style="display: flex; gap: 12px"><span style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(182,255,59,0.15); display: flex; align-items: center; justify-content: center; gap: 2px"><span style="width: 2.5px; height: 11px; border-radius: 2px; background: #B6FF3B; animation: wave 0.9s ease-in-out infinite"></span><span style="width: 2.5px; height: 11px; border-radius: 2px; background: #B6FF3B; animation: wave 0.9s ease-in-out 0.2s infinite"></span></span><span><span style="color: #F4F2FF; font-weight: 600">Visible activity, private words.</span> A waveform shows talking. Words stay inside.</span></div>
+<div style="display: flex; gap: 12px"><span style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #FF3D9A, #9B5CFF); box-shadow: 0 0 12px rgba(255,61,154,0.5)"></span><span><span style="color: #F4F2FF; font-weight: 600">Video is a bubble.</span> Camera on shows a round video over your token, only to your zone.</span></div>
+</div>
+</section>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; flex-grow: 1">
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 24px; background: rgba(20,18,44,0.7)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Walking</h2>
+<div style="display: grid; grid-template-columns: 128px 1fr; row-gap: 16px; column-gap: 12px; align-items: start; font-size: 13px; line-height: 18px; color: #BDB8E6">
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(255,61,154,0.15); color: #FF3D9A; font-weight: 700; font-size: 12px; white-space: nowrap">Click floor</span><span>Path-finds around furniture. Dotted path and a target mark.</span>
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(255,61,154,0.15); color: #FF3D9A; font-weight: 700; font-size: 12px; white-space: nowrap">WASD · arrows</span><span>Direct control. Up is always up, the plan never turns.</span>
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(34,227,255,0.15); color: #22E3FF; font-weight: 700; font-size: 12px">Speed</span><span>1.4 m/s, eases in 150 ms. The office crosses in ~8 s.</span>
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(182,255,59,0.15); color: #B6FF3B; font-weight: 700; font-size: 12px">Others</span><span>Soft 0.4 m avoidance, no stacking. Remote moves smoothed over 100 ms.</span>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 24px; background: rgba(20,18,44,0.7)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Camera in a space</h2>
+<div style="display: flex; gap: 16px; align-items: center">
+<svg width="150" height="96" viewBox="0 0 150 96" style="flex-shrink: 0" aria-label="Viewport eases from the whole floor to a close-up on one ring">
+<rect x="6" y="6" width="138" height="84" rx="10" fill="#15122E" stroke="#22E3FF" stroke-opacity="0.5" stroke-width="1.5"></rect>
+<g fill="#2B2658"><rect x="44" y="20" width="18" height="7" rx="2"></rect><rect x="72" y="20" width="18" height="7" rx="2"></rect><rect x="100" y="20" width="18" height="7" rx="2"></rect><rect x="44" y="44" width="18" height="7" rx="2"></rect><rect x="72" y="44" width="18" height="7" rx="2"></rect><rect x="100" y="44" width="18" height="7" rx="2"></rect></g>
+<circle cx="81" cy="48" r="12" fill="#B6FF3B" fill-opacity="0.15" stroke="#B6FF3B" stroke-width="1.5"></circle>
+<circle cx="24" cy="36" r="10" fill="none" stroke="#B6FF3B" stroke-opacity="0.6"></circle>
+<rect fill="none" stroke="#FF3D9A" stroke-width="2.5" rx="8"><animate attributeName="x" values="4;4;42;42;4" keyTimes="0;0.3;0.45;0.8;1" dur="5s" repeatCount="indefinite"></animate><animate attributeName="y" values="4;4;25;25;4" keyTimes="0;0.3;0.45;0.8;1" dur="5s" repeatCount="indefinite"></animate><animate attributeName="width" values="142;142;78;78;142" keyTimes="0;0.3;0.45;0.8;1" dur="5s" repeatCount="indefinite"></animate><animate attributeName="height" values="88;88;47;47;88" keyTimes="0;0.3;0.45;0.8;1" dur="5s" repeatCount="indefinite"></animate></rect>
+</svg>
+<span style="font-size: 12px; line-height: 17px; color: #8A84BA">Overview → step into a ring → eases to ×1.8 on it.</span>
+</div>
+<ul style="margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px; color: #BDB8E6">
+<li><span style="color: #F4F2FF">Flat, top-down, north-up.</span> No tilt, no rotation.</li>
+<li><span style="color: #F4F2FF">Follows you</span> with a soft lag. Scroll zooms overview ↔ close-up.</li>
+<li><span style="color: #F4F2FF">Zoom out past overview</span> (or Esc) rises to the Unit view. Your avatar stays.</li>
+</ul>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 24px; background: rgba(20,18,44,0.7)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Avatar parts</h2>
+<div style="display: flex; gap: 10px; align-items: center">
+<dc-import name="Avatar" mode="bust" size="60" presence="none" skin="#F1D2B6" hair="bun" hair-color="#6A4629" outfit="#FFD23F" acc="glasses" hint-size="60px,60px"></dc-import>
+<dc-import name="Avatar" mode="bust" size="60" presence="none" skin="#A06A48" hair="buzz" hair-color="#17120F" outfit="#B6FF3B" acc="headphones" hint-size="60px,60px"></dc-import>
+<dc-import name="Avatar" mode="bust" size="60" presence="none" skin="#C68A62" hair="bob" hair-color="#FF3D9A" outfit="#9B5CFF" hint-size="60px,60px"></dc-import>
+<dc-import name="Avatar" mode="bust" size="60" presence="none" skin="#77492F" hair="curly" hair-color="#17120F" outfit="#22E3FF" hint-size="60px,60px"></dc-import>
+<dc-import name="Avatar" mode="bust" size="60" presence="none" skin="#E0B08A" hair="long" hair-color="#22E3FF" outfit="#FF3D9A" hint-size="60px,60px"></dc-import>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 600">
+<span style="padding: 4px 10px; border-radius: 999px; background: rgba(255,210,63,0.15); color: #FFD23F">6 skins</span>
+<span style="padding: 4px 10px; border-radius: 999px; background: rgba(255,61,154,0.15); color: #FF3D9A">6 hair shapes</span>
+<span style="padding: 4px 10px; border-radius: 999px; background: rgba(34,227,255,0.15); color: #22E3FF">6 hair colours</span>
+<span style="padding: 4px 10px; border-radius: 999px; background: rgba(182,255,59,0.15); color: #B6FF3B">8 outfits</span>
+<span style="padding: 4px 10px; border-radius: 999px; background: rgba(155,92,255,0.2); color: #C3A2FF">3 accessories</span>
+</div>
+<span style="font-size: 13px; line-height: 18px; color: #BDB8E6"><span style="color: #F4F2FF">5,184 combinations.</span> Two renders from one model: a token for spaces and the globe, a full figure for onboarding and Profile.</span>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

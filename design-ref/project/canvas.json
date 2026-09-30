@@ -1,0 +1,286 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Avatar.dc.html": {
+      "h": 120,
+      "title": "Component · Avatar",
+      "w": 120,
+      "x": 4560,
+      "y": 0
+    },
+    "Components.dc.html": {
+      "h": 1100,
+      "title": "02 · Components",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Dock.dc.html": {
+      "h": 88,
+      "title": "Component · Dock",
+      "w": 420,
+      "x": 4760,
+      "y": 0
+    },
+    "Interaction.dc.html": {
+      "h": 1100,
+      "title": "03 · Navigation & interaction model",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 1100,
+      "title": "01 · Design system",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "S01-Landing.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "1 · Landing / welcome",
+      "w": 1440,
+      "x": 0,
+      "y": 1480
+    },
+    "S02a-Location.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "2a · Onboarding — choose location",
+      "w": 1440,
+      "x": 1520,
+      "y": 1480
+    },
+    "S02b-Avatar.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "2b · Onboarding — create avatar",
+      "w": 1440,
+      "x": 3040,
+      "y": 1480
+    },
+    "S02c-Desk.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "2c · Onboarding — choose home desk",
+      "w": 1440,
+      "x": 4560,
+      "y": 1480
+    },
+    "S03-Globe.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "3 · Main globe",
+      "w": 1440,
+      "x": 0,
+      "y": 2760
+    },
+    "S04-Peek.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "4 · Focused unit (peek)",
+      "w": 1440,
+      "x": 1520,
+      "y": 2760
+    },
+    "S05-Travel.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "5 · Travel selection",
+      "w": 1440,
+      "x": 3040,
+      "y": 2760
+    },
+    "S06-Car.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "6 · Car travel",
+      "w": 1440,
+      "x": 0,
+      "y": 4040
+    },
+    "S07-Flight.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "7 · Flight travel",
+      "w": 1440,
+      "x": 1520,
+      "y": 4040
+    },
+    "S08-Office.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "8 · Office interior",
+      "w": 1440,
+      "x": 0,
+      "y": 5320
+    },
+    "S09-Home.dc.html": {
+      "h": 900,
+      "title": "9 · Home desk & personal space",
+      "w": 1440,
+      "x": 3040,
+      "y": 5320
+    },
+    "S10-DeskSelect.dc.html": {
+      "h": 900,
+      "title": "10 · Desk selection",
+      "w": 1440,
+      "x": 4560,
+      "y": 5320
+    },
+    "S11-Andaman.dc.html": {
+      "h": 900,
+      "title": "11 · Shared destination — Andaman",
+      "w": 1440,
+      "x": 6080,
+      "y": 5320
+    },
+    "S12-Profile.dc.html": {
+      "h": 900,
+      "title": "12 · Profile & avatar customization",
+      "w": 1440,
+      "x": 4560,
+      "y": 2760
+    },
+    "S13-Presence.dc.html": {
+      "h": 900,
+      "title": "13 · Presence states",
+      "w": 1440,
+      "x": 6080,
+      "y": 2760
+    },
+    "S14-Proximity.dc.html": {
+      "h": 900,
+      "title": "14 · Proximity communication",
+      "w": 1440,
+      "x": 1520,
+      "y": 5320
+    },
+    "Spec-Globe.dc.html": {
+      "h": 1000,
+      "title": "Spec · Globe behavior",
+      "w": 1440,
+      "x": 0,
+      "y": 6600
+    },
+    "Spec-Movement.dc.html": {
+      "h": 1000,
+      "title": "Spec · Avatar & movement",
+      "w": 1440,
+      "x": 1520,
+      "y": 6600
+    },
+    "Spec-Spaces.dc.html": {
+      "h": 1000,
+      "title": "Spec · Space layouts",
+      "w": 1440,
+      "x": 3040,
+      "y": 6600
+    },
+    "Spec-States.dc.html": {
+      "h": 1000,
+      "title": "Spec · State transitions",
+      "w": 1440,
+      "x": 4560,
+      "y": 6600
+    },
+    "Spec-Travel.dc.html": {
+      "h": 900,
+      "title": "Spec · Travel animations",
+      "w": 1440,
+      "x": 3040,
+      "y": 4040
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-28T14:30:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "rowA": {
+      "kind": "title1",
+      "maxW": 5180,
+      "text": "Foundations",
+      "w": 240,
+      "x": 0,
+      "y": -260
+    },
+    "rowB": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Arrive — landing & onboarding",
+      "w": 240,
+      "x": 0,
+      "y": 1220
+    },
+    "rowC": {
+      "kind": "title1",
+      "maxW": 7520,
+      "text": "The globe — see everyone, peek, choose to go",
+      "w": 240,
+      "x": 0,
+      "y": 2500
+    },
+    "rowD": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Travel — car and flight",
+      "w": 240,
+      "x": 0,
+      "y": 3780
+    },
+    "rowE": {
+      "kind": "title1",
+      "maxW": 7520,
+      "text": "Spaces — walk over, be together",
+      "w": 240,
+      "x": 0,
+      "y": 5060
+    },
+    "rowF": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Behavior specs",
+      "w": 240,
+      "x": 0,
+      "y": 6340
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Components.dc.html",
+    "Interaction.dc.html",
+    "Avatar.dc.html",
+    "Dock.dc.html",
+    "S01-Landing.dc.html",
+    "S02a-Location.dc.html",
+    "S02b-Avatar.dc.html",
+    "S02c-Desk.dc.html",
+    "S03-Globe.dc.html",
+    "S04-Peek.dc.html",
+    "S05-Travel.dc.html",
+    "S12-Profile.dc.html",
+    "S13-Presence.dc.html",
+    "S06-Car.dc.html",
+    "S07-Flight.dc.html",
+    "Spec-Travel.dc.html",
+    "S08-Office.dc.html",
+    "S14-Proximity.dc.html",
+    "S09-Home.dc.html",
+    "S10-DeskSelect.dc.html",
+    "S11-Andaman.dc.html",
+    "Spec-Globe.dc.html",
+    "Spec-Movement.dc.html",
+    "Spec-Spaces.dc.html",
+    "Spec-States.dc.html"
+  ],
+  "pages": [],
+  "title": "Virtual World — UI/UX Direction"
+}

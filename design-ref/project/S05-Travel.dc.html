@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Travel selection</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+a{color:#FF3D9A} a:hover{color:#FF7BBA}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(3);opacity:0}}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #0B0B1A; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<img src="/_blob/16f718ff875eb18932263020ddd664c2" alt="" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px; object-fit: cover">
+<img src="/_blob/a31104bf554cbf99796a2ccdb9479c0a" alt="Regional view of the curved, brightly colored Earth showing your home area in pink and the destination in yellow" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px">
+<div style="position: absolute; inset: 0; background: linear-gradient(270deg, rgba(11,11,26,0.82) 0%, rgba(11,11,26,0.2) 40%, rgba(11,11,26,0) 55%)"></div>
+
+<svg width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<defs>
+<linearGradient id="t5p-wing" x1="0" y1="-38" x2="0" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#A8F6FF"></stop><stop offset="0.5" stop-color="#22E3FF"></stop><stop offset="1" stop-color="#A8F6FF"></stop></linearGradient>
+<linearGradient id="t5p-fus" x1="0" y1="-6" x2="0" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="1" stop-color="#FFD6EA"></stop></linearGradient>
+<linearGradient id="t5p-trail" x1="-4" y1="0" x2="-170" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient>
+<radialGradient id="t5p-halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#22E3FF" stop-opacity="0.5"></stop><stop offset="1" stop-color="#22E3FF" stop-opacity="0"></stop></radialGradient>
+<linearGradient id="t5c-body" x1="0" y1="-25" x2="0" y2="25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF8BC4"></stop><stop offset="0.55" stop-color="#FF3D9A"></stop><stop offset="1" stop-color="#C21A6E"></stop></linearGradient>
+<linearGradient id="t5c-beam" x1="50" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF6C8" stop-opacity="0.85"></stop><stop offset="1" stop-color="#FFF6C8" stop-opacity="0"></stop></linearGradient>
+<radialGradient id="t5c-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FF3D9A" stop-opacity="0.75"></stop><stop offset="1" stop-color="#FF3D9A" stop-opacity="0"></stop></radialGradient>
+<clipPath id="t5c-glass"><path d="M8 -17 L18 -13 Q21.5 0 18 13 L8 17 Z"></path></clipPath>
+<linearGradient id="t5c-glassg" x1="-28" y1="-18" x2="20" y2="18" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2A1B5A"></stop><stop offset="1" stop-color="#6BEBFF"></stop></linearGradient>
+</defs>
+<g fill="none" stroke-linecap="round">
+<path id="t5-f" d="M680,305 L674,297 L669,289 L663,281 L657,274 L650,268 L644,263 L637,259 L630,256 L622,255 L615,256 L607,259 L599,264 L591,272 L583,282 L574,295 L566,311 L558,329 L549,350 L541,374 L533,400 L525,429 L517,460 L509,493 L501,528 L494,564 L486,602 L479,641 L472,681 L465,722 L459,762" stroke="#22E3FF" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="3 8"></path>
+<path id="t5-c" d="M680,305 L674,314 L669,324 L664,334 L658,344 L652,355 L646,366 L640,378 L634,389 L628,402 L622,414 L615,427 L608,440 L602,454 L595,468 L588,482 L580,497 L573,513 L565,529 L557,545 L550,562 L541,580 L533,598 L524,616 L516,635 L507,655 L498,675 L488,696 L478,717 L469,740 L459,762" stroke="#FF3D9A" stroke-opacity="0.35" stroke-width="14"></path>
+<path d="M680,305 L674,314 L669,324 L664,334 L658,344 L652,355 L646,366 L640,378 L634,389 L628,402 L622,414 L615,427 L608,440 L602,454 L595,468 L588,482 L580,497 L573,513 L565,529 L557,545 L550,562 L541,580 L533,598 L524,616 L516,635 L507,655 L498,675 L488,696 L478,717 L469,740 L459,762" stroke="#FF7BBA" stroke-width="3" stroke-dasharray="10 8"><animate attributeName="stroke-dashoffset" values="0;-36" dur="1.2s" repeatCount="indefinite"></animate></path>
+</g>
+<g><animateMotion dur="5s" repeatCount="indefinite" rotate="auto"><mpath href="#t5-c"></mpath></animateMotion><g transform="scale(0.36)"><g opacity="0.55"><animate attributeName="opacity" values="0.5;0.7;0.45;0.65;0.5" dur="1.4s" repeatCount="indefinite"></animate>
+<path d="M50 -15 L320 -78 L320 6 Z" fill="url(#t5c-beam)"></path><path d="M50 15 L320 -6 L320 78 Z" fill="url(#t5c-beam)"></path></g>
+<ellipse cx="0" cy="0" rx="80" ry="48" fill="url(#t5c-glow)"><animate attributeName="opacity" values="0.55;1;0.55" dur="1.1s" repeatCount="indefinite"></animate></ellipse>
+<g><circle cx="-52" cy="-9" r="2" fill="#FFD23F"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="cy" values="-9;-30" dur="0.9s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="9" r="2" fill="#FF8BC4"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="cy" values="9;30" dur="0.9s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.15s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="-9" r="2" fill="#22E3FF"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.3s" repeatCount="indefinite"></animate><animate attributeName="cy" values="-9;-30" dur="0.9s" begin="0.3s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.3s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.3s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="9" r="2" fill="#FFD23F"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.45s" repeatCount="indefinite"></animate><animate attributeName="cy" values="9;30" dur="0.9s" begin="0.45s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.45s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.45s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="-9" r="2" fill="#FFFFFF"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="cy" values="-9;-30" dur="0.9s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.6s" repeatCount="indefinite"></animate></circle><circle cx="-52" cy="9" r="2" fill="#FF8BC4"><animate attributeName="cx" values="-52;-150" dur="0.9s" begin="0.75s" repeatCount="indefinite"></animate><animate attributeName="cy" values="9;30" dur="0.9s" begin="0.75s" repeatCount="indefinite"></animate><animate attributeName="r" values="2.5;7" dur="0.9s" begin="0.75s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="0.9s" begin="0.75s" repeatCount="indefinite"></animate></circle></g>
+<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -1.4;0 0;0 1;0 0" dur="0.42s" repeatCount="indefinite"></animateTransform>
+<rect x="-50" y="-25" width="104" height="54" rx="22" fill="#000000" fill-opacity="0.35" transform="translate(5 7)"></rect>
+<rect x="-43" y="-30.5" width="26" height="13" rx="4.5" fill="#140B28"></rect><path d="M-41 -24 L-19 -24" stroke="#5A4C92" stroke-width="8" stroke-dasharray="2.5 3"><animate attributeName="stroke-dashoffset" values="0;5.5" dur="0.12s" repeatCount="indefinite"></animate></path><rect x="17" y="-30.5" width="26" height="13" rx="4.5" fill="#140B28"></rect><path d="M19 -24 L41 -24" stroke="#5A4C92" stroke-width="8" stroke-dasharray="2.5 3"><animate attributeName="stroke-dashoffset" values="0;5.5" dur="0.12s" repeatCount="indefinite"></animate></path><rect x="-43" y="17.5" width="26" height="13" rx="4.5" fill="#140B28"></rect><path d="M-41 24 L-19 24" stroke="#5A4C92" stroke-width="8" stroke-dasharray="2.5 3"><animate attributeName="stroke-dashoffset" values="0;5.5" dur="0.12s" repeatCount="indefinite"></animate></path><rect x="17" y="17.5" width="26" height="13" rx="4.5" fill="#140B28"></rect><path d="M19 24 L41 24" stroke="#5A4C92" stroke-width="8" stroke-dasharray="2.5 3"><animate attributeName="stroke-dashoffset" values="0;5.5" dur="0.12s" repeatCount="indefinite"></animate></path>
+<path d="M-44 -25 L30 -25 Q50 -24 51 -10 L51 10 Q50 24 30 25 L-44 25 Q-50 25 -50 18 L-50 -18 Q-50 -25 -44 -25 Z" fill="url(#t5c-body)" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"></path>
+<rect x="-50" y="-6.5" width="101" height="3.5" rx="1.5" fill="#FFD23F"></rect><rect x="-50" y="3" width="101" height="3.5" rx="1.5" fill="#FFD23F"></rect>
+<rect x="-28" y="-20" width="47" height="40" rx="12" fill="#C21A6E"></rect>
+<path d="M8 -17 L18 -13 Q21.5 0 18 13 L8 17 Z" fill="url(#t5c-glassg)"></path><path d="M-19 -16 L-26 -12 Q-28.5 0 -26 12 L-19 16 Z" fill="url(#t5c-glassg)"></path>
+<rect x="-17" y="-19" width="23" height="3.2" rx="1.5" fill="url(#t5c-glassg)"></rect><rect x="-17" y="15.8" width="23" height="3.2" rx="1.5" fill="url(#t5c-glassg)"></rect>
+<g clip-path="url(#t5c-glass)"><path d="M6 -20 L10 -20 L4 20 L0 20 Z" fill="#FFFFFF" fill-opacity="0.8"><animateTransform attributeName="transform" type="translate" values="0 0;18 0;18 0" keyTimes="0;0.3;1" dur="2.4s" repeatCount="indefinite"></animateTransform></path></g>
+<rect x="-18" y="-14" width="25" height="28" rx="6" fill="url(#t5c-body)"></rect>
+<rect x="-18" y="-6.5" width="25" height="3.5" fill="#FFD23F"></rect><rect x="-18" y="3" width="25" height="3.5" fill="#FFD23F"></rect>
+<ellipse cx="12" cy="-26" rx="4.5" ry="2.6" fill="#FF3D9A"></ellipse><ellipse cx="12" cy="26" rx="4.5" ry="2.6" fill="#FF3D9A"></ellipse>
+<circle cx="52" cy="-14" r="8" fill="#FFF6C8" fill-opacity="0.45"><animate attributeName="r" values="7;10;7" dur="0.9s" repeatCount="indefinite"></animate></circle><circle cx="52" cy="14" r="8" fill="#FFF6C8" fill-opacity="0.45"><animate attributeName="r" values="7;10;7" dur="0.9s" repeatCount="indefinite"></animate></circle>
+<rect x="46" y="-18" width="6" height="8" rx="2" fill="#FFFBE0"></rect><rect x="46" y="10" width="6" height="8" rx="2" fill="#FFFBE0"></rect>
+<circle cx="-50" cy="-14" r="6" fill="#FF2A4A" fill-opacity="0.55"><animate attributeName="fill-opacity" values="0.35;0.8;0.35" dur="0.8s" repeatCount="indefinite"></animate></circle><circle cx="-50" cy="14" r="6" fill="#FF2A4A" fill-opacity="0.55"><animate attributeName="fill-opacity" values="0.35;0.8;0.35" dur="0.8s" repeatCount="indefinite"></animate></circle>
+<rect x="-52" y="-19" width="4" height="9" rx="2" fill="#FF3355"></rect><rect x="-52" y="10" width="4" height="9" rx="2" fill="#FF3355"></rect>
+</g></g></g>
+<g><animateMotion dur="2.6s" repeatCount="indefinite" rotate="auto"><mpath href="#t5-f"></mpath></animateMotion><g transform="scale(0.5)"><circle r="58" fill="url(#t5p-halo)"><animate attributeName="r" values="50;62;50" dur="1.6s" repeatCount="indefinite"></animate></circle>
+<g fill="none" stroke="url(#t5p-trail)" stroke-linecap="round">
+<path d="M-4 -16 L-170 -16" stroke-width="4"></path><path d="M-4 16 L-170 16" stroke-width="4"></path>
+<path d="M-4 -16 L-170 -16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="0;44" dur="0.5s" repeatCount="indefinite"></animate></path>
+<path d="M-4 16 L-170 16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="20;64" dur="0.5s" repeatCount="indefinite"></animate></path>
+</g>
+<g><animateTransform attributeName="transform" type="scale" values="1 1;1 0.84;1 1;1 0.94;1 1" dur="5s" repeatCount="indefinite"></animateTransform>
+<path d="M8 -4 L-10 -38 L-19 -38 L-9 -4 Z M8 4 L-10 38 L-19 38 L-9 4 Z" fill="url(#t5p-wing)" stroke="#FFFFFF" stroke-width="1"></path>
+<path d="M-22 -3 L-32 -15 L-37 -15 L-31 -3 Z M-22 3 L-32 15 L-37 15 L-31 3 Z" fill="url(#t5p-wing)" stroke="#FFFFFF" stroke-width="0.8"></path>
+<rect x="-3" y="-19" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect><rect x="-3" y="13" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect>
+<circle cx="-4" cy="-16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle><circle cx="-4" cy="16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle>
+<path d="M36 0 C36 -4 32 -5.5 25 -5.5 L-27 -4 C-32 -4 -35 -2 -36 0 C-35 2 -32 4 -27 4 L25 5.5 C32 5.5 36 4 36 0 Z" fill="url(#t5p-fus)" stroke="#22E3FF" stroke-width="1"></path>
+<rect x="-26" y="-1.4" width="50" height="2.8" rx="1.4" fill="#22E3FF"></rect>
+<g fill="#22E3FF"><circle cx="18" cy="-2.6" r="0.9"></circle><circle cx="13" cy="-2.6" r="0.9"></circle><circle cx="8" cy="-2.6" r="0.9"></circle><circle cx="3" cy="-2.6" r="0.9"></circle><circle cx="-2" cy="-2.6" r="0.9"></circle><circle cx="-7" cy="-2.6" r="0.9"></circle><circle cx="-12" cy="-2.6" r="0.9"></circle></g>
+<ellipse cx="30" cy="0" rx="4.5" ry="3.4" fill="#1B1036"></ellipse>
+<path d="M-24 0 L-38 0" stroke="#22E3FF" stroke-width="3" stroke-linecap="round"></path>
+<circle cx="-14.5" cy="-38" r="4" fill="#FF3D9A"><animate attributeName="opacity" values="1;0.15;1" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-14.5" cy="38" r="4" fill="#B6FF3B"><animate attributeName="opacity" values="0.15;1;0.15" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-37" cy="0" r="5" fill="#FFFFFF" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.14;1" dur="1.3s" repeatCount="indefinite"></animate></circle>
+</g></g></g>
+</svg>
+<div style="position: absolute; left: 640px; top: 228px; padding: 4px 9px; border-radius: 999px; background: rgba(20,18,44,0.88); border: 1px solid rgba(34,227,255,0.5); font-size: 11px; font-weight: 700; color: #22E3FF; white-space: nowrap">Flight arc</div>
+<div style="position: absolute; left: 626px; top: 436px; padding: 4px 9px; border-radius: 999px; background: rgba(20,18,44,0.88); border: 1px solid rgba(255,61,154,0.6); font-size: 11px; font-weight: 700; color: #FF3D9A; white-space: nowrap">Car · on the ground</div>
+
+<div style="position: absolute; left: 680px; top: 305px; width: 0; height: 0">
+<div style="position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #FF3D9A; animation: ping 2s ease-out infinite"></div>
+<div style="position: absolute; left: -1px; top: -20px; width: 2px; height: 18px; background: linear-gradient(rgba(255,61,154,0), #FF3D9A)"></div>
+<div style="position: absolute; left: -17px; top: -56px"><dc-import name="Avatar" mode="bust" size="34" presence="online" you="true" skin="#C68A62" hair="short" hair-color="#17120F" outfit="#FF3D9A" hint-size="34px,34px"></dc-import></div>
+</div>
+<div style="position: absolute; left: 459px; top: 762px; width: 0; height: 0">
+<div style="position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #FFD23F; animation: ping 2s ease-out 0.5s infinite"></div>
+<div style="position: absolute; left: -1px; top: -20px; width: 2px; height: 18px; background: linear-gradient(rgba(182,255,59,0), #B6FF3B)"></div>
+<div style="position: absolute; left: 0; bottom: 20px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 10px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1.5px solid #B6FF3B; white-space: nowrap; box-shadow: 0 0 18px rgba(182,255,59,0.4)">
+<dc-import name="Avatar" mode="bust" size="24" presence="none" skin="#E0B08A" hair="long" hair-color="#3A2517" outfit="#22E3FF" hint-size="24px,24px"></dc-import>
+<div style="margin-left: -7px"><dc-import name="Avatar" mode="bust" size="24" presence="none" skin="#A06A48" hair="buzz" hair-color="#17120F" outfit="#B6FF3B" acc="headphones" hint-size="24px,24px"></dc-import></div>
+<span style="margin-left: 6px; font: 700 12px 'Unbounded', sans-serif; color: #B6FF3B">Office</span>
+</div>
+</div>
+
+<section role="dialog" aria-label="Travel to the Office" style="position: absolute; right: 40px; top: 170px; width: 500px; display: flex; flex-direction: column; gap: 20px; padding: 28px; box-sizing: border-box; border-radius: 30px; background: rgba(20,18,44,0.92); border: 1px solid rgba(190,180,255,0.16); box-shadow: 0 30px 80px rgba(0,0,0,0.6); backdrop-filter: blur(18px)">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font: 700 11px/14px 'Geist Mono', monospace; letter-spacing: 0.1em; color: #FFD23F">TRAVEL · 938 KM</span>
+<h1 style="margin: 0; font: 700 36px/40px 'Unbounded', sans-serif; letter-spacing: -0.03em">How do you<br>want to go?</h1>
+</div>
+<div role="radiogroup" aria-label="Travel mode" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<a href="S06-Car.dc.html" role="radio" aria-checked="true" style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 22px; background: rgba(255,61,154,0.16); border: 2px solid #FF3D9A; box-shadow: 0 0 30px rgba(255,61,154,0.3); color: #F4F2FF; text-decoration: none">
+<div style="width: 52px; height: 52px; border-radius: 16px; background: #FF3D9A; display: flex; align-items: center; justify-content: center; color: #1A0012"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5v-4l2.2-5.2A1.5 1.5 0 0 1 8.1 6.3h7.8a1.5 1.5 0 0 1 1.4 1l2.2 5.2v4a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1z"></path><path d="M4.5 12.5h15"></path><path d="M6.5 17.5v1.5M17.5 17.5v1.5"></path></svg></div>
+<span style="font: 700 17px 'Unbounded', sans-serif">Car</span>
+<span style="font: 700 30px/32px 'Geist Mono', monospace; color: #FF3D9A">20 s</span>
+<span style="font-size: 13px; color: #BDB8E6">Slow glide over land</span>
+</a>
+<a href="S07-Flight.dc.html" role="radio" aria-checked="false" style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 22px; background: rgba(34,227,255,0.08); border: 2px solid rgba(34,227,255,0.35); color: #F4F2FF; text-decoration: none">
+<div style="width: 52px; height: 52px; border-radius: 16px; background: rgba(34,227,255,0.2); display: flex; align-items: center; justify-content: center; color: #22E3FF"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 12 16l1.5 4.5M12 16V4.8a1.3 1.3 0 0 1 2.6 0V9l6.4 4v2l-6.4-2v4.5M12 9 3 13v2l9-2"></path></svg></div>
+<span style="font: 700 17px 'Unbounded', sans-serif">Flight</span>
+<span style="font: 700 30px/32px 'Geist Mono', monospace; color: #22E3FF">5 s</span>
+<span style="font-size: 13px; color: #BDB8E6">Arc over the curve</span>
+</a>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #BDB8E6">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #22E3FF; box-shadow: 0 0 8px #22E3FF"></span>Everyone sees you moving until you arrive.
+</div>
+<div style="display: flex; gap: 10px">
+<a href="S04-Peek.dc.html" style="display: flex; align-items: center; justify-content: center; height: 56px; padding: 0 22px; border-radius: 999px; background: rgba(190,180,255,0.1); color: #F4F2FF; font-size: 15px; font-weight: 600; text-decoration: none">Cancel</a>
+<a href="S06-Car.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 10px; flex-grow: 1; height: 56px; border-radius: 999px; background: #FF3D9A; color: #1A0012; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 0 34px rgba(255,61,154,0.55)">Go by car<span style="font: 700 11px 'Geist Mono', monospace; padding: 2px 6px; border-radius: 6px; background: rgba(26,0,18,0.18)">↵</span></a>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

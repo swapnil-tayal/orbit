@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>State transitions spec</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1000px; box-sizing: border-box; background: radial-gradient(900px 600px at 50% 0%, rgba(155,92,255,0.18), rgba(11,11,26,0) 65%), #0B0B1A; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<header style="position: absolute; left: 64px; right: 64px; top: 52px; display: flex; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font: 700 12px/16px 'Geist Mono', monospace; letter-spacing: 0.14em; color: #C3A2FF">SPEC · STATES</div>
+<h1 style="margin: 0; font: 800 42px/46px 'Unbounded', sans-serif; letter-spacing: -0.035em">How you move <span style="color: #C3A2FF">between screens</span></h1>
+</div>
+<div style="display: flex; gap: 18px; font-size: 12px; font-weight: 600; color: #BDB8E6">
+<span style="display: flex; align-items: center; gap: 7px"><span style="width: 24px; height: 3px; border-radius: 2px; background: #BDB8E6"></span>camera only</span>
+<span style="display: flex; align-items: center; gap: 7px"><span style="width: 24px; height: 3px; border-radius: 2px; background: #FF3D9A; box-shadow: 0 0 8px #FF3D9A"></span>your avatar moves</span>
+<span style="display: flex; align-items: center; gap: 7px"><span style="width: 24px; height: 3px; border-radius: 2px; background: #B6FF3B; box-shadow: 0 0 8px #B6FF3B"></span>you join / leave people</span>
+</div>
+</header>
+
+<svg width="1440" height="1000" viewBox="0 0 1440 1000" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<defs>
+<marker id="st-aw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#BDB8E6"></path></marker>
+<marker id="st-ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#FF3D9A"></path></marker>
+<marker id="st-al" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B6FF3B"></path></marker>
+</defs>
+<g fill="none" stroke-width="2" stroke-linecap="round">
+<path d="M226 214 L316 214" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M466 214 L556 214" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M706 214 L796 214" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M871 244 C 871 300 250 300 160 344" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M150 244 L150 344" stroke="#BDB8E6" marker-end="url(#st-aw)" stroke-dasharray="4 5"></path>
+<path d="M258 384 L340 384" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M340 404 L258 404" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M556 394 L620 394" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M620 414 C 590 440 580 440 556 414" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M150 424 L150 560 C 150 575 170 590 190 590 L 780 590" stroke="#BDB8E6" stroke-dasharray="4 5" marker-end="url(#st-aw)"></path>
+<path d="M780 606 C 600 606 470 520 462 426" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M1000 640 C 1040 690 1080 700 1120 700" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+<path d="M1120 716 C 1070 740 1020 720 990 668" stroke="#BDB8E6" marker-end="url(#st-aw)"></path>
+</g>
+<g fill="none" stroke-width="2.5" stroke-linecap="round">
+<path id="st-e1" d="M836 394 L900 394" stroke="#FF3D9A" marker-end="url(#st-ap)"></path>
+<path id="st-e2" d="M1116 394 L1180 394" stroke="#FF3D9A" marker-end="url(#st-ap)"></path>
+<path id="st-e3" d="M1290 434 C 1290 520 1100 560 1010 580" stroke="#FF3D9A" marker-end="url(#st-ap)"></path>
+<path id="st-e4" d="M900 572 C 880 500 760 470 740 426" stroke="#FF3D9A" marker-end="url(#st-ap)"></path>
+<path id="st-e5" d="M800 640 C 700 690 640 690 590 690" stroke="#B6FF3B" marker-end="url(#st-al)"></path>
+<path id="st-e6" d="M590 710 C 650 730 720 730 800 668" stroke="#B6FF3B" marker-end="url(#st-al)"></path>
+</g>
+<g>
+<circle r="5" fill="#FF3D9A"><animateMotion dur="1.4s" repeatCount="indefinite"><mpath href="#st-e1"></mpath></animateMotion></circle>
+<circle r="5" fill="#FF3D9A"><animateMotion dur="1.4s" begin="0.5s" repeatCount="indefinite"><mpath href="#st-e2"></mpath></animateMotion></circle>
+<circle r="5" fill="#FF3D9A"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#st-e3"></mpath></animateMotion></circle>
+<circle r="5" fill="#FF3D9A"><animateMotion dur="2.4s" begin="1s" repeatCount="indefinite"><mpath href="#st-e4"></mpath></animateMotion></circle>
+<circle r="5" fill="#B6FF3B"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#st-e5"></mpath></animateMotion></circle>
+<circle r="5" fill="#B6FF3B"><animateMotion dur="2s" begin="1s" repeatCount="indefinite"><mpath href="#st-e6"></mpath></animateMotion></circle>
+</g>
+<g font-family="Geist, sans-serif" font-size="11.5" font-weight="600" fill="#BDB8E6">
+<text x="271" y="205" text-anchor="middle">Enter</text><text x="511" y="205" text-anchor="middle">Set home</text><text x="751" y="205" text-anchor="middle">Continue</text>
+<text x="430" y="276">Claim desk → globe, you at your desk</text>
+<text x="160" y="300">returning launch</text>
+<text x="299" y="376" text-anchor="middle">zoom in</text><text x="299" y="421" text-anchor="middle">zoom out</text>
+<text x="562" y="386">Travel</text><text x="566" y="446">Cancel</text>
+<text x="842" y="386" fill="#FF3D9A">Depart</text><text x="1122" y="386" fill="#FF3D9A">Arrive</text>
+<text x="1150" y="578" fill="#FF3D9A">drop into the 2D plan</text>
+<text x="170" y="580">zoom into your own unit</text>
+<text x="560" y="540">rise out (avatar stays)</text>
+<text x="650" y="668" fill="#B6FF3B">cross a ring</text><text x="640" y="744" fill="#B6FF3B">step out</text>
+<text x="1044" y="684">Change desk</text><text x="1030" y="742">Done</text>
+<text x="814" y="470" fill="#FF3D9A">Home · from any space</text>
+</g>
+</svg>
+
+<div style="position: absolute; left: 56px; top: 184px; width: 170px; height: 60px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 16px; background: linear-gradient(rgba(20,18,44,0.9), rgba(20,18,44,0.9)), #0B0B1A; border: 1px solid rgba(190,180,255,0.2)"><span style="font-size: 14px; font-weight: 700">Landing</span><span style="font: 500 11px 'Geist Mono', monospace; color: #8A84BA">01</span></div>
+<div style="position: absolute; left: 316px; top: 184px; width: 150px; height: 60px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 16px; background: linear-gradient(rgba(20,18,44,0.9), rgba(20,18,44,0.9)), #0B0B1A; border: 1px solid rgba(190,180,255,0.2)"><span style="font-size: 14px; font-weight: 700">Location</span><span style="font: 500 11px 'Geist Mono', monospace; color: #8A84BA">02a</span></div>
+<div style="position: absolute; left: 556px; top: 184px; width: 150px; height: 60px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 16px; background: linear-gradient(rgba(20,18,44,0.9), rgba(20,18,44,0.9)), #0B0B1A; border: 1px solid rgba(190,180,255,0.2)"><span style="font-size: 14px; font-weight: 700">Avatar</span><span style="font: 500 11px 'Geist Mono', monospace; color: #8A84BA">02b</span></div>
+<div style="position: absolute; left: 796px; top: 184px; width: 150px; height: 60px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 16px; background: linear-gradient(rgba(20,18,44,0.9), rgba(20,18,44,0.9)), #0B0B1A; border: 1px solid rgba(190,180,255,0.2)"><span style="font-size: 14px; font-weight: 700">Home desk</span><span style="font: 500 11px 'Geist Mono', monospace; color: #8A84BA">02c</span></div>
+
+<div style="position: absolute; left: 56px; top: 344px; width: 202px; height: 80px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 18px; background: linear-gradient(rgba(34,227,255,0.12), rgba(34,227,255,0.12)), #0B0B1A; border: 2px solid #22E3FF; box-shadow: 0 0 24px rgba(34,227,255,0.25)"><span style="font: 700 14px 'Unbounded', sans-serif">Globe · Orbit</span><span style="font-size: 11px; color: #BDB8E6">03 · 3D · see everyone</span></div>
+<div style="position: absolute; left: 340px; top: 344px; width: 216px; height: 80px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 18px; background: linear-gradient(rgba(255,210,63,0.1), rgba(255,210,63,0.1)), #0B0B1A; border: 2px solid #FFD23F"><span style="font: 700 14px 'Unbounded', sans-serif">Unit · Peek</span><span style="font-size: 11px; color: #BDB8E6">04 · camera away, you stay</span></div>
+<div style="position: absolute; left: 620px; top: 354px; width: 216px; height: 70px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 18px; background: linear-gradient(rgba(20,18,44,0.9), rgba(20,18,44,0.9)), #0B0B1A; border: 1.5px solid rgba(255,61,154,0.55)"><span style="font-size: 15px; font-weight: 700">Travel sheet</span><span style="font-size: 11px; color: #BDB8E6">05 · car or flight</span></div>
+<div style="position: absolute; left: 900px; top: 354px; width: 216px; height: 70px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 18px; background: linear-gradient(rgba(255,61,154,0.16), rgba(255,61,154,0.16)), #0B0B1A; border: 2px solid #FF3D9A; box-shadow: 0 0 24px rgba(255,61,154,0.3)"><span style="font: 700 14px 'Unbounded', sans-serif">Traveling</span><span style="font-size: 11px; color: #BDB8E6">06 car · 07 flight · 3D</span></div>
+<div style="position: absolute; left: 1180px; top: 354px; width: 210px; height: 80px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 18px; background: linear-gradient(rgba(20,18,44,0.9), rgba(20,18,44,0.9)), #0B0B1A; border: 1.5px solid rgba(255,61,154,0.55)"><span style="font-size: 15px; font-weight: 700">Arrival</span><span style="font-size: 11px; color: #BDB8E6">land on the arrival pad</span></div>
+
+<div style="position: absolute; left: 780px; top: 572px; width: 230px; height: 96px; display: flex; flex-direction: column; justify-content: center; gap: 3px; padding: 0 18px; box-sizing: border-box; border-radius: 20px; background: linear-gradient(rgba(155,92,255,0.16), rgba(155,92,255,0.16)), #0B0B1A; border: 2px solid #9B5CFF; box-shadow: 0 0 24px rgba(155,92,255,0.3)"><span style="font: 700 15px 'Unbounded', sans-serif">In a space</span><span style="font-size: 11px; line-height: 15px; color: #BDB8E6">08 office · 09 home · 11 shared<br>flat 2D plan · walk freely</span></div>
+<div style="position: absolute; left: 380px; top: 660px; width: 210px; height: 80px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 18px; background: linear-gradient(rgba(182,255,59,0.12), rgba(182,255,59,0.12)), #0B0B1A; border: 2px solid #B6FF3B; box-shadow: 0 0 24px rgba(182,255,59,0.25)"><span style="font: 700 14px 'Unbounded', sans-serif">Together</span><span style="font-size: 11px; color: #BDB8E6">14 · ring, meeting area, circle</span></div>
+<div style="position: absolute; left: 1120px; top: 672px; width: 190px; height: 64px; display: flex; flex-direction: column; justify-content: center; padding: 0 16px; box-sizing: border-box; border-radius: 16px; background: linear-gradient(rgba(20,18,44,0.9), rgba(20,18,44,0.9)), #0B0B1A; border: 1.5px dashed #22E3FF"><span style="font-size: 14px; font-weight: 700">Desk mode</span><span style="font-size: 11px; color: #BDB8E6">10 · home office only</span></div>
+
+<div style="position: absolute; left: 64px; right: 64px; top: 790px; display: grid; grid-template-columns: 1.7fr 1fr; gap: 20px">
+<section style="display: flex; flex-direction: column; gap: 14px; padding: 20px 22px; border-radius: 24px; background: rgba(20,18,44,0.75)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Presence</h2>
+<div style="display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; flex-wrap: wrap">
+<span style="padding: 7px 12px; border-radius: 999px; border: 1.5px solid #6E6A8F; color: #8A84BA">Offline · dim at desk</span>
+<span style="color: #8A84BA; font-weight: 500">open app →</span>
+<span style="padding: 7px 12px; border-radius: 999px; background: rgba(182,255,59,0.16); color: #B6FF3B">Online · at desk</span>
+<span style="color: #8A84BA; font-weight: 500">depart →</span>
+<span style="padding: 7px 12px; border-radius: 999px; background: rgba(34,227,255,0.16); color: #22E3FF">Traveling</span>
+<span style="color: #8A84BA; font-weight: 500">arrive →</span>
+<span style="padding: 7px 12px; border-radius: 999px; background: rgba(182,255,59,0.16); color: #B6FF3B">Online · in a space</span>
+</div>
+<span style="font-size: 13px; line-height: 19px; color: #BDB8E6">Close the app, or 30 s without connection → <span style="color: #F4F2FF">Offline</span>. You go back to your home desk and start there next time, even mid-trip.</span>
+</section>
+<section style="display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; border-radius: 24px; background: rgba(255,210,63,0.06); border: 1px solid rgba(255,210,63,0.3); font-size: 13px; line-height: 19px; color: #BDB8E6">
+<h2 style="margin: 0 0 2px; font: 700 13px 'Unbounded', sans-serif; color: #FFD23F">Always true</h2>
+<span style="display: flex; gap: 10px"><span style="flex-shrink: 0; width: 7px; height: 7px; margin-top: 6px; border-radius: 50%; background: #FFD23F"></span>You can only enter the space your avatar is in.</span>
+<span style="display: flex; gap: 10px"><span style="flex-shrink: 0; width: 7px; height: 7px; margin-top: 6px; border-radius: 50%; background: #FFD23F"></span>Peeking never changes your presence or location.</span>
+<span style="display: flex; gap: 10px"><span style="flex-shrink: 0; width: 7px; height: 7px; margin-top: 6px; border-radius: 50%; background: #FFD23F"></span>Profile opens as a sheet over any state and closes back to it.</span>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

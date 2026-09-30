@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Main globe</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+a{color:#FF3D9A} a:hover{color:#FF7BBA}
+@keyframes ping{0%{transform:scale(1);opacity:.9}100%{transform:scale(3.4);opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes breathe{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.9;transform:scale(1.02)}}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #0B0B1A; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<img src="/_blob/16f718ff875eb18932263020ddd664c2" alt="" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px; object-fit: cover">
+<div style="position: absolute; left: 290px; top: 48px; width: 860px; height: 860px; border-radius: 50%; background: radial-gradient(closest-side, rgba(34,227,255,0) 88%, rgba(34,227,255,0.35) 93%, rgba(255,61,154,0.18) 97%, rgba(255,61,154,0) 100%); animation: breathe 4s ease-in-out infinite"></div>
+<img src="/_blob/279b12b3d727eed167776c6f57cc4e68" alt="The full, brightly colored Earth seen from orbit, centred on South Asia, with people shown as glowing markers" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px">
+<div style="position: absolute; left: 260px; top: 18px; width: 920px; height: 920px; border-radius: 50%; border: 1px dashed rgba(34,227,255,0.25); box-sizing: border-box; animation: spin 90s linear infinite"></div>
+
+<svg width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<defs>
+<linearGradient id="g3p-wing" x1="0" y1="-38" x2="0" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#A8F6FF"></stop><stop offset="0.5" stop-color="#22E3FF"></stop><stop offset="1" stop-color="#A8F6FF"></stop></linearGradient>
+<linearGradient id="g3p-fus" x1="0" y1="-6" x2="0" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="1" stop-color="#FFD6EA"></stop></linearGradient>
+<linearGradient id="g3p-trail" x1="-4" y1="0" x2="-170" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient>
+<radialGradient id="g3p-halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#22E3FF" stop-opacity="0.5"></stop><stop offset="1" stop-color="#22E3FF" stop-opacity="0"></stop></radialGradient>
+<linearGradient id="g3c-body" x1="0" y1="-25" x2="0" y2="25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#9DF4FF"></stop><stop offset="0.55" stop-color="#22E3FF"></stop><stop offset="1" stop-color="#0E9DB5"></stop></linearGradient>
+</defs>
+<g fill="none" stroke-linecap="round" stroke="#22E3FF" stroke-width="1.6" stroke-dasharray="3 6" stroke-opacity="0.8">
+<path id="g3-r" d="M703,425 L706,427 L709,431 L712,434 L716,438 L719,440 L723,444 L726,447 L730,452 L733,454 L736,457 L742,464 L749,471 L756,478 L762,485 L769,492 L775,499 L781,506 L787,513 L793,519 L798,525 L803,531 L808,537"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"></animate></path>
+<path id="g3-v" d="M710,503 L718,498 L726,494 L734,489 L742,484 L750,480 L758,475 L766,470 L774,466"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"></animate></path>
+<path id="g3-y" d="M569,437 L594,454 L625,473 L660,493 L697,514 L736,534 L774,554 L806,568 L834,581 L860,592 L882,600"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"></animate></path>
+<path id="g3-i" d="M408,246 L411,230 L416,218 L424,210 L429,207 L442,202 L458,201 L475,201"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"></animate></path>
+</g>
+<g><animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#g3-r"></mpath></animateMotion><g transform="scale(0.32)"><circle r="58" fill="url(#g3p-halo)"><animate attributeName="r" values="50;62;50" dur="1.6s" repeatCount="indefinite"></animate></circle>
+<g fill="none" stroke="url(#g3p-trail)" stroke-linecap="round">
+<path d="M-4 -16 L-170 -16" stroke-width="4"></path><path d="M-4 16 L-170 16" stroke-width="4"></path>
+<path d="M-4 -16 L-170 -16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="0;44" dur="0.5s" repeatCount="indefinite"></animate></path>
+<path d="M-4 16 L-170 16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="20;64" dur="0.5s" repeatCount="indefinite"></animate></path>
+</g>
+<g><animateTransform attributeName="transform" type="scale" values="1 1;1 0.84;1 1;1 0.94;1 1" dur="5s" repeatCount="indefinite"></animateTransform>
+<path d="M8 -4 L-10 -38 L-19 -38 L-9 -4 Z M8 4 L-10 38 L-19 38 L-9 4 Z" fill="url(#g3p-wing)" stroke="#FFFFFF" stroke-width="1"></path>
+<path d="M-22 -3 L-32 -15 L-37 -15 L-31 -3 Z M-22 3 L-32 15 L-37 15 L-31 3 Z" fill="url(#g3p-wing)" stroke="#FFFFFF" stroke-width="0.8"></path>
+<rect x="-3" y="-19" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect><rect x="-3" y="13" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect>
+<circle cx="-4" cy="-16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle><circle cx="-4" cy="16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle>
+<path d="M36 0 C36 -4 32 -5.5 25 -5.5 L-27 -4 C-32 -4 -35 -2 -36 0 C-35 2 -32 4 -27 4 L25 5.5 C32 5.5 36 4 36 0 Z" fill="url(#g3p-fus)" stroke="#22E3FF" stroke-width="1"></path>
+<rect x="-26" y="-1.4" width="50" height="2.8" rx="1.4" fill="#22E3FF"></rect>
+<g fill="#22E3FF"><circle cx="18" cy="-2.6" r="0.9"></circle><circle cx="13" cy="-2.6" r="0.9"></circle><circle cx="8" cy="-2.6" r="0.9"></circle><circle cx="3" cy="-2.6" r="0.9"></circle><circle cx="-2" cy="-2.6" r="0.9"></circle><circle cx="-7" cy="-2.6" r="0.9"></circle><circle cx="-12" cy="-2.6" r="0.9"></circle></g>
+<ellipse cx="30" cy="0" rx="4.5" ry="3.4" fill="#1B1036"></ellipse>
+<path d="M-24 0 L-38 0" stroke="#22E3FF" stroke-width="3" stroke-linecap="round"></path>
+<circle cx="-14.5" cy="-38" r="4" fill="#FF3D9A"><animate attributeName="opacity" values="1;0.15;1" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-14.5" cy="38" r="4" fill="#B6FF3B"><animate attributeName="opacity" values="0.15;1;0.15" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-37" cy="0" r="5" fill="#FFFFFF" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.14;1" dur="1.3s" repeatCount="indefinite"></animate></circle>
+</g></g></g>
+<g><animateMotion dur="12s" begin="-4s" repeatCount="indefinite" rotate="auto"><mpath href="#g3-v"></mpath></animateMotion><g transform="scale(0.22)"><animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="0.4s" additive="sum" repeatCount="indefinite"></animateTransform><ellipse cx="0" cy="0" rx="70" ry="44" fill="#22E3FF" fill-opacity="0.25"><animate attributeName="fill-opacity" values="0.15;0.4;0.15" dur="1.2s" repeatCount="indefinite"></animate></ellipse>
+<path d="M50 -12 L150 -40 L150 40 L50 12 Z" fill="#FFF6C8" fill-opacity="0.35"></path>
+<rect x="-43" y="-31" width="26" height="62" rx="6" fill="#140B28"></rect><rect x="17" y="-31" width="26" height="62" rx="6" fill="#140B28"></rect>
+<path d="M-44 -25 L30 -25 Q50 -24 51 -10 L51 10 Q50 24 30 25 L-44 25 Q-50 25 -50 18 L-50 -18 Q-50 -25 -44 -25 Z" fill="url(#g3c-body)" stroke="#FFFFFF" stroke-width="3"></path>
+<rect x="-50" y="-6" width="101" height="4" fill="#FFFFFF"></rect><rect x="-50" y="2" width="101" height="4" fill="#FFFFFF"></rect>
+<rect x="-28" y="-20" width="47" height="40" rx="12" fill="#0E9DB5"></rect>
+<path d="M8 -17 L18 -13 Q21.5 0 18 13 L8 17 Z" fill="#1B1036"></path><path d="M-19 -16 L-26 -12 Q-28.5 0 -26 12 L-19 16 Z" fill="#1B1036"></path>
+<rect x="-18" y="-14" width="25" height="28" rx="6" fill="url(#g3c-body)"></rect>
+<rect x="-18" y="-6" width="25" height="4" fill="#FFFFFF"></rect><rect x="-18" y="2" width="25" height="4" fill="#FFFFFF"></rect>
+<rect x="45" y="-19" width="7" height="10" rx="2" fill="#FFFBE0"></rect><rect x="45" y="9" width="7" height="10" rx="2" fill="#FFFBE0"></rect>
+<rect x="-53" y="-19" width="6" height="10" rx="2" fill="#FF3355"><animate attributeName="opacity" values="1;0.4;1" dur="0.8s" repeatCount="indefinite"></animate></rect><rect x="-53" y="9" width="6" height="10" rx="2" fill="#FF3355"><animate attributeName="opacity" values="1;0.4;1" dur="0.8s" repeatCount="indefinite"></animate></rect></g></g>
+<g><animateMotion dur="10s" begin="-6s" repeatCount="indefinite" rotate="auto"><mpath href="#g3-y"></mpath></animateMotion><g transform="scale(0.32)"><circle r="58" fill="url(#g3p-halo)"><animate attributeName="r" values="50;62;50" dur="1.6s" repeatCount="indefinite"></animate></circle>
+<g fill="none" stroke="url(#g3p-trail)" stroke-linecap="round">
+<path d="M-4 -16 L-170 -16" stroke-width="4"></path><path d="M-4 16 L-170 16" stroke-width="4"></path>
+<path d="M-4 -16 L-170 -16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="0;44" dur="0.5s" repeatCount="indefinite"></animate></path>
+<path d="M-4 16 L-170 16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="20;64" dur="0.5s" repeatCount="indefinite"></animate></path>
+</g>
+<g><animateTransform attributeName="transform" type="scale" values="1 1;1 0.84;1 1;1 0.94;1 1" dur="5s" repeatCount="indefinite"></animateTransform>
+<path d="M8 -4 L-10 -38 L-19 -38 L-9 -4 Z M8 4 L-10 38 L-19 38 L-9 4 Z" fill="url(#g3p-wing)" stroke="#FFFFFF" stroke-width="1"></path>
+<path d="M-22 -3 L-32 -15 L-37 -15 L-31 -3 Z M-22 3 L-32 15 L-37 15 L-31 3 Z" fill="url(#g3p-wing)" stroke="#FFFFFF" stroke-width="0.8"></path>
+<rect x="-3" y="-19" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect><rect x="-3" y="13" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect>
+<circle cx="-4" cy="-16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle><circle cx="-4" cy="16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle>
+<path d="M36 0 C36 -4 32 -5.5 25 -5.5 L-27 -4 C-32 -4 -35 -2 -36 0 C-35 2 -32 4 -27 4 L25 5.5 C32 5.5 36 4 36 0 Z" fill="url(#g3p-fus)" stroke="#22E3FF" stroke-width="1"></path>
+<rect x="-26" y="-1.4" width="50" height="2.8" rx="1.4" fill="#22E3FF"></rect>
+<g fill="#22E3FF"><circle cx="18" cy="-2.6" r="0.9"></circle><circle cx="13" cy="-2.6" r="0.9"></circle><circle cx="8" cy="-2.6" r="0.9"></circle><circle cx="3" cy="-2.6" r="0.9"></circle><circle cx="-2" cy="-2.6" r="0.9"></circle><circle cx="-7" cy="-2.6" r="0.9"></circle><circle cx="-12" cy="-2.6" r="0.9"></circle></g>
+<ellipse cx="30" cy="0" rx="4.5" ry="3.4" fill="#1B1036"></ellipse>
+<path d="M-24 0 L-38 0" stroke="#22E3FF" stroke-width="3" stroke-linecap="round"></path>
+<circle cx="-14.5" cy="-38" r="4" fill="#FF3D9A"><animate attributeName="opacity" values="1;0.15;1" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-14.5" cy="38" r="4" fill="#B6FF3B"><animate attributeName="opacity" values="0.15;1;0.15" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-37" cy="0" r="5" fill="#FFFFFF" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.14;1" dur="1.3s" repeatCount="indefinite"></animate></circle>
+</g></g></g>
+<g><animateMotion dur="7s" begin="-3s" repeatCount="indefinite" rotate="auto"><mpath href="#g3-i"></mpath></animateMotion><g transform="scale(0.32)"><circle r="58" fill="url(#g3p-halo)"><animate attributeName="r" values="50;62;50" dur="1.6s" repeatCount="indefinite"></animate></circle>
+<g fill="none" stroke="url(#g3p-trail)" stroke-linecap="round">
+<path d="M-4 -16 L-170 -16" stroke-width="4"></path><path d="M-4 16 L-170 16" stroke-width="4"></path>
+<path d="M-4 -16 L-170 -16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="0;44" dur="0.5s" repeatCount="indefinite"></animate></path>
+<path d="M-4 16 L-170 16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="20;64" dur="0.5s" repeatCount="indefinite"></animate></path>
+</g>
+<g><animateTransform attributeName="transform" type="scale" values="1 1;1 0.84;1 1;1 0.94;1 1" dur="5s" repeatCount="indefinite"></animateTransform>
+<path d="M8 -4 L-10 -38 L-19 -38 L-9 -4 Z M8 4 L-10 38 L-19 38 L-9 4 Z" fill="url(#g3p-wing)" stroke="#FFFFFF" stroke-width="1"></path>
+<path d="M-22 -3 L-32 -15 L-37 -15 L-31 -3 Z M-22 3 L-32 15 L-37 15 L-31 3 Z" fill="url(#g3p-wing)" stroke="#FFFFFF" stroke-width="0.8"></path>
+<rect x="-3" y="-19" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect><rect x="-3" y="13" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect>
+<circle cx="-4" cy="-16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle><circle cx="-4" cy="16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle>
+<path d="M36 0 C36 -4 32 -5.5 25 -5.5 L-27 -4 C-32 -4 -35 -2 -36 0 C-35 2 -32 4 -27 4 L25 5.5 C32 5.5 36 4 36 0 Z" fill="url(#g3p-fus)" stroke="#22E3FF" stroke-width="1"></path>
+<rect x="-26" y="-1.4" width="50" height="2.8" rx="1.4" fill="#22E3FF"></rect>
+<g fill="#22E3FF"><circle cx="18" cy="-2.6" r="0.9"></circle><circle cx="13" cy="-2.6" r="0.9"></circle><circle cx="8" cy="-2.6" r="0.9"></circle><circle cx="3" cy="-2.6" r="0.9"></circle><circle cx="-2" cy="-2.6" r="0.9"></circle><circle cx="-7" cy="-2.6" r="0.9"></circle><circle cx="-12" cy="-2.6" r="0.9"></circle></g>
+<ellipse cx="30" cy="0" rx="4.5" ry="3.4" fill="#1B1036"></ellipse>
+<path d="M-24 0 L-38 0" stroke="#22E3FF" stroke-width="3" stroke-linecap="round"></path>
+<circle cx="-14.5" cy="-38" r="4" fill="#FF3D9A"><animate attributeName="opacity" values="1;0.15;1" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-14.5" cy="38" r="4" fill="#B6FF3B"><animate attributeName="opacity" values="0.15;1;0.15" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-37" cy="0" r="5" fill="#FFFFFF" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.14;1" dur="1.3s" repeatCount="indefinite"></animate></circle>
+</g></g></g>
+</svg>
+
+<div style="position: absolute; left: 672px; top: 463px; width: 0; height: 0">
+<div style="position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #B6FF3B; animation: ping 1.8s ease-out infinite"></div>
+<div style="position: absolute; left: -3px; top: -3px; width: 6px; height: 6px; border-radius: 50%; background: #B6FF3B; box-shadow: 0 0 10px #B6FF3B"></div>
+<div style="position: absolute; left: -1px; top: -16px; width: 2px; height: 14px; background: linear-gradient(rgba(182,255,59,0), #B6FF3B)"></div>
+<a href="S04-Peek.dc.html" aria-label="7 people, 5 online. Peek at this area" style="position: absolute; left: 0; bottom: 16px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 9px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1.5px solid #B6FF3B; text-decoration: none; color: #F4F2FF; white-space: nowrap; box-shadow: 0 0 18px rgba(182,255,59,0.45)">
+<dc-import name="Avatar" mode="bust" size="22" presence="none" skin="#E0B08A" hair="long" hair-color="#3A2517" outfit="#22E3FF" hint-size="22px,22px"></dc-import>
+<div style="margin-left: -7px"><dc-import name="Avatar" mode="bust" size="22" presence="none" skin="#A06A48" hair="buzz" hair-color="#17120F" outfit="#B6FF3B" acc="headphones" hint-size="22px,22px"></dc-import></div>
+<div style="margin-left: -7px"><dc-import name="Avatar" mode="bust" size="22" presence="none" skin="#F1D2B6" hair="bun" hair-color="#6A4629" outfit="#FFD23F" acc="glasses" hint-size="22px,22px"></dc-import></div>
+<span style="margin-left: 6px; font: 700 12px/16px 'Geist Mono', monospace; color: #B6FF3B">7</span>
+</a>
+</div>
+<div style="position: absolute; left: 679px; top: 495px; width: 0; height: 0">
+<div style="position: absolute; left: -2.5px; top: -2.5px; width: 5px; height: 5px; border-radius: 50%; background: #B6FF3B"></div>
+<div style="position: absolute; left: -1px; top: -14px; width: 2px; height: 12px; background: linear-gradient(rgba(182,255,59,0), #B6FF3B)"></div>
+<a href="S04-Peek.dc.html" aria-label="3 people, 1 online" style="position: absolute; left: 0; bottom: 14px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 8px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1px solid rgba(182,255,59,0.6); text-decoration: none; color: #F4F2FF; white-space: nowrap">
+<dc-import name="Avatar" mode="bust" size="20" presence="none" skin="#A06A48" hair="short" hair-color="#17120F" outfit="#9B5CFF" hint-size="20px,20px"></dc-import>
+<span style="margin-left: 5px; font: 700 11px/14px 'Geist Mono', monospace">3</span>
+</a>
+</div>
+<div style="position: absolute; left: 703px; top: 531px; width: 0; height: 0">
+<div style="position: absolute; left: -2.5px; top: -2.5px; width: 5px; height: 5px; border-radius: 50%; background: #B6FF3B"></div>
+<div style="position: absolute; left: -1px; top: -14px; width: 2px; height: 12px; background: linear-gradient(rgba(182,255,59,0), #B6FF3B)"></div>
+<a href="S04-Peek.dc.html" aria-label="5 people, 1 online" style="position: absolute; left: 0; bottom: 14px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 8px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1px solid rgba(182,255,59,0.6); text-decoration: none; color: #F4F2FF; white-space: nowrap">
+<dc-import name="Avatar" mode="bust" size="20" presence="none" skin="#A06A48" hair="short" hair-color="#17120F" outfit="#FF8A00" hint-size="20px,20px"></dc-import>
+<span style="margin-left: 5px; font: 700 11px/14px 'Geist Mono', monospace">5</span>
+</a>
+</div>
+<div style="position: absolute; left: 808px; top: 537px; width: 0; height: 0">
+<svg width="16" height="16" viewBox="0 0 24 24" style="position: absolute; left: -8px; top: -8px; filter: drop-shadow(0 0 6px #FFD23F)"><path d="M12 3l5 9-5 9-5-9z" fill="#FFD23F"></path></svg>
+<div style="position: absolute; left: -1px; top: -22px; width: 2px; height: 14px; background: linear-gradient(rgba(255,210,63,0), #FFD23F)"></div>
+<a href="S11-Andaman.dc.html" aria-label="Shared destination, 6 people there" style="position: absolute; left: 0; bottom: 22px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 9px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1.5px solid #FFD23F; text-decoration: none; color: #F4F2FF; white-space: nowrap; box-shadow: 0 0 18px rgba(255,210,63,0.4)">
+<dc-import name="Avatar" mode="bust" size="22" presence="none" skin="#E0B08A" hair="bun" hair-color="#17120F" outfit="#FF8A00" hint-size="22px,22px"></dc-import>
+<div style="margin-left: -7px"><dc-import name="Avatar" mode="bust" size="22" presence="none" skin="#F1D2B6" hair="bob" hair-color="#FFD23F" outfit="#9B5CFF" hint-size="22px,22px"></dc-import></div>
+<div style="margin-left: -7px"><dc-import name="Avatar" mode="bust" size="22" presence="none" skin="#A06A48" hair="curly" hair-color="#17120F" outfit="#FFD23F" hint-size="22px,22px"></dc-import></div>
+<span style="margin-left: 6px; font: 700 12px/16px 'Geist Mono', monospace; color: #FFD23F">6</span>
+</a>
+</div>
+<div style="position: absolute; left: 701px; top: 410px; width: 0; height: 0">
+<div style="position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; background: #FF3D9A; animation: ping 2s ease-out infinite"></div>
+<div style="position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #FF3D9A; box-shadow: 0 0 14px #FF3D9A"></div>
+<div style="position: absolute; left: -1px; top: -18px; width: 2px; height: 16px; background: linear-gradient(rgba(255,61,154,0), #FF3D9A)"></div>
+<div style="position: absolute; left: -16px; top: -52px"><dc-import name="Avatar" mode="bust" size="32" presence="online" you="true" skin="#C68A62" hair="short" hair-color="#17120F" outfit="#FF3D9A" hint-size="32px,32px"></dc-import></div>
+<a href="S04-Peek.dc.html" aria-label="6 more people near you" style="position: absolute; left: 21px; top: -46px; padding: 2px 7px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1px solid rgba(182,255,59,0.6); font: 700 11px/14px 'Geist Mono', monospace; color: #B6FF3B; text-decoration: none">+6</a>
+</div>
+<div style="position: absolute; left: 569px; top: 437px; width: 0; height: 0">
+<div style="position: absolute; left: -1px; top: -12px; width: 2px; height: 10px; background: linear-gradient(rgba(110,106,143,0), #6E6A8F)"></div>
+<div style="position: absolute; left: -10px; top: -33px"><dc-import name="Avatar" mode="bust" size="20" presence="offline" skin="#A06A48" hair="short" hair-color="#17120F" outfit="#22E3FF" hint-size="20px,20px"></dc-import></div>
+</div>
+<div style="position: absolute; left: 446px; top: 591px; width: 0; height: 0">
+<div style="position: absolute; left: -2.5px; top: -2.5px; width: 5px; height: 5px; border-radius: 50%; background: #B6FF3B"></div>
+<div style="position: absolute; left: -1px; top: -14px; width: 2px; height: 12px; background: linear-gradient(rgba(182,255,59,0), #B6FF3B)"></div>
+<div style="position: absolute; left: -12px; top: -38px"><dc-import name="Avatar" mode="bust" size="24" presence="online" skin="#553524" hair="curly" hair-color="#17120F" outfit="#FFD23F" hint-size="24px,24px"></dc-import></div>
+</div>
+<div style="position: absolute; left: 486px; top: 209px; width: 0; height: 0">
+<div style="position: absolute; left: -2.5px; top: -2.5px; width: 5px; height: 5px; border-radius: 50%; background: #B6FF3B"></div>
+<div style="position: absolute; left: -1px; top: -14px; width: 2px; height: 12px; background: linear-gradient(rgba(182,255,59,0), #B6FF3B)"></div>
+<a href="S04-Peek.dc.html" aria-label="4 people, 1 online" style="position: absolute; left: 0; bottom: 14px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 8px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1px solid rgba(182,255,59,0.6); text-decoration: none; color: #F4F2FF; white-space: nowrap">
+<dc-import name="Avatar" mode="bust" size="20" presence="none" skin="#F1D2B6" hair="short" hair-color="#FFD23F" outfit="#22E3FF" hint-size="20px,20px"></dc-import>
+<span style="margin-left: 5px; font: 700 11px/14px 'Geist Mono', monospace">4</span>
+</a>
+</div>
+<div style="position: absolute; left: 882px; top: 600px; width: 0; height: 0">
+<div style="position: absolute; left: -2.5px; top: -2.5px; width: 5px; height: 5px; border-radius: 50%; background: #B6FF3B"></div>
+<div style="position: absolute; left: -1px; top: -14px; width: 2px; height: 12px; background: linear-gradient(rgba(182,255,59,0), #B6FF3B)"></div>
+<a href="S04-Peek.dc.html" aria-label="2 people, 1 online" style="position: absolute; left: 0; bottom: 14px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 8px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1px solid rgba(182,255,59,0.6); text-decoration: none; color: #F4F2FF; white-space: nowrap">
+<dc-import name="Avatar" mode="bust" size="20" presence="none" skin="#E0B08A" hair="short" hair-color="#17120F" outfit="#3DDC97" acc="glasses" hint-size="20px,20px"></dc-import>
+<span style="margin-left: 5px; font: 700 11px/14px 'Geist Mono', monospace">2</span>
+</a>
+</div>
+<div style="position: absolute; left: 1000px; top: 319px; width: 0; height: 0">
+<div style="position: absolute; left: -1px; top: -12px; width: 2px; height: 10px; background: linear-gradient(rgba(110,106,143,0), #6E6A8F)"></div>
+<div style="position: absolute; left: -10px; top: -33px"><dc-import name="Avatar" mode="bust" size="20" presence="offline" skin="#F1D2B6" hair="buzz" hair-color="#17120F" outfit="#9B5CFF" hint-size="20px,20px"></dc-import></div>
+</div>
+<div style="position: absolute; left: 1034px; top: 724px; width: 0; height: 0">
+<div style="position: absolute; left: -1px; top: -12px; width: 2px; height: 10px; background: linear-gradient(rgba(110,106,143,0), #6E6A8F)"></div>
+<div style="position: absolute; left: -10px; top: -33px"><dc-import name="Avatar" mode="bust" size="20" presence="offline" skin="#F1D2B6" hair="long" hair-color="#FFD23F" outfit="#FF3D9A" hint-size="20px,20px"></dc-import></div>
+</div>
+
+<div style="position: absolute; left: 404px; top: 456px; width: 216px; display: flex; flex-direction: column; gap: 10px; padding: 14px; box-sizing: border-box; border-radius: 18px; background: rgba(20,18,44,0.94); border: 1px solid rgba(182,255,59,0.45); box-shadow: 0 0 30px rgba(182,255,59,0.18), 0 18px 50px rgba(0,0,0,0.55)">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font: 700 14px 'Unbounded', sans-serif">Office</span><span style="font: 12px 'Geist Mono', monospace; color: #8A84BA">938 km</span></div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px"><span style="font: 700 22px 'Unbounded', sans-serif; color: #B6FF3B">5</span><span style="color: #BDB8E6">online of 7</span></div>
+<span style="font-size: 12px; font-weight: 700; color: #FF3D9A">Click to peek →</span>
+</div>
+<svg width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0; pointer-events: none" aria-hidden="true"><path d="M620 468 L636 448" stroke="#B6FF3B" stroke-opacity="0.6" stroke-width="1.5" fill="none"></path></svg>
+
+<a href="#" style="position: absolute; left: 190px; top: 456px; display: flex; align-items: center; gap: 8px; padding: 8px 12px 8px 10px; border-radius: 999px; background: rgba(20,18,44,0.85); border: 1px solid rgba(34,227,255,0.35); color: #F4F2FF; text-decoration: none; font-size: 12px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22E3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"></path></svg>
+<span><span style="font-family: 'Geist Mono', monospace; font-weight: 700">8</span> on the far side <span style="color: #B6FF3B">· 2 online</span></span>
+</a>
+
+<header style="position: absolute; left: 32px; right: 32px; top: 28px; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 16px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="8" fill="none" stroke="#22E3FF" stroke-width="2"></circle><ellipse cx="15" cy="15" rx="14" ry="5" fill="none" stroke="#FF3D9A" stroke-width="2" transform="rotate(-24 15 15)"></ellipse><circle cx="26.5" cy="10" r="2.4" fill="#B6FF3B"></circle></svg>
+<span style="font: 700 20px/24px 'Unbounded', sans-serif; letter-spacing: -0.02em">orbit</span>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; border-radius: 999px; background: rgba(20,18,44,0.8); border: 1px solid rgba(255,61,154,0.35)">
+<dc-import name="Avatar" mode="bust" size="30" presence="online" you="true" skin="#C68A62" hair="short" hair-color="#17120F" outfit="#FF3D9A" hint-size="30px,30px"></dc-import>
+<div style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 700">At your desk</span><span style="font-size: 12px; color: #BDB8E6">Home office · 4:12 PM</span></div>
+</div>
+</div>
+<a href="S13-Presence.dc.html" style="display: flex; align-items: center; gap: 14px; padding: 10px 16px; border-radius: 999px; background: rgba(20,18,44,0.8); border: 1px solid rgba(190,180,255,0.16); font-size: 13px; color: #F4F2FF; text-decoration: none">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #B6FF3B; box-shadow: 0 0 8px #B6FF3B"></span><span style="font-family: 'Geist Mono', monospace; font-weight: 700">21</span><span style="color: #BDB8E6">online</span></span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #22E3FF; box-shadow: 0 0 8px #22E3FF"></span><span style="font-family: 'Geist Mono', monospace; font-weight: 700">4</span><span style="color: #BDB8E6">traveling</span></span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #6E6A8F; box-sizing: border-box"></span><span style="font-family: 'Geist Mono', monospace; font-weight: 700">25</span><span style="color: #BDB8E6">offline</span></span>
+</a>
+</header>
+
+<div style="position: absolute; right: 32px; top: 350px; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<div role="group" aria-label="Zoom" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px; border-radius: 999px; background: rgba(20,18,44,0.8); border: 1px solid rgba(190,180,255,0.16)">
+<button aria-label="Zoom in" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: transparent; color: #22E3FF; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button>
+<div style="width: 3px; height: 56px; border-radius: 3px; background: rgba(190,180,255,0.14); position: relative"><div style="position: absolute; left: -3.5px; top: 46px; width: 10px; height: 10px; border-radius: 50%; background: #22E3FF; box-shadow: 0 0 10px #22E3FF"></div></div>
+<button aria-label="Zoom out" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: transparent; color: #22E3FF; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"></path></svg></button>
+</div>
+<button aria-label="Back to me" style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid rgba(255,61,154,0.6); background: rgba(20,18,44,0.8); color: #FF3D9A; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 18px rgba(255,61,154,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"></circle><circle cx="12" cy="12" r="2"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg></button>
+</div>
+
+<div style="position: absolute; left: 510px; top: 796px"><dc-import name="Dock" context="globe" active="none" online="21" hint-size="420px,88px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

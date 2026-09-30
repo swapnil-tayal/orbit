@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Travel animations spec</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 52px 64px; background: radial-gradient(800px 500px at 100% 0%, rgba(255,61,154,0.16), rgba(11,11,26,0) 70%), #0B0B1A; display: flex; flex-direction: column; gap: 24px; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<header style="display: flex; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font: 700 12px/16px 'Geist Mono', monospace; letter-spacing: 0.14em; color: #FF3D9A">SPEC · TRAVEL</div>
+<h1 style="margin: 0; font: 800 42px/46px 'Unbounded', sans-serif; letter-spacing: -0.035em">Feel the distance, <span style="color: #FFD23F">never wait</span></h1>
+</div>
+<p style="margin: 0; max-width: 440px; font-size: 14px; line-height: 21px; color: #BDB8E6">Two ways to move, always between unit centres. Car is slow and low. Flight is fast and high. Both are short enough to enjoy.</p>
+</header>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<section style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 26px; background: rgba(255,61,154,0.07); border: 1px solid rgba(255,61,154,0.3)">
+<div style="display: flex; align-items: center; gap: 12px"><span style="width: 40px; height: 40px; border-radius: 12px; background: #FF3D9A; color: #1A0012; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5v-4l2.2-5.2A1.5 1.5 0 0 1 8.1 6.3h7.8a1.5 1.5 0 0 1 1.4 1l2.2 5.2v4a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1z"></path><path d="M4.5 12.5h15"></path></svg></span><h2 style="margin: 0; font: 700 22px 'Unbounded', sans-serif">Car</h2><span style="margin-left: auto; font: 700 14px 'Geist Mono', monospace; color: #FF3D9A">4 s + km ÷ 60 · max 30 s</span></div>
+<div style="display: flex; height: 36px; border-radius: 12px; overflow: hidden; font-size: 12px; font-weight: 700">
+<div style="width: 10%; display: flex; align-items: center; justify-content: center; background: #FF3D9A; color: #1A0012">Go</div>
+<div style="width: 76%; display: flex; align-items: center; justify-content: center; background: rgba(255,61,154,0.25)">Drive · chase camera</div>
+<div style="width: 14%; display: flex; align-items: center; justify-content: center; background: #FFD23F; color: #0B0B1A">Arrive</div>
+</div>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 19px; color: #BDB8E6">
+<li><span style="color: #F4F2FF">Path:</span> ground great-circle, no roads. Glowing trail behind, marching dots ahead.</li>
+<li><span style="color: #F4F2FF">Camera:</span> 40 km up, 60 km behind, horizon in the top 16%.</li>
+<li><span style="color: #F4F2FF">Only offered</span> on the same landmass and ≤ 1,500 km. Otherwise shown off with a reason.</li>
+</ul>
+</section>
+<section style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 26px; background: rgba(34,227,255,0.07); border: 1px solid rgba(34,227,255,0.3)">
+<div style="display: flex; align-items: center; gap: 12px"><span style="width: 40px; height: 40px; border-radius: 12px; background: #22E3FF; color: #0B0B1A; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 12 16l1.5 4.5M12 16V4.8a1.3 1.3 0 0 1 2.6 0V9l6.4 4v2l-6.4-2v4.5M12 9 3 13v2l9-2"></path></svg></span><h2 style="margin: 0; font: 700 22px 'Unbounded', sans-serif">Flight</h2><span style="margin-left: auto; font: 700 14px 'Geist Mono', monospace; color: #22E3FF">4 s + km ÷ 1,500 · max 12 s</span></div>
+<div style="display: flex; height: 36px; border-radius: 12px; overflow: hidden; font-size: 12px; font-weight: 700">
+<div style="width: 20%; display: flex; align-items: center; justify-content: center; background: #22E3FF; color: #0B0B1A">Take off</div>
+<div style="width: 50%; display: flex; align-items: center; justify-content: center; background: rgba(34,227,255,0.22)">Arc over the curve</div>
+<div style="width: 18%; display: flex; align-items: center; justify-content: center; background: rgba(34,227,255,0.5); color: #0B0B1A">Land</div>
+<div style="width: 12%; display: flex; align-items: center; justify-content: center; background: #FFD23F; color: #0B0B1A">In</div>
+</div>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 19px; color: #BDB8E6">
+<li><span style="color: #F4F2FF">Path:</span> great circle lifted by h(t) = H·sin(πt), H = min(900 km, 16% of distance). A shadow tracks the ground.</li>
+<li><span style="color: #F4F2FF">Camera:</span> high side view (~3,000 km) framing both ends and the horizon.</li>
+<li><span style="color: #F4F2FF">Always available.</span></li>
+</ul>
+</section>
+</div>
+
+<div style="display: grid; grid-template-columns: 520px 1fr; gap: 20px; flex-grow: 1">
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 26px; background: rgba(20,18,44,0.7)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Durations</h2>
+<div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; row-gap: 9px; font-size: 13px">
+<span style="color: #8A84BA">Distance</span><span style="color: #FF3D9A; font-weight: 700">Car</span><span style="color: #22E3FF; font-weight: 700">Flight</span>
+<span style="font-family: 'Geist Mono', monospace">250 km</span><span style="font-family: 'Geist Mono', monospace">8 s</span><span style="font-family: 'Geist Mono', monospace">4 s</span>
+<span style="font-family: 'Geist Mono', monospace">938 km · Office</span><span style="font: 700 13px 'Geist Mono', monospace; color: #FF3D9A">20 s</span><span style="font: 700 13px 'Geist Mono', monospace; color: #22E3FF">5 s</span>
+<span style="font-family: 'Geist Mono', monospace">1,500 km</span><span style="font-family: 'Geist Mono', monospace">29 s</span><span style="font-family: 'Geist Mono', monospace">5 s</span>
+<span style="font-family: 'Geist Mono', monospace">2,631 km · Andaman</span><span style="font-family: 'Geist Mono', monospace; color: #8A84BA">water</span><span style="font: 700 13px 'Geist Mono', monospace; color: #22E3FF">6 s</span>
+<span style="font-family: 'Geist Mono', monospace">12,000 km</span><span style="font-family: 'Geist Mono', monospace; color: #8A84BA">too far</span><span style="font-family: 'Geist Mono', monospace">12 s</span>
+</div>
+<svg viewBox="0 0 460 110" width="100%" height="130" style="margin-top: auto" aria-label="Flight arc height over the trip">
+<path id="st-arc" d="M10 96 Q230 -34 450 96" fill="none" stroke="#22E3FF" stroke-width="2.5"></path>
+<path d="M10 96 L450 96" stroke="#FF3D9A" stroke-width="2" stroke-dasharray="4 7"><animate attributeName="stroke-dashoffset" values="0;-22" dur="1s" repeatCount="indefinite"></animate></path>
+<circle r="7" fill="#22E3FF"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#st-arc"></mpath></animateMotion></circle>
+<circle r="5" fill="#FF3D9A"><animateMotion dur="6s" repeatCount="indefinite" path="M10 96 L450 96"></animateMotion></circle>
+</svg>
+</section>
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: center; column-gap: 28px; row-gap: 44px; padding: 28px; border-radius: 26px; background: rgba(20,18,44,0.7)">
+<div style="display: flex; flex-direction: column; gap: 8px"><span style="font: 700 11px 'Geist Mono', monospace; color: #FFD23F">BEFORE</span><span style="font: 700 15px 'Unbounded', sans-serif">One confirm</span><span style="font-size: 13px; line-height: 19px; color: #BDB8E6">Your last-used mode is pre-selected when available (flight the first time). Enter departs.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><span style="font: 700 11px 'Geist Mono', monospace; color: #FF3D9A">DURING</span><span style="font: 700 15px 'Unbounded', sans-serif">Just the trip</span><span style="font-size: 13px; line-height: 19px; color: #BDB8E6">Dock hides; one pill shows progress and time left. Everyone sees you gliding. No cancel in the MVP.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><span style="font: 700 11px 'Geist Mono', monospace; color: #B6FF3B">ARRIVAL</span><span style="font: 700 15px 'Unbounded', sans-serif">Drop into 2D</span><span style="font-size: 13px; line-height: 19px; color: #BDB8E6">Camera dives into the unit, the globe fades to the flat floor plan, you appear on the arrival pad.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><span style="font: 700 11px 'Geist Mono', monospace; color: #22E3FF">MOTION</span><span style="font: 700 15px 'Unbounded', sans-serif">Ease like a camera</span><span style="font-size: 13px; line-height: 19px; color: #BDB8E6">Take-off and landing ease; cruise is linear. Reduced motion swaps the trip for a 1.2 s crossfade.</span></div>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

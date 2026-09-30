@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding — create avatar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+a{color:#FF3D9A} a:hover{color:#FF7BBA}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #0B0B1A; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<img src="/_blob/16f718ff875eb18932263020ddd664c2" alt="" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px; object-fit: cover">
+<div style="position: absolute; left: 330px; top: 170px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,61,154,0.22), rgba(155,92,255,0.1) 55%, rgba(11,11,26,0))"></div>
+
+<div style="position: absolute; left: 48px; top: 30px; display: flex; align-items: center; gap: 10px">
+<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="8" fill="none" stroke="#22E3FF" stroke-width="2"></circle><ellipse cx="15" cy="15" rx="14" ry="5" fill="none" stroke="#FF3D9A" stroke-width="2" transform="rotate(-24 15 15)"></ellipse><circle cx="26.5" cy="10" r="2.4" fill="#B6FF3B"></circle></svg>
+<span style="font: 700 20px/24px 'Unbounded', sans-serif; letter-spacing: -0.02em">orbit</span>
+</div>
+<nav aria-label="Onboarding steps" style="position: absolute; left: 50%; top: 42px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px">
+<span style="width: 36px; height: 6px; border-radius: 999px; background: #B6FF3B"></span><span style="width: 56px; height: 6px; border-radius: 999px; background: #FF3D9A; box-shadow: 0 0 12px #FF3D9A"></span><span style="width: 36px; height: 6px; border-radius: 999px; background: rgba(190,180,255,0.2)"></span>
+</nav>
+
+<div style="position: absolute; left: 48px; top: 130px; width: 330px; display: flex; flex-direction: column; gap: 16px">
+<span style="font: 600 12px/16px 'Geist Mono', monospace; letter-spacing: 0.12em; color: #FF3D9A">STEP 2 OF 3</span>
+<h1 style="margin: 0; font: 700 44px/48px 'Unbounded', sans-serif; letter-spacing: -0.03em">Be <span style="color: #B6FF3B">you</span>, but brighter</h1>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: #BDB8E6">This is how people spot you on the globe and across a room.</p>
+</div>
+
+<div style="position: absolute; left: 470px; top: 728px; width: 280px; height: 70px; border-radius: 50%; border: 2px solid #FF3D9A; box-shadow: 0 0 30px rgba(255,61,154,0.55), inset 0 0 30px rgba(255,61,154,0.3); box-sizing: border-box"></div>
+<div style="position: absolute; left: 470px; top: 728px; width: 280px; height: 70px; border-radius: 50%; border: 2px solid #22E3FF; box-sizing: border-box; animation: ping 2.4s ease-out infinite"></div>
+<div style="position: absolute; left: 490px; top: 305px">
+<dc-import name="Avatar" mode="figure" size="460" presence="none" skin="{{skin}}" hair="{{hair}}" hair-color="{{hairColor}}" outfit="{{outfit}}" acc="{{acc}}" hint-size="251px,460px"></dc-import>
+</div>
+
+<div style="position: absolute; left: 48px; top: 600px; display: flex; gap: 20px; align-items: flex-end">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div style="width: 86px; height: 86px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #1F5BFF, #0A1C7A 70%); box-shadow: 0 0 0 2px rgba(34,227,255,0.6), 0 0 24px rgba(34,227,255,0.4); display: flex; align-items: center; justify-content: center">
+<dc-import name="Avatar" mode="bust" size="34" presence="online" you="true" skin="{{skin}}" hair="{{hair}}" hair-color="{{hairColor}}" outfit="{{outfit}}" acc="{{acc}}" hint-size="34px,34px"></dc-import>
+</div>
+<span style="font-size: 12px; color: #BDB8E6">On the globe</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div style="width: 86px; height: 86px; border-radius: 18px; background: #15122E; background-image: radial-gradient(rgba(255,255,255,0.08) 1.2px, transparent 1.3px); background-size: 14px 14px; display: flex; align-items: center; justify-content: center">
+<div style="width: 64px; height: 64px; border-radius: 50%; border: 2px solid rgba(255,61,154,0.8); box-sizing: border-box; display: flex; align-items: center; justify-content: center"><dc-import name="Avatar" mode="bust" size="34" presence="online" you="true" skin="{{skin}}" hair="{{hair}}" hair-color="{{hairColor}}" outfit="{{outfit}}" acc="{{acc}}" hint-size="34px,34px"></dc-import></div>
+</div>
+<span style="font-size: 12px; color: #BDB8E6">In a space</span>
+</div>
+</div>
+
+<section aria-label="Customize avatar" style="position: absolute; right: 48px; top: 110px; width: 500px; display: flex; flex-direction: column; gap: 22px; padding: 28px; box-sizing: border-box; border-radius: 28px; background: rgba(20,18,44,0.88); border: 1px solid rgba(190,180,255,0.16); box-shadow: 0 30px 80px rgba(0,0,0,0.55); backdrop-filter: blur(18px)">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; color: #BDB8E6">Skin</span>
+<div style="display: flex; gap: 10px">
+<sc-for list="{{skins}}" as="s" hint-placeholder-count="6">
+<button aria-label="{{s.label}}" onClick="{{s.pick}}" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: {{s.c}}; box-shadow: {{s.ring}}; cursor: pointer"></button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; color: #BDB8E6">Hair</span>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{hairs}}" as="h" hint-placeholder-count="6">
+<button aria-label="{{h.label}}" onClick="{{h.pick}}" style="height: 64px; border-radius: 16px; border: 0; background: {{h.bg}}; box-shadow: {{h.ring}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<dc-import name="Avatar" mode="bust" size="44" presence="none" skin="{{h.skin}}" hair="{{h.id}}" hair-color="{{h.hc}}" outfit="{{h.outfit}}" hint-size="44px,44px"></dc-import>
+</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; color: #BDB8E6">Hair color</span>
+<div style="display: flex; gap: 10px">
+<sc-for list="{{hairColors}}" as="s" hint-placeholder-count="6">
+<button aria-label="{{s.label}}" onClick="{{s.pick}}" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: {{s.c}}; box-shadow: {{s.ring}}; cursor: pointer"></button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; color: #BDB8E6">Outfit</span>
+<div style="display: flex; gap: 10px">
+<sc-for list="{{outfits}}" as="s" hint-placeholder-count="8">
+<button aria-label="{{s.label}}" onClick="{{s.pick}}" style="width: 44px; height: 44px; border-radius: 14px; border: 0; background: {{s.c}}; box-shadow: {{s.ring}}; cursor: pointer"></button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; color: #BDB8E6">Extra</span>
+<div role="radiogroup" aria-label="Accessory" style="display: flex; gap: 6px; padding: 4px; border-radius: 999px; background: rgba(190,180,255,0.06)">
+<sc-for list="{{accs}}" as="a" hint-placeholder-count="3">
+<button role="radio" aria-checked="{{a.checked}}" onClick="{{a.pick}}" style="flex-grow: 1; height: 44px; border-radius: 999px; border: 0; background: {{a.bg}}; color: {{a.fg}}; font: 700 14px 'Geist', sans-serif; cursor: pointer">{{a.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px">
+<button onClick="{{randomize}}" style="display: flex; align-items: center; gap: 8px; height: 54px; padding: 0 18px; border-radius: 999px; border: 0; background: rgba(34,227,255,0.14); color: #22E3FF; font: 700 15px 'Geist', sans-serif; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></path></svg>Shuffle</button>
+<a href="S02c-Desk.dc.html" style="display: flex; align-items: center; justify-content: center; flex-grow: 1; height: 54px; border-radius: 999px; background: #FF3D9A; color: #1A0012; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 0 30px rgba(255,61,154,0.55)">Continue</a>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { skin: '#C68A62', hair: 'short', hairColor: '#17120F', outfit: '#FF3D9A', acc: 'none' }; }
+  renderVals() {
+    const st = this.state;
+    const ring = (on) => on ? '0 0 0 2px #14122B, 0 0 0 4.5px #FF3D9A, 0 0 16px rgba(255,61,154,0.7)' : 'inset 0 0 0 1px rgba(255,255,255,0.14)';
+    const SK = [['#F1D2B6', 'Light'], ['#E0B08A', 'Light medium'], ['#C68A62', 'Medium'], ['#A06A48', 'Medium deep'], ['#77492F', 'Deep'], ['#553524', 'Deepest']];
+    const HC = [['#17120F', 'Black'], ['#6A4629', 'Brown'], ['#FFD23F', 'Sunny'], ['#FF3D9A', 'Pink'], ['#22E3FF', 'Cyan'], ['#9B5CFF', 'Violet']];
+    const OF = [['#FF3D9A', 'Hot pink'], ['#22E3FF', 'Cyan'], ['#B6FF3B', 'Lime'], ['#FF8A00', 'Orange'], ['#9B5CFF', 'Violet'], ['#FFD23F', 'Yellow'], ['#FF5A5F', 'Coral'], ['#3DDC97', 'Mint']];
+    const HR = [['short', 'Short'], ['long', 'Long'], ['bun', 'Bun'], ['curly', 'Curly'], ['buzz', 'Buzz'], ['bob', 'Bob']];
+    const AC = [['none', 'None'], ['glasses', 'Glasses'], ['headphones', 'Headphones']];
+    return {
+      ...st,
+      skins: SK.map(([c, l]) => ({ c, label: `Skin ${l}`, ring: ring(st.skin === c), pick: () => this.setState({ skin: c }) })),
+      hairColors: HC.map(([c, l]) => ({ c, label: `Hair ${l}`, ring: ring(st.hairColor === c), pick: () => this.setState({ hairColor: c }) })),
+      outfits: OF.map(([c, l]) => ({ c, label: `Outfit ${l}`, ring: ring(st.outfit === c), pick: () => this.setState({ outfit: c }) })),
+      hairs: HR.map(([id, l]) => ({ id, label: `${l} hair`, skin: st.skin, hc: st.hairColor, outfit: st.outfit, bg: st.hair === id ? 'rgba(255,61,154,0.16)' : 'rgba(190,180,255,0.06)', ring: st.hair === id ? 'inset 0 0 0 2px #FF3D9A' : 'inset 0 0 0 1px rgba(190,180,255,0.12)', pick: () => this.setState({ hair: id }) })),
+      accs: AC.map(([id, label]) => ({ label, checked: st.acc === id ? 'true' : 'false', bg: st.acc === id ? '#B6FF3B' : 'transparent', fg: st.acc === id ? '#0B0B1A' : '#BDB8E6', pick: () => this.setState({ acc: id }) })),
+      randomize: () => { const r = (a) => a[Math.floor(Math.random() * a.length)]; this.setState({ skin: r(SK)[0], hairColor: r(HC)[0], outfit: r(OF)[0], hair: r(HR)[0], acc: r(AC)[0] }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+:root {
+  --night: #0b0b1a;
+  --floor: #15122e;
+  --text: #f4f2ff;
+  --text-2: #bdb8e6;
+  --text-3: #8a84ba;
+  --pink: #ff3d9a;
+  --pink-light: #ff7bba;
+  --on-pink: #1a0012;
+  --cyan: #22e3ff;
+  --lime: #b6ff3b;
+  --yellow: #ffd23f;
+  --violet: #9b5cff;
+  --offline: #6e6a8f;
+  --disabled: #4a4575;
+  --orange: #ff8a00;
+  --glass-70: rgba(20, 18, 44, 0.7);
+  --glass-80: rgba(20, 18, 44, 0.8);
+  --glass-85: rgba(20, 18, 44, 0.85);
+  --glass-88: rgba(20, 18, 44, 0.88);
+  --glass-90: rgba(20, 18, 44, 0.9);
+  --glass-92: rgba(20, 18, 44, 0.92);
+  --glass-94: rgba(20, 18, 44, 0.94);
+  --hair-12: rgba(190, 180, 255, 0.12);
+  --hair-16: rgba(190, 180, 255, 0.16);
+  --hair-18: rgba(190, 180, 255, 0.18);
+  --hair-20: rgba(190, 180, 255, 0.2);
+  --fill-06: rgba(190, 180, 255, 0.06);
+  --fill-08: rgba(190, 180, 255, 0.08);
+  --fill-10: rgba(190, 180, 255, 0.1);
+  --fill-14: rgba(190, 180, 255, 0.14);
+  --font-ui: "Geist Variable", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, monospace;
+  --font-display: "Sora Variable", "Sora", sans-serif;
+  --ease-camera: cubic-bezier(0.22, 0.8, 0.2, 1);
+  --shadow-panel: 0 30px 80px rgba(0, 0, 0, 0.55);
+  --shadow-dock: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --radius-panel: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: var(--night);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+button,
+input {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--pink);
+}
+
+a:hover {
+  color: var(--pink-light);
+}
+
+::selection {
+  background: rgba(255, 61, 154, 0.4);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.display {
+  font-family: var(--font-display);
+}
+
+.hidden-label {
+  position: absolute;
+  left: -9999px;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes ping-wide {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes ping-soft {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes bob-centered {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -6px);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes march {
+  to {
+    background-position: 24px 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes rise-toast {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  12%,
+  88% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -4px);
+  }
+}
+
+@keyframes drop-toast {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -4px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glowpulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px #b6ff3b, 0 0 24px rgba(182, 255, 59, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 3px #b6ff3b, 0 0 44px rgba(182, 255, 59, 0.9);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0.6px, -0.5px);
+  }
+  50% {
+    transform: translate(-0.5px, 0.4px);
+  }
+  75% {
+    transform: translate(0.4px, 0.6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-iteration-count: 1 !important;
+    animation-duration: 0.01ms !important;
+  }
+}

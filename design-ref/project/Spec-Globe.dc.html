@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Globe behavior spec</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1000px; box-sizing: border-box; padding: 52px 64px; background: radial-gradient(900px 520px at 0% 0%, rgba(34,227,255,0.14), rgba(11,11,26,0) 70%), radial-gradient(700px 500px at 100% 100%, rgba(155,92,255,0.14), rgba(11,11,26,0) 70%), #0B0B1A; display: flex; flex-direction: column; gap: 26px; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<header style="display: flex; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font: 700 12px/16px 'Geist Mono', monospace; letter-spacing: 0.14em; color: #22E3FF">SPEC · GLOBE</div>
+<h1 style="margin: 0; font: 800 42px/46px 'Unbounded', sans-serif; letter-spacing: -0.035em">One globe, <span style="color: #22E3FF">four heights</span></h1>
+</div>
+<p style="margin: 0; max-width: 440px; font-size: 14px; line-height: 21px; color: #BDB8E6">Zoom is continuous. What you see changes at four heights. The camera tilts as it drops, so the curve never leaves the screen.</p>
+</header>
+
+<svg width="1312" height="34" viewBox="0 0 1312 34" aria-label="Zoom track from 12,000 km to 50 km">
+<path d="M156 17 H1155" stroke="#2B2658" stroke-width="6" stroke-linecap="round"></path>
+<path d="M156 17 H1155" stroke="url(#sg-track)" stroke-width="2" stroke-linecap="round"></path>
+<defs><linearGradient id="sg-track" x1="0" x2="1"><stop offset="0" stop-color="#22E3FF"></stop><stop offset="0.5" stop-color="#B6FF3B"></stop><stop offset="1" stop-color="#FFD23F"></stop></linearGradient></defs>
+<g fill="#15122E" stroke-width="2"><circle cx="156" cy="17" r="7" stroke="#22E3FF"></circle><circle cx="489" cy="17" r="7" stroke="#22E3FF"></circle><circle cx="822" cy="17" r="7" stroke="#B6FF3B"></circle><circle cx="1155" cy="17" r="7" stroke="#FFD23F"></circle></g>
+<circle cy="17" r="9" fill="#FF3D9A"><animate attributeName="cx" values="156;156;489;489;822;822;1155;1155;156" keyTimes="0;0.1;0.2;0.32;0.42;0.54;0.64;0.88;1" dur="9s" repeatCount="indefinite"></animate></circle>
+<text x="1190" y="21" font-family="Geist Mono, monospace" font-size="11" font-weight="700" fill="#FFD23F">stop · 50 km</text>
+<text x="24" y="21" font-family="Geist Mono, monospace" font-size="11" font-weight="700" fill="#8A84BA">log zoom</text>
+</svg>
+
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 16px 18px 18px; border-radius: 24px; background: rgba(20,18,44,0.75); border: 1px solid rgba(34,227,255,0.25)">
+<svg viewBox="0 0 280 130" width="100%" height="130" style="border-radius: 16px; background: #0E0C22" aria-label="Whole globe with clusters">
+<defs><radialGradient id="sg-o" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#4A6BFF"></stop><stop offset="0.55" stop-color="#2A2178"></stop><stop offset="1" stop-color="#120F33"></stop></radialGradient></defs>
+<circle cx="140" cy="65" r="60" fill="#22E3FF" fill-opacity="0.12"><animate attributeName="r" values="58;66;58" dur="3.2s" repeatCount="indefinite"></animate></circle>
+<circle cx="140" cy="65" r="52" fill="url(#sg-o)"></circle>
+<ellipse cx="140" cy="65" rx="82" ry="22" fill="none" stroke="#FF3D9A" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 7"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2.4s" repeatCount="indefinite"></animate></ellipse>
+<circle cx="122" cy="52" r="11" fill="#B6FF3B"></circle><text x="122" y="56" text-anchor="middle" font-family="Geist, sans-serif" font-size="11" font-weight="800" fill="#0B0B1A">5</text>
+<circle cx="160" cy="80" r="4.5" fill="#B6FF3B"></circle><circle cx="156" cy="42" r="4.5" fill="#22E3FF"></circle>
+<circle cx="130" cy="84" r="5.5" fill="#FF3D9A"></circle><circle cx="130" cy="84" r="5.5" fill="none" stroke="#FF3D9A" stroke-width="2"><animate attributeName="r" values="5;14" dur="1.8s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0" dur="1.8s" repeatCount="indefinite"></animate></circle>
+<rect x="194" y="16" width="34" height="18" rx="9" fill="#2B2658"></rect><text x="211" y="29" text-anchor="middle" font-family="Geist, sans-serif" font-size="11" font-weight="700" fill="#BDB8E6">+3</text>
+</svg>
+<div style="display: flex; align-items: baseline; justify-content: space-between"><h2 style="margin: 0; font: 700 18px 'Unbounded', sans-serif">Orbit</h2><span style="font: 700 11px 'Geist Mono', monospace; color: #22E3FF">12,000 km · 0°</span></div>
+<ul style="margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 18px; color: #BDB8E6"><li>Whole disc, all 50 people</li><li>Markers &lt; 34 px apart merge</li><li>You never merge</li><li>Far-side count at the edge</li></ul>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 16px 18px 18px; border-radius: 24px; background: rgba(20,18,44,0.75); border: 1px solid rgba(34,227,255,0.25)">
+<svg viewBox="0 0 280 130" width="100%" height="130" style="border-radius: 16px; background: #0E0C22" aria-label="Region view with separate markers and a travel arc">
+<defs><radialGradient id="sg-r" cx="50%" cy="10%" r="80%"><stop offset="0" stop-color="#4A6BFF"></stop><stop offset="0.5" stop-color="#2A2178"></stop><stop offset="1" stop-color="#120F33"></stop></radialGradient></defs>
+<circle cx="140" cy="300" r="276" fill="none" stroke="#22E3FF" stroke-opacity="0.25" stroke-width="10"></circle>
+<circle cx="140" cy="300" r="270" fill="url(#sg-r)"></circle>
+<path id="sg-rarc" d="M64 98 Q130 10 214 78" fill="none" stroke="#22E3FF" stroke-width="2" stroke-dasharray="3 6"><animate attributeName="stroke-dashoffset" values="0;-18" dur="0.9s" repeatCount="indefinite"></animate></path>
+<circle r="5" fill="#22E3FF"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#sg-rarc"></mpath></animateMotion></circle>
+<g fill="#B6FF3B"><circle cx="64" cy="98" r="5"></circle><circle cx="96" cy="88" r="5"></circle><circle cx="108" cy="104" r="5"></circle><circle cx="178" cy="100" r="5"></circle><circle cx="214" cy="78" r="5"></circle></g>
+<circle cx="150" cy="92" r="6" fill="#FF3D9A"></circle>
+<rect x="160" y="108" width="54" height="18" rx="9" fill="#2B2658"></rect><text x="187" y="121" text-anchor="middle" font-family="Geist, sans-serif" font-size="10" font-weight="600" fill="#F4F2FF">hover</text>
+</svg>
+<div style="display: flex; align-items: baseline; justify-content: space-between"><h2 style="margin: 0; font: 700 18px 'Unbounded', sans-serif">Region</h2><span style="font: 700 11px 'Geist Mono', monospace; color: #22E3FF">2,000 km · 15°</span></div>
+<ul style="margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 18px; color: #BDB8E6"><li>Clusters split, one per unit</li><li>Others' trips visible as arcs</li><li>Names on hover only</li></ul>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 16px 18px 18px; border-radius: 24px; background: rgba(20,18,44,0.75); border: 1px solid rgba(182,255,59,0.25)">
+<svg viewBox="0 0 280 130" width="100%" height="130" style="border-radius: 16px; background: #0E0C22" aria-label="Area view with the 50 km grid on land">
+<defs><clipPath id="sg-ac"><circle cx="140" cy="430" r="410"></circle></clipPath><radialGradient id="sg-a" cx="50%" cy="0%" r="60%"><stop offset="0" stop-color="#3D5BF0"></stop><stop offset="1" stop-color="#1A165A"></stop></radialGradient></defs>
+<circle cx="140" cy="430" r="416" fill="none" stroke="#22E3FF" stroke-opacity="0.25" stroke-width="10"></circle>
+<circle cx="140" cy="430" r="410" fill="url(#sg-a)"></circle>
+<g clip-path="url(#sg-ac)">
+<g fill="none" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1"><path d="M-121.3 114.1 A410 410 0 0 1 401.3 114.1 M-109.9 128.0 A392 392 0 0 1 389.9 128.0 M-98.4 141.8 A374 374 0 0 1 378.4 141.8 M-86.9 155.7 A356 356 0 0 1 366.9 155.7 M-75.4 169.6 A338 338 0 0 1 355.4 169.6 M-64.0 183.4 A320 320 0 0 1 344.0 183.4 M-52.5 197.3 A302 302 0 0 1 332.5 197.3"></path><path d="M-86.9 88.5 L-16.1 195.1 M-61.3 72.8 L1.6 184.3 M-34.6 59.0 L19.9 174.8 M-6.9 47.2 L38.9 166.7 M21.5 37.5 L58.5 160.0 M50.6 29.9 L78.5 154.8 M80.1 24.4 L98.8 151.0 M110.0 21.1 L119.3 148.8 M140.0 20.0 L140.0 148.0 M170.0 21.1 L160.7 148.8 M199.9 24.4 L181.2 151.0 M229.4 29.9 L201.5 154.8 M258.5 37.5 L221.5 160.0 M286.9 47.2 L241.1 166.7 M314.6 59.0 L260.1 174.8 M341.3 72.8 L278.4 184.3 M366.9 88.5 L296.1 195.1"></path></g>
+<g fill="#B6FF3B" fill-opacity="0.6" stroke="#B6FF3B" stroke-width="1"><path d="M85.4 60.0 A374 374 0 0 1 112.6 57.0 L113.9 75.0 A356 356 0 0 0 88.0 77.8Z"></path><path d="M166.1 75.0 A356 356 0 0 1 192.0 77.8 L189.4 95.6 A338 338 0 0 0 164.8 92.9Z"></path><path d="M225.5 47.4 A392 392 0 0 1 253.3 54.7 L248.1 72.0 A374 374 0 0 0 221.6 65.0Z"></path><path d="M42.3 106.4 A338 338 0 0 1 66.3 100.1 L70.2 117.7 A320 320 0 0 0 47.5 123.7Z"></path></g>
+<path d="M115.2 92.9 A338 338 0 0 1 140.0 92.0 L140.0 110.0 A320 320 0 0 0 116.6 110.9Z" fill="#FF3D9A" fill-opacity="0.55" stroke="#FF3D9A" stroke-width="1.5"><animate attributeName="fill-opacity" values="0.55;0.9;0.55" dur="1.8s" repeatCount="indefinite"></animate></path>
+</g>
+</svg>
+<div style="display: flex; align-items: baseline; justify-content: space-between"><h2 style="margin: 0; font: 700 18px 'Unbounded', sans-serif">Area</h2><span style="font: 700 11px 'Geist Mono', monospace; color: #B6FF3B">400 km · 35°</span></div>
+<ul style="margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 18px; color: #BDB8E6"><li>50 km grid fades in, land only</li><li>Units with homes glow lime</li><li>Your home unit glows pink</li></ul>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 16px 18px 18px; border-radius: 24px; background: rgba(20,18,44,0.75); border: 1px solid rgba(255,210,63,0.3)">
+<svg viewBox="0 0 280 130" width="100%" height="130" style="border-radius: 16px; background: #0E0C22" aria-label="Unit view with one focused cell and its office">
+<defs><linearGradient id="sg-u" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A165A"></stop><stop offset="1" stop-color="#3D5BF0"></stop></linearGradient><clipPath id="sg-uc"><rect x="0" y="26" width="280" height="104"></rect></clipPath></defs>
+<rect x="0" y="0" width="280" height="30" fill="#0E0C22"></rect>
+<path d="M0 30 Q140 22 280 30 V130 H0Z" fill="url(#sg-u)"></path>
+<path d="M0 30 Q140 22 280 30" fill="none" stroke="#22E3FF" stroke-width="2" stroke-opacity="0.8"></path>
+<g clip-path="url(#sg-uc)" fill="none" stroke="#FFFFFF" stroke-opacity="0.16"><path d="M-590.4 156.4 L870.4 156.4 M-439.3 129.4 L719.3 129.4 M-302.1 104.9 L582.1 104.9 M-183.1 83.7 L463.1 83.7 M-81.1 65.5 L361.1 65.5 M10.8 49.1 L269.2 49.1 M-577.4 156.4 L13.1 49.1 M-447.0 156.4 L36.2 49.1 M-316.5 156.4 L59.2 49.1 M-186.1 156.4 L82.3 49.1 M-55.7 156.4 L105.4 49.1 M74.8 156.4 L128.5 49.1 M205.2 156.4 L151.5 49.1 M335.7 156.4 L174.6 49.1 M466.1 156.4 L197.7 49.1 M596.5 156.4 L220.8 49.1 M727.0 156.4 L243.8 49.1 M857.4 156.4 L266.9 49.1"></path></g>
+<path d="M88.3 129.4 L191.7 129.4 L168.8 83.7 L111.2 83.7Z" fill="#FFD23F" fill-opacity="0.2" stroke="#FFD23F" stroke-width="2"><animate attributeName="fill-opacity" values="0.15;0.4;0.15" dur="2s" repeatCount="indefinite"></animate></path>
+<path d="M140 86 L158 95 L140 104 L122 95Z" fill="#FF3D9A"></path><path d="M122 95 L140 104 L140 118 L122 109Z" fill="#9B5CFF"></path><path d="M140 104 L158 95 L158 109 L140 118Z" fill="#22E3FF" fill-opacity="0.8"></path>
+<g style="animation: bob 1.6s ease-in-out infinite"><circle cx="128" cy="74" r="4.5" fill="#B6FF3B"></circle><circle cx="140" cy="70" r="4.5" fill="#FFD23F"></circle><circle cx="152" cy="74" r="4.5" fill="#22E3FF"></circle></g>
+<rect x="186" y="96" width="74" height="22" rx="11" fill="#FFD23F"></rect><text x="223" y="111" text-anchor="middle" font-family="Geist, sans-serif" font-size="11" font-weight="700" fill="#0B0B1A">Peek card</text>
+</svg>
+<div style="display: flex; align-items: baseline; justify-content: space-between"><h2 style="margin: 0; font: 700 18px 'Unbounded', sans-serif">Unit</h2><span style="font: 700 11px 'Geist Mono', monospace; color: #FFD23F">50 km · 55° · max</span></div>
+<ul style="margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 18px; color: #BDB8E6"><li>One unit ≈ a third of the width</li><li>Peek card opens, Travel lives here</li><li>Zoom-in stops, + disables</li></ul>
+</section>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 420px; gap: 20px; flex-grow: 1">
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 24px; background: rgba(20,18,44,0.7)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Handling</h2>
+<div style="display: grid; grid-template-columns: 118px 1fr; row-gap: 15px; column-gap: 14px; align-items: start; font-size: 13px; line-height: 18px; color: #BDB8E6">
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(34,227,255,0.15); color: #22E3FF; font-weight: 700; font-size: 12px">Drag</span><span>Spins the globe, settles in ~600 ms. At Unit height it pans the surface.</span>
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(34,227,255,0.15); color: #22E3FF; font-weight: 700; font-size: 12px">Scroll · pinch</span><span>Log zoom, tilt follows. Hard stop at 50 km.</span>
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(182,255,59,0.15); color: #B6FF3B; font-weight: 700; font-size: 12px">Click a person</span><span>Camera flies to their unit in 900 ms. A peek: you stay put.</span>
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(255,210,63,0.15); color: #FFD23F; font-weight: 700; font-size: 12px">Double-click</span><span>Focus that unit. Water or desert: "No spaces here".</span>
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(255,61,154,0.15); color: #FF3D9A; font-weight: 700; font-size: 12px">Back to me</span><span>Flies to wherever your avatar is right now.</span>
+<span style="justify-self: start; padding: 3px 9px; border-radius: 8px; background: rgba(155,92,255,0.18); color: #C3A2FF; font-weight: 700; font-size: 12px">Idle</span><span>No auto-spin in the app. Only the landing drifts.</span>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 24px; background: rgba(255,61,154,0.06); border: 1px solid rgba(255,61,154,0.28)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #FF3D9A">Privacy by coarseness</h2>
+<div style="display: flex; flex-direction: column; gap: 16px; font-size: 13px; line-height: 19px; color: #BDB8E6">
+<div style="display: flex; gap: 10px"><span style="flex-shrink: 0; width: 8px; height: 8px; margin-top: 5px; border-radius: 50%; background: #FF3D9A; box-shadow: 0 0 8px #FF3D9A"></span><span><span style="color: #F4F2FF">Only a unit ID is stored.</span> Search or rough location becomes a unit on the device, then is thrown away.</span></div>
+<div style="display: flex; gap: 10px"><span style="flex-shrink: 0; width: 8px; height: 8px; margin-top: 5px; border-radius: 50%; background: #FF3D9A; box-shadow: 0 0 8px #FF3D9A"></span><span><span style="color: #F4F2FF">Markers sit at the unit centre</span> in fixed slots. Never offset from real coordinates.</span></div>
+<div style="display: flex; gap: 10px"><span style="flex-shrink: 0; width: 8px; height: 8px; margin-top: 5px; border-radius: 50%; background: #FF3D9A; box-shadow: 0 0 8px #FF3D9A"></span><span><span style="color: #F4F2FF">No labels on the globe.</span> No cities, roads or borders.</span></div>
+<div style="display: flex; gap: 10px"><span style="flex-shrink: 0; width: 8px; height: 8px; margin-top: 5px; border-radius: 50%; background: #FF3D9A; box-shadow: 0 0 8px #FF3D9A"></span><span><span style="color: #F4F2FF">Home never follows you.</span> No dragging. Real moves change nothing. Change it only in Profile.</span></div>
+<div style="display: flex; gap: 10px"><span style="flex-shrink: 0; width: 8px; height: 8px; margin-top: 5px; border-radius: 50%; background: #FF3D9A; box-shadow: 0 0 8px #FF3D9A"></span><span><span style="color: #F4F2FF">Oceans, deserts, ice, empty land:</span> no homes, no offices, not selectable.</span></div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 24px; background: rgba(20,18,44,0.7)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">The 50 km grid</h2>
+<svg viewBox="0 0 380 200" width="100%" height="200" aria-label="Latitude bands split into cells; cells get wider in degrees toward the pole">
+<rect x="20.0" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="48.7" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="77.3" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="106.0" y="158" width="24.7" height="24" rx="5" fill="#B6FF3B" fill-opacity="0.28" stroke="#B6FF3B" stroke-opacity="0.7"></rect>
+<rect x="134.7" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="163.3" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="192.0" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="220.7" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="249.3" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="278.0" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="306.7" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="335.3" y="158" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="20.0" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="48.7" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="77.3" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="106.0" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="134.7" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="163.3" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="192.0" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="220.7" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="249.3" y="130" width="24.7" height="24" rx="5" fill="#B6FF3B" fill-opacity="0.28" stroke="#B6FF3B" stroke-opacity="0.7"></rect>
+<rect x="278.0" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="306.7" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="335.3" y="130" width="24.7" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="20.0" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="51.3" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="82.5" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="113.8" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="145.1" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="176.4" y="102" width="27.3" height="24" rx="5" fill="#FFD23F" fill-opacity="0.3" stroke="#FFD23F" stroke-width="2"><animate attributeName="fill-opacity" values="0.3;0.65;0.3" dur="1.8s" repeatCount="indefinite"></animate></rect>
+<rect x="207.6" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="238.9" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="270.2" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="301.5" y="102" width="27.3" height="24" rx="5" fill="#B6FF3B" fill-opacity="0.28" stroke="#B6FF3B" stroke-opacity="0.7"></rect>
+<rect x="332.7" y="102" width="27.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="20.0" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="54.4" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="88.8" y="74" width="30.4" height="24" rx="5" fill="#B6FF3B" fill-opacity="0.28" stroke="#B6FF3B" stroke-opacity="0.7"></rect>
+<rect x="123.2" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="157.6" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="192.0" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="226.4" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="260.8" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="295.2" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="329.6" y="74" width="30.4" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="20.0" y="46" width="39.0" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="63.0" y="46" width="39.0" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="106.0" y="46" width="39.0" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="149.0" y="46" width="39.0" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="192.0" y="46" width="39.0" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="235.0" y="46" width="39.0" height="24" rx="5" fill="#B6FF3B" fill-opacity="0.28" stroke="#B6FF3B" stroke-opacity="0.7"></rect>
+<rect x="278.0" y="46" width="39.0" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="321.0" y="46" width="39.0" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="20.0" y="18" width="53.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="77.3" y="18" width="53.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="134.7" y="18" width="53.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="192.0" y="18" width="53.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="249.3" y="18" width="53.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<rect x="306.7" y="18" width="53.3" height="24" rx="5" fill="#22E3FF" fill-opacity="0.06" stroke="#22E3FF" stroke-opacity="0.3"></rect>
+<path d="M190 114 L190 86 L236 72" fill="none" stroke="#FFD23F" stroke-width="1.5"></path>
+<rect x="236" y="60" width="104" height="24" rx="12" fill="#FFD23F"></rect><text x="288" y="76" text-anchor="middle" font-family="Geist Mono, monospace" font-size="12" font-weight="700" fill="#0B0B1A">unit 268:541</text>
+<text x="20" y="10" font-family="Geist Mono, monospace" font-size="10" fill="#8A84BA">↑ pole</text>
+<text x="20" y="197" font-family="Geist Mono, monospace" font-size="10" fill="#8A84BA">equator</text>
+</svg>
+<span style="font-size: 13px; line-height: 19px; color: #BDB8E6">Latitude is cut into 50 km bands (0.449°). Each band holds as many equal ~50 km cells as fit, so cells stay near-square. A unit is <span style="font-family: 'Geist Mono', monospace; color: #FFD23F">band:cell</span>. An office exists only where someone lives.</span>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

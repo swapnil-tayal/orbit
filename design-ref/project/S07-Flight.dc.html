@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Flight travel</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+a{color:#FF3D9A} a:hover{color:#FF7BBA}
+@property --f7km{syntax:'<integer>';initial-value:1158;inherits:false}
+@property --f7s{syntax:'<integer>';initial-value:3;inherits:false}
+@keyframes f7fill{0%{width:56%}100%{width:100%}}
+@keyframes f7km{from{--f7km:1158}to{--f7km:0}}
+@keyframes f7s{from{--f7s:3}to{--f7s:0}}
+@keyframes f7drift{0%{transform:translateX(0)}100%{transform:translateX(90px)}}
+@keyframes f7bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+.f7-km{counter-reset:km var(--f7km);animation:f7km 6s linear infinite}
+.f7-km::after{content:counter(km)}
+.f7-s{counter-reset:s var(--f7s);animation:f7s 6s linear infinite}
+.f7-s::after{content:"0:0" counter(s)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #0B0B1A; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<img src="/_blob/16f718ff875eb18932263020ddd664c2" alt="" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px; object-fit: cover">
+<img src="/_blob/6c65ff386dfa3c040d97da217a174fd7" alt="High side view of the vivid curved Earth over a bright blue sea; a flight arc rises from the home area and descends toward islands on the right" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px">
+
+<svg width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<defs>
+<linearGradient id="f7-trail" x1="244" y1="0" x2="789" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF3D9A" stop-opacity="0.1"></stop><stop offset="1" stop-color="#FFD23F" stop-opacity="1"></stop></linearGradient>
+<linearGradient id="f7p-wing" x1="0" y1="-38" x2="0" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8BF3FF"></stop><stop offset="0.5" stop-color="#22E3FF"></stop><stop offset="1" stop-color="#8BF3FF"></stop></linearGradient>
+<linearGradient id="f7p-fus" x1="0" y1="-6" x2="0" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="1" stop-color="#FFD6EA"></stop></linearGradient>
+<linearGradient id="f7p-trail" x1="-4" y1="0" x2="-170" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient>
+<radialGradient id="f7p-halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FF3D9A" stop-opacity="0.5"></stop><stop offset="1" stop-color="#FF3D9A" stop-opacity="0"></stop></radialGradient>
+<filter id="f7-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"></feGaussianBlur></filter>
+<filter id="f7-shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5"></feGaussianBlur></filter>
+</defs>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path id="f7-ground" d="M244,602 L273,600 L302,598 L332,597 L362,596 L393,595 L424,595 L456,594 L488,594 L520,594 L553,595 L586,595 L618,596 L652,597 L685,599 L718,600 L752,602 L785,604 L818,606 L852,609 L885,612 L918,615 L951,618 L984,622 L1016,625 L1049,629 L1081,634 L1112,638 L1144,642 L1174,647 L1205,652" stroke="#000000" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="2 7"></path>
+<path id="f7-rest" d="M789,512 L802,513 L815,515 L828,517 L841,519 L854,521 L866,523 L879,526 L892,528 L904,531 L916,534 L928,537 L940,540 L952,543 L963,547 L975,550 L986,554 L997,557 L1008,561 L1019,564 L1030,568 L1040,572 L1050,576 L1060,580 L1070,584 L1080,588 L1090,592 L1099,597 L1108,601 L1117,605 L1126,609 L1134,614 L1143,618 L1151,622 L1159,626 L1167,631 L1175,635 L1183,639 L1190,644 L1198,648 L1205,652" stroke="#22E3FF" stroke-opacity="0.8" stroke-width="2.4" stroke-dasharray="4 10"><animate attributeName="stroke-dashoffset" values="0;-28" dur="0.8s" repeatCount="indefinite"></animate></path>
+<path d="M244,602 L261,593 L280,584 L300,576 L320,567 L342,559 L365,551 L390,543 L415,536 L442,529 L469,523 L498,518 L528,514 L559,510 L591,507 L623,505 L656,504 L689,505 L723,506 L756,508 L789,512" stroke="#FF3D9A" stroke-opacity="0.3" stroke-width="18"></path>
+<path d="M244,602 L261,593 L280,584 L300,576 L320,567 L342,559 L365,551 L390,543 L415,536 L442,529 L469,523 L498,518 L528,514 L559,510 L591,507 L623,505 L656,504 L689,505 L723,506 L756,508 L789,512" stroke="url(#f7-trail)" stroke-width="4"></path>
+</g>
+<g filter="url(#f7-soft)" fill="#FFFFFF">
+<g opacity="0.4" style="animation: f7drift 16s ease-in-out infinite alternate"><ellipse cx="420" cy="420" rx="90" ry="26"></ellipse><ellipse cx="470" cy="408" rx="60" ry="24"></ellipse><ellipse cx="380" cy="430" rx="50" ry="18"></ellipse></g>
+<g opacity="0.35" style="animation: f7drift 20s ease-in-out -6s infinite alternate"><ellipse cx="930" cy="410" rx="110" ry="28"></ellipse><ellipse cx="990" cy="398" rx="64" ry="24"></ellipse></g>
+<g opacity="0.38" style="animation: f7drift 18s ease-in-out -3s infinite alternate"><ellipse cx="640" cy="720" rx="120" ry="30"></ellipse><ellipse cx="700" cy="705" rx="70" ry="26"></ellipse></g>
+<g opacity="0.4" style="animation: f7drift 22s ease-in-out -9s infinite alternate"><ellipse cx="1180" cy="300" rx="100" ry="24"></ellipse></g>
+</g>
+<g filter="url(#f7-shadow)"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto" keyPoints="0.56;0.95" keyTimes="0;1" calcMode="linear"><mpath href="#f7-ground"></mpath></animateMotion><g transform="scale(0.75)"><path d="M8 -4 L-10 -38 L-19 -38 L-9 -4 Z M8 4 L-10 38 L-19 38 L-9 4 Z M-22 -3 L-32 -15 L-37 -15 L-31 -3 Z M-22 3 L-32 15 L-37 15 L-31 3 Z M36 0 C36 -4 32 -5.5 25 -5.5 L-27 -4 C-32 -4 -35 -2 -36 0 C-35 2 -32 4 -27 4 L25 5.5 C32 5.5 36 4 36 0 Z" fill="#000000" fill-opacity="0.35"></path></g></g>
+<path d="M789,512 L802,513 L815,515 L828,517 L841,519 L854,521 L866,523 L879,526 L892,528 L904,531 L916,534 L928,537 L940,540 L952,543 L963,547 L975,550 L986,554 L997,557 L1008,561 L1019,564 L1030,568 L1040,572 L1050,576 L1060,580 L1070,584 L1080,588 L1090,592 L1099,597 L1108,601 L1117,605 L1126,609 L1134,614 L1143,618 L1151,622 L1159,626 L1167,631 L1175,635 L1183,639 L1190,644 L1198,648 L1205,652" fill="none" stroke="#FF3D9A" stroke-opacity="0.3" stroke-width="18" stroke-linecap="round" stroke-dasharray="443 443"><animate attributeName="stroke-dashoffset" values="443;44.3" dur="6s" repeatCount="indefinite" calcMode="linear"></animate></path>
+<path d="M789,512 L802,513 L815,515 L828,517 L841,519 L854,521 L866,523 L879,526 L892,528 L904,531 L916,534 L928,537 L940,540 L952,543 L963,547 L975,550 L986,554 L997,557 L1008,561 L1019,564 L1030,568 L1040,572 L1050,576 L1060,580 L1070,584 L1080,588 L1090,592 L1099,597 L1108,601 L1117,605 L1126,609 L1134,614 L1143,618 L1151,622 L1159,626 L1167,631 L1175,635 L1183,639 L1190,644 L1198,648 L1205,652" fill="none" stroke="#FFD23F" stroke-width="4" stroke-linecap="round" stroke-dasharray="443 443"><animate attributeName="stroke-dashoffset" values="443;44.3" dur="6s" repeatCount="indefinite" calcMode="linear"></animate></path>
+<g><animateMotion dur="6s" repeatCount="indefinite" rotate="auto" keyPoints="0;0.9" keyTimes="0;1" calcMode="linear"><mpath href="#f7-rest"></mpath></animateMotion><g transform="scale(1.25)">
+<circle r="58" fill="url(#f7p-halo)"><animate attributeName="r" values="50;62;50" dur="1.6s" repeatCount="indefinite"></animate></circle>
+<g fill="none" stroke="url(#f7p-trail)" stroke-linecap="round">
+<path d="M-4 -16 L-170 -16" stroke-width="4"></path><path d="M-4 16 L-170 16" stroke-width="4"></path>
+<path d="M-4 -16 L-170 -16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="0;44" dur="0.5s" repeatCount="indefinite"></animate></path>
+<path d="M-4 16 L-170 16" stroke-width="10" stroke-opacity="0.35" stroke-dasharray="30 14"><animate attributeName="stroke-dashoffset" values="20;64" dur="0.5s" repeatCount="indefinite"></animate></path>
+</g>
+<g><animateTransform attributeName="transform" type="scale" values="1 1;1 0.84;1 1;1 0.94;1 1" dur="5s" repeatCount="indefinite"></animateTransform>
+<path d="M8 -4 L-10 -38 L-19 -38 L-9 -4 Z M8 4 L-10 38 L-19 38 L-9 4 Z" fill="url(#f7p-wing)" stroke="#FFFFFF" stroke-width="1"></path>
+<path d="M-22 -3 L-32 -15 L-37 -15 L-31 -3 Z M-22 3 L-32 15 L-37 15 L-31 3 Z" fill="url(#f7p-wing)" stroke="#FFFFFF" stroke-width="0.8"></path>
+<rect x="-3" y="-19" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect><rect x="-3" y="13" width="12" height="6" rx="3" fill="#F4F2FF" stroke="#22E3FF" stroke-width="1"></rect>
+<circle cx="-4" cy="-16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle><circle cx="-4" cy="16" r="3" fill="#BFF8FF"><animate attributeName="r" values="2.5;4.2;2.5" dur="0.3s" repeatCount="indefinite"></animate></circle>
+<path d="M36 0 C36 -4 32 -5.5 25 -5.5 L-27 -4 C-32 -4 -35 -2 -36 0 C-35 2 -32 4 -27 4 L25 5.5 C32 5.5 36 4 36 0 Z" fill="url(#f7p-fus)" stroke="#FF3D9A" stroke-width="1"></path>
+<rect x="-26" y="-1.4" width="50" height="2.8" rx="1.4" fill="#FF3D9A"></rect>
+<g fill="#22E3FF"><circle cx="18" cy="-2.6" r="0.9"></circle><circle cx="13" cy="-2.6" r="0.9"></circle><circle cx="8" cy="-2.6" r="0.9"></circle><circle cx="3" cy="-2.6" r="0.9"></circle><circle cx="-2" cy="-2.6" r="0.9"></circle><circle cx="-7" cy="-2.6" r="0.9"></circle><circle cx="-12" cy="-2.6" r="0.9"></circle></g>
+<ellipse cx="30" cy="0" rx="4.5" ry="3.4" fill="#1B1036"></ellipse>
+<path d="M-24 0 L-38 0" stroke="#FF3D9A" stroke-width="3" stroke-linecap="round"></path>
+<circle cx="-14.5" cy="-38" r="4" fill="#FF3D9A"><animate attributeName="opacity" values="1;0.15;1" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-14.5" cy="38" r="4" fill="#B6FF3B"><animate attributeName="opacity" values="0.15;1;0.15" dur="1s" repeatCount="indefinite"></animate></circle>
+<circle cx="-37" cy="0" r="5" fill="#FFFFFF" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.14;1" dur="1.3s" repeatCount="indefinite"></animate></circle>
+</g>
+</g></g>
+<ellipse cx="1205" cy="652" rx="28" ry="10" fill="none" stroke="#FFD23F" stroke-width="2"></ellipse>
+<ellipse cx="1205" cy="652" rx="28" ry="10" fill="none" stroke="#FFD23F" stroke-width="1.5"><animate attributeName="rx" values="28;60" dur="2s" repeatCount="indefinite"></animate><animate attributeName="ry" values="10;20" dur="2s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite"></animate></ellipse>
+<ellipse cx="1205" cy="652" rx="46" ry="16" fill="none" stroke="#FFD23F" stroke-width="2" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" values="0;-28" dur="1s" repeatCount="indefinite"></animate></ellipse>
+<circle cx="244" cy="602" r="6" fill="#FF3D9A"></circle>
+<circle cx="244" cy="602" r="6" fill="none" stroke="#FF3D9A" stroke-width="2"><animate attributeName="r" values="6;22" dur="2s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.9;0" dur="2s" repeatCount="indefinite"></animate></circle>
+</svg>
+
+<div style="position: absolute; left: 256px; top: 612px; padding: 4px 10px; border-radius: 999px; background: rgba(20,18,44,0.88); border: 1px solid rgba(255,61,154,0.5); font-size: 12px; font-weight: 700; color: #FF3D9A; white-space: nowrap">Home</div>
+<div style="position: absolute; left: 1205px; top: 652px; width: 0; height: 0">
+<svg width="18" height="18" viewBox="0 0 24 24" style="position: absolute; left: -9px; top: -9px; filter: drop-shadow(0 0 8px #FFD23F)"><path d="M12 3l5 9-5 9-5-9z" fill="#FFD23F"></path></svg>
+<div style="position: absolute; left: -1px; top: -28px; width: 2px; height: 18px; background: linear-gradient(rgba(255,210,63,0), #FFD23F)"></div>
+<div style="position: absolute; left: 0; bottom: 28px; transform: translateX(-50%); display: flex; align-items: center; padding: 2px 10px 2px 2px; border-radius: 999px; background: rgba(20,18,44,0.92); border: 1.5px solid #FFD23F; white-space: nowrap; box-shadow: 0 0 18px rgba(255,210,63,0.4)">
+<dc-import name="Avatar" mode="bust" size="24" presence="none" skin="#E0B08A" hair="bun" hair-color="#17120F" outfit="#FF8A00" hint-size="24px,24px"></dc-import>
+<div style="margin-left: -7px"><dc-import name="Avatar" mode="bust" size="24" presence="none" skin="#F1D2B6" hair="bob" hair-color="#FFD23F" outfit="#9B5CFF" hint-size="24px,24px"></dc-import></div>
+<div style="margin-left: -7px"><dc-import name="Avatar" mode="bust" size="24" presence="none" skin="#A06A48" hair="curly" hair-color="#17120F" outfit="#FFD23F" hint-size="24px,24px"></dc-import></div>
+<span style="margin-left: 6px; font: 700 12px 'Geist Mono', monospace; color: #FFD23F">6 there</span>
+</div>
+</div>
+
+<div style="position: absolute; left: 50%; top: 28px; transform: translateX(-50%); width: 500px; display: flex; align-items: center; gap: 14px; padding: 12px 18px; box-sizing: border-box; border-radius: 999px; background: rgba(20,18,44,0.9); border: 1px solid rgba(255,61,154,0.4); box-shadow: 0 0 30px rgba(255,61,154,0.2)">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3D9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: f7bob 1.6s ease-in-out infinite"><path d="M10.5 20.5 12 16l1.5 4.5M12 16V4.8a1.3 1.3 0 0 1 2.6 0V9l6.4 4v2l-6.4-2v4.5M12 9 3 13v2l9-2"></path></svg>
+<span style="font: 700 13px 'Unbounded', sans-serif; white-space: nowrap">To Andaman</span>
+<div role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" aria-label="Trip progress" style="flex-grow: 1; height: 6px; border-radius: 999px; background: rgba(190,180,255,0.14); position: relative; overflow: hidden"><div style="position: absolute; left: 0; top: 0; bottom: 0; width: 56%; border-radius: 999px; background: linear-gradient(90deg, #FF3D9A, #FFD23F); animation: f7fill 6s linear infinite"></div></div>
+<span class="f7-s" style="font: 700 14px 'Geist Mono', monospace; color: #FFD23F"></span>
+</div>
+<div style="position: absolute; left: 32px; top: 28px; display: flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; border-radius: 999px; background: rgba(20,18,44,0.82); border: 1px solid rgba(34,227,255,0.4)">
+<dc-import name="Avatar" mode="bust" size="30" presence="traveling" you="true" skin="#C68A62" hair="short" hair-color="#17120F" outfit="#FF3D9A" hint-size="30px,30px"></dc-import>
+<div style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 700">Flying</span><span style="font-size: 12px; color: #22E3FF">everyone sees you moving</span></div>
+</div>
+<div style="position: absolute; left: 32px; bottom: 32px; display: flex; align-items: baseline; gap: 8px; padding: 12px 18px; border-radius: 18px; background: rgba(20,18,44,0.82); border: 1px solid rgba(190,180,255,0.16)">
+<span class="f7-km" style="min-width: 76px; font: 700 26px 'Unbounded', sans-serif; color: #FF3D9A"></span><span style="font-size: 13px; color: #BDB8E6">km to go · landing at the jetty</span>
+</div>
+<a href="S11-Andaman.dc.html" style="position: absolute; right: 32px; bottom: 32px; padding: 12px 18px; border-radius: 999px; background: rgba(190,180,255,0.08); border: 1px solid rgba(190,180,255,0.16); color: #BDB8E6; font-size: 13px; text-decoration: none">Prototype: skip to arrival →</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

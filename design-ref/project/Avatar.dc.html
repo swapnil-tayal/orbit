@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Avatar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="position: relative; width: {{w}}px; height: {{h}}px; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<sc-if value="{{showLabel}}" hint-placeholder-val="{{false}}">
+<div style="position: absolute; left: 50%; bottom: {{labelBottom}}; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 3px 9px 3px 7px; border-radius: 999px; background: rgba(20,18,44,0.9); border: 1px solid {{labelBorder}}; white-space: nowrap; font-size: 12px; font-weight: 600; line-height: 16px; opacity: {{labelOp}}; box-shadow: 0 6px 18px rgba(0,0,0,0.4)">
+<span style="width: 6px; height: 6px; border-radius: 50%; background: {{pc}}; box-shadow: 0 0 8px {{pc}}"></span>
+<span>{{label}}</span>
+</div>
+</sc-if>
+<sc-if value="{{isBust}}" hint-placeholder-val="{{true}}">
+<sc-if value="{{pulse}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" style="position: absolute; inset: 0; overflow: visible">
+<circle cx="50" cy="50" r="52" fill="none" stroke="{{ringColor}}" stroke-width="3"><animate attributeName="r" values="52;78" dur="2s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite"></animate></circle>
+</svg>
+</sc-if>
+<div style="position: absolute; inset: 0; border-radius: 50%; box-shadow: {{ringShadow}}; opacity: {{op}}; filter: {{filt}}">
+<div style="position: absolute; inset: 0; border-radius: 50%; overflow: hidden">
+<svg viewBox="0 0 100 100" width="100%" height="100%" style="display: block">
+<rect width="100" height="100" fill="#1A1838"></rect>
+<rect width="100" height="100" fill="{{outfit}}" opacity="0.3"></rect>
+<path d="M13 104 C13 81 29 69.5 50 69.5 C71 69.5 87 81 87 104 Z" fill="{{outfit}}"></path>
+<path d="M50 69.5 C71 69.5 87 81 87 104 L50 104 Z" fill="#000000" opacity="0.14"></path>
+<rect x="43.5" y="55" width="13" height="17" rx="5" fill="{{skin}}"></rect>
+<rect x="43.5" y="55" width="13" height="17" rx="5" fill="#000000" opacity="0.2"></rect>
+<ellipse cx="50" cy="44" rx="17" ry="19" fill="{{skin}}"></ellipse>
+<path d="M50 25 C60 25 67 33 67 44 C67 55 60 63 50 63 Z" fill="#000000" opacity="0.08"></path>
+<path d="{{hairPath}}" fill="{{hairColor}}"></path>
+<g opacity="{{glassesOp}}" fill="none" stroke="#0E0B1F" stroke-width="2.2"><rect x="36.5" y="40.5" width="11.5" height="8" rx="3"></rect><rect x="52" y="40.5" width="11.5" height="8" rx="3"></rect><path d="M48 44h4"></path></g>
+<g opacity="{{phonesOp}}"><path d="M31 46 C31 20 69 20 69 46" fill="none" stroke="#2A2458" stroke-width="4.5"></path><rect x="26.5" y="39" width="8" height="14" rx="3.5" fill="#FF3D9A"></rect><rect x="65.5" y="39" width="8" height="14" rx="3.5" fill="#FF3D9A"></rect></g>
+</svg>
+</div>
+<sc-if value="{{speaking}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" style="position: absolute; inset: 0; overflow: visible">
+<circle cx="50" cy="50" r="54" fill="none" stroke="#B6FF3B" stroke-width="3.5"><animate attributeName="r" values="53;62;53" dur="1.1s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0.25;1" dur="1.1s" repeatCount="indefinite"></animate></circle>
+</svg>
+</sc-if>
+</div>
+<sc-if value="{{showDot}}" hint-placeholder-val="{{true}}">
+<div style="position: absolute; right: {{dotOff}}px; bottom: {{dotOff}}px; width: {{dot}}px; height: {{dot}}px; box-sizing: border-box; border-radius: 50%; background: {{dotFill}}; border: {{dotBorder}}; box-shadow: {{dotGlow}}"></div>
+</sc-if>
+</sc-if>
+<sc-if value="{{isFigure}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 60 110" width="{{w}}" height="{{h}}" style="display: block; overflow: visible; opacity: {{op}}; filter: {{filt}}">
+<ellipse cx="30" cy="104" rx="15" ry="4.5" fill="#000000" opacity="0.5"></ellipse>
+<ellipse cx="30" cy="104" rx="21" ry="6.5" fill="none" stroke="{{floorRing}}" stroke-width="1.8" opacity="{{floorOp}}"></ellipse>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="2.4s" repeatCount="indefinite"></animateTransform>
+<rect x="21.5" y="66" width="17" height="37" rx="8" fill="#26214F"></rect>
+<rect x="29.5" y="72" width="1" height="30" fill="#000000" opacity="0.3"></rect>
+<path d="M14 72 C14 51 20 40.5 30 40.5 C40 40.5 46 51 46 72 L46 76 C46 78.5 44.5 80 42 80 L18 80 C15.5 80 14 78.5 14 76 Z" fill="{{outfit}}"></path>
+<path d="M30 40.5 C40 40.5 46 51 46 72 L46 76 C46 78.5 44.5 80 42 80 L30 80 Z" fill="#000000" opacity="0.16"></path>
+<rect x="26.5" y="33" width="7" height="9" rx="3" fill="{{skin}}"></rect>
+<g transform="translate(-3.8 -3.76) scale(0.676)">
+<ellipse cx="50" cy="44" rx="17" ry="19" fill="{{skin}}"></ellipse>
+<path d="M50 25 C60 25 67 33 67 44 C67 55 60 63 50 63 Z" fill="#000000" opacity="0.1"></path>
+<path d="{{hairPath}}" fill="{{hairColor}}"></path>
+<g opacity="{{glassesOp}}" fill="none" stroke="#0E0B1F" stroke-width="2.4"><rect x="36.5" y="40.5" width="11.5" height="8" rx="3"></rect><rect x="52" y="40.5" width="11.5" height="8" rx="3"></rect><path d="M48 44h4"></path></g>
+<g opacity="{{phonesOp}}"><path d="M31 46 C31 20 69 20 69 46" fill="none" stroke="#2A2458" stroke-width="5"></path><rect x="26.5" y="39" width="8" height="14" rx="3.5" fill="#FF3D9A"></rect><rect x="65.5" y="39" width="8" height="14" rx="3.5" fill="#FF3D9A"></rect></g>
+</g>
+</g>
+<sc-if value="{{speaking}}" hint-placeholder-val="{{false}}">
+<ellipse cx="30" cy="104" rx="24" ry="8" fill="none" stroke="#B6FF3B" stroke-width="1.8"><animate attributeName="rx" values="22;30;22" dur="1.1s" repeatCount="indefinite"></animate><animate attributeName="ry" values="7;10;7" dur="1.1s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="1;0.2;1" dur="1.1s" repeatCount="indefinite"></animate></ellipse>
+</sc-if>
+</svg>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"mode":{"editor":"enum","options":["bust","figure"],"default":"bust"},"size":{"editor":"int","min":16,"max":480,"default":120},"skin":{"editor":"color","options":["#F1D2B6","#E0B08A","#C68A62","#77492F"],"default":"#C68A62"},"hair":{"editor":"enum","options":["short","long","bun","curly","buzz","bob"],"default":"short"},"hairColor":{"editor":"color","options":["#17120F","#6A4629","#FF3D9A","#22E3FF"],"default":"#17120F"},"outfit":{"editor":"color","options":["#FF3D9A","#22E3FF","#B6FF3B","#9B5CFF"],"default":"#FF3D9A"},"acc":{"editor":"enum","options":["none","glasses","headphones"],"default":"none"},"presence":{"editor":"enum","options":["online","traveling","offline","none"],"default":"online"},"you":{"editor":"boolean","default":false},"speaking":{"editor":"boolean","default":false},"pulse":{"editor":"boolean","default":false},"label":{"editor":"text","default":""},"$preview":{"width":120,"height":120}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const mode = p.mode ?? 'bust';
+    const size = Number(p.size ?? 120);
+    const HAIR = {
+      short: 'M32.5 44 C31 28 40 21 50.5 21 C61 21 69.5 28 67.5 44 C66 37 60 32.5 50 32.5 C41 32.5 35 36.5 32.5 44 Z',
+      long: 'M31 45 C29 27 39 19.5 50 19.5 C61 19.5 71 27 69 45 L71.5 68 C67 71.5 63 71 60.5 68.5 L61 38 C56.5 33.5 43.5 33.5 39 38 L39.5 68.5 C37 71 33 71.5 28.5 68 Z',
+      bun: 'M32.5 44 C31 29 40 22 50.5 22 C61 22 69.5 29 67.5 44 C65.5 37 59.5 33 50 33 C40.5 33 34.5 37 32.5 44 Z M43 17 C43 11.5 57 11.5 57 17 C57 22.5 43 22.5 43 17 Z',
+      curly: 'M30.5 45 C26 37 29.5 27 36.5 25 C38.5 18 46.5 15.5 51.5 18.5 C57.5 14.5 66 18 67.5 25 C73.5 28 74.5 38 70 45 C68.5 38 62 33 50.5 33 C39 33 32.5 38 30.5 45 Z',
+      buzz: 'M33.5 41 C33.5 29 41 23.5 50 23.5 C59 23.5 66.5 29 66.5 41 C62.5 35 57 32 50 32 C43 32 37.5 35 33.5 41 Z',
+      bob: 'M31 47 C29 28 39 20 50 20 C61 20 71 28 69 47 L69.5 57 C66 59 63 58.5 61.5 56 L62 38 C57 33 43 33 38 38 L38.5 56 C37 58.5 34 59 30.5 57 Z'
+    };
+    const presence = p.presence ?? 'online';
+    const you = p.you === true || p.you === 'true';
+    const speaking = p.speaking === true || p.speaking === 'true';
+    const pulse = p.pulse === true || p.pulse === 'true';
+    const PC = { online: '#B6FF3B', traveling: '#22E3FF', offline: '#6E6A8F', none: '#6E6A8F' };
+    const pc = you && presence === 'online' ? '#FF3D9A' : PC[presence];
+    const ringColor = you ? '#FF3D9A' : PC[presence];
+    const ringW = size >= 60 ? 3 : 2;
+    let ringShadow = 'none';
+    if (presence !== 'none') {
+      ringShadow = `0 0 0 ${ringW}px ${ringColor}, 0 0 ${Math.round(size * 0.35)}px ${you ? 'rgba(255,61,154,0.55)' : presence === 'online' ? 'rgba(182,255,59,0.35)' : 'rgba(34,227,255,0.35)'}`;
+      if (presence === 'offline') ringShadow = `0 0 0 1.5px rgba(110,106,143,0.9)`;
+    }
+    const offline = presence === 'offline';
+    const w = mode === 'bust' ? size : Math.round(size * 60 / 110);
+    const dot = Math.max(8, Math.round(size * 0.26));
+    const label = p.label ?? '';
+    return {
+      w, h: size, isBust: mode === 'bust', isFigure: mode !== 'bust',
+      skin: p.skin ?? '#C68A62', hairColor: p.hairColor ?? '#17120F', outfit: p.outfit ?? '#FF3D9A',
+      hairPath: HAIR[p.hair ?? 'short'] || HAIR.short,
+      glassesOp: (p.acc ?? 'none') === 'glasses' ? 1 : 0, phonesOp: (p.acc ?? 'none') === 'headphones' ? 1 : 0,
+      ringShadow, ringColor, op: offline ? 0.45 : 1, filt: offline ? 'grayscale(0.9)' : 'none',
+      showDot: mode === 'bust' && presence !== 'none' && size >= 22, dot, dotOff: Math.round(-size * 0.02),
+      dotFill: offline ? '#0B0B1A' : pc, dotBorder: offline ? '2px solid #6E6A8F' : '2px solid #0B0B1A', dotGlow: offline ? 'none' : `0 0 8px ${pc}`,
+      floorRing: you ? '#FF3D9A' : PC[presence], floorOp: presence === 'none' ? 0 : (offline ? 0.4 : 0.9),
+      speaking, pulse, label, showLabel: !!label, pc, labelBorder: you ? 'rgba(255,61,154,0.6)' : 'rgba(190,180,255,0.2)',
+      labelOp: offline ? 0.7 : 1, labelBottom: mode === 'bust' ? 'calc(100% + 8px)' : 'calc(100% + 4px)'
+    };
+  }
+}
+</script>
+</body>
+</html>

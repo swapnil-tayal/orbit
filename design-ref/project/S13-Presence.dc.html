@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Presence states</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+a{color:#FF3D9A} a:hover{color:#FF7BBA}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(3);opacity:0}}
+@keyframes slide{0%{transform:translateX(-30px)}100%{transform:translateX(30px)}}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #0B0B1A; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<img src="/_blob/16f718ff875eb18932263020ddd664c2" alt="" style="position: absolute; left: 0; top: 0; width: 1440px; height: 900px; object-fit: cover">
+<img src="/_blob/279b12b3d727eed167776c6f57cc4e68" alt="" style="position: absolute; left: 380px; top: 0; width: 1440px; height: 900px; opacity: 0.45">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, #0B0B1A 0%, #0B0B1A 58%, rgba(11,11,26,0.4) 75%, rgba(11,11,26,0.1) 100%)"></div>
+
+<div style="position: absolute; left: 56px; top: 48px; width: 880px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font: 700 12px/16px 'Geist Mono', monospace; letter-spacing: 0.12em; color: #22E3FF">13 · PRESENCE</div>
+<h1 style="margin: 0; font: 700 42px/46px 'Unbounded', sans-serif; letter-spacing: -0.03em">Three states. <span style="color: #B6FF3B">One glance.</span></h1>
+</div>
+<div style="display: grid; grid-template-columns: 130px repeat(4, minmax(0, 1fr)); gap: 10px">
+<div></div>
+<div style="font-size: 12px; font-weight: 700; color: #8A84BA; letter-spacing: 0.06em; text-transform: uppercase">On the globe</div>
+<div style="font-size: 12px; font-weight: 700; color: #8A84BA; letter-spacing: 0.06em; text-transform: uppercase">In People</div>
+<div style="font-size: 12px; font-weight: 700; color: #8A84BA; letter-spacing: 0.06em; text-transform: uppercase">In a space</div>
+<div style="font-size: 12px; font-weight: 700; color: #8A84BA; letter-spacing: 0.06em; text-transform: uppercase">At their desk</div>
+
+<div style="display: flex; align-items: center; gap: 10px; font: 700 16px 'Unbounded', sans-serif; color: #B6FF3B"><span style="width: 10px; height: 10px; border-radius: 50%; background: #B6FF3B; box-shadow: 0 0 10px #B6FF3B"></span>Online</div>
+<div style="height: 120px; border-radius: 20px; background: radial-gradient(120px 80px at 50% 115%, #1759F5, #0A1C7A 60%, rgba(10,28,122,0.2)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 14px; box-sizing: border-box"><div style="display: flex; flex-direction: column; align-items: center"><dc-import name="Avatar" mode="bust" size="32" presence="online" skin="#E0B08A" hair="long" hair-color="#3A2517" outfit="#22E3FF" hint-size="32px,32px"></dc-import><div style="width: 2px; height: 14px; background: linear-gradient(#B6FF3B, rgba(182,255,59,0))"></div><div style="position: relative; width: 6px; height: 6px"><div style="position: absolute; inset: 0; border-radius: 50%; background: #B6FF3B; animation: ping 1.8s ease-out infinite"></div><div style="position: absolute; inset: 0; border-radius: 50%; background: #B6FF3B"></div></div></div></div>
+<div style="height: 120px; border-radius: 20px; background: rgba(20,18,44,0.8); display: flex; align-items: center; gap: 10px; padding: 0 14px"><dc-import name="Avatar" mode="bust" size="32" presence="online" skin="#E0B08A" hair="long" hair-color="#3A2517" outfit="#22E3FF" hint-size="32px,32px"></dc-import><div style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 700">Meera</span><span style="font-size: 12px; color: #BDB8E6">At her desk</span></div></div>
+<div style="height: 120px; border-radius: 20px; background: #15122E; background-image: radial-gradient(rgba(255,255,255,0.08) 1.2px, transparent 1.3px); background-size: 16px 16px; display: flex; align-items: center; justify-content: center"><dc-import name="Avatar" mode="bust" size="44" presence="online" speaking="true" skin="#E0B08A" hair="long" hair-color="#3A2517" outfit="#22E3FF" hint-size="44px,44px"></dc-import></div>
+<div style="height: 120px; border-radius: 20px; background: #15122E; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px"><span style="display: flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; background: rgba(20,18,44,0.9); font-size: 12px; font-weight: 600"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B6FF3B; box-shadow: 0 0 8px #B6FF3B"></span>Meera</span><span style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid rgba(182,255,59,0.7); box-sizing: border-box"></span></div>
+
+<div style="display: flex; align-items: center; gap: 10px; font: 700 16px 'Unbounded', sans-serif; color: #22E3FF"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22E3FF" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>Traveling</div>
+<div style="height: 120px; border-radius: 20px; background: radial-gradient(120px 80px at 50% 115%, #1759F5, #0A1C7A 60%, rgba(10,28,122,0.2)); display: flex; align-items: center; justify-content: center; overflow: hidden"><div style="display: flex; align-items: center; gap: 6px; animation: slide 2.4s ease-in-out infinite alternate"><svg width="46" height="8" viewBox="0 0 46 8"><path d="M0 4 H46" stroke="#22E3FF" stroke-width="2" stroke-dasharray="3 5"></path></svg><div style="width: 26px; height: 26px; border-radius: 50%; background: #14122B; border: 2px solid #22E3FF; box-sizing: border-box; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="-24 -24 48 48"><path d="M20.7 0c0 1.84-1.61 2.99-3.45 2.99H4.6l-9.2 14.26H-9.2l5.06-14.26H-13.34L-17.02 8.05H-20.7l2.07-8.05L-20.7-8.05h3.68l3.68 5.06h9.2L-9.2-17.25h4.6l9.2 14.26h12.65c1.84 0 3.45 1.15 3.45 2.99z" fill="#22E3FF"></path></svg></div></div></div>
+<div style="height: 120px; border-radius: 20px; background: rgba(20,18,44,0.8); display: flex; align-items: center; gap: 10px; padding: 0 14px"><dc-import name="Avatar" mode="bust" size="32" presence="traveling" skin="#C68A62" hair="buzz" hair-color="#17120F" outfit="#3DDC97" hint-size="32px,32px"></dc-import><div style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 700">Rohan</span><span style="font-size: 12px; color: #22E3FF">To Andaman · 0:03</span></div></div>
+<div style="height: 120px; border-radius: 20px; background: #15122E; display: flex; align-items: center; justify-content: center; padding: 0 14px; text-align: center; font-size: 12px; line-height: 17px; color: #BDB8E6">Leaves the space with a toast: <span style="color: #22E3FF">"Rohan left for Andaman"</span></div>
+<div style="height: 120px; border-radius: 20px; background: #15122E; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px"><span style="padding: 3px 9px; border-radius: 999px; background: rgba(34,227,255,0.14); border: 1px solid rgba(34,227,255,0.5); font-size: 12px; font-weight: 600; color: #22E3FF">Rohan · away</span><span style="font-size: 11px; color: #8A84BA">no ring while away</span></div>
+
+<div style="display: flex; align-items: center; gap: 10px; font: 700 16px 'Unbounded', sans-serif; color: #8A84BA"><span style="width: 10px; height: 10px; border-radius: 50%; border: 2px solid #6E6A8F; box-sizing: border-box"></span>Offline</div>
+<div style="height: 120px; border-radius: 20px; background: radial-gradient(120px 80px at 50% 115%, #1759F5, #0A1C7A 60%, rgba(10,28,122,0.2)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 14px; box-sizing: border-box"><div style="display: flex; flex-direction: column; align-items: center"><dc-import name="Avatar" mode="bust" size="24" presence="offline" skin="#E0B08A" hair="short" hair-color="#3A2517" outfit="#9B5CFF" hint-size="24px,24px"></dc-import><div style="width: 2px; height: 10px; background: linear-gradient(#6E6A8F, rgba(110,106,143,0))"></div></div></div>
+<div style="height: 120px; border-radius: 20px; background: rgba(20,18,44,0.8); display: flex; align-items: center; gap: 10px; padding: 0 14px"><dc-import name="Avatar" mode="bust" size="32" presence="offline" skin="#E0B08A" hair="short" hair-color="#3A2517" outfit="#9B5CFF" hint-size="32px,32px"></dc-import><div style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 700; color: #BDB8E6">Jai</span><span style="font-size: 12px; color: #8A84BA">Offline · home desk</span></div></div>
+<div style="height: 120px; border-radius: 20px; background: #15122E; display: flex; align-items: center; justify-content: center; padding: 0 14px; text-align: center; font-size: 12px; line-height: 17px; color: #8A84BA">Not in any space</div>
+<div style="height: 120px; border-radius: 20px; background: #15122E; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px"><span style="padding: 3px 9px; border-radius: 999px; background: rgba(20,18,44,0.7); font-size: 12px; color: #8A84BA">Jai</span><span style="font-size: 11px; color: #8A84BA">dim tag, empty chair</span></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; font-size: 13px; line-height: 19px; color: #BDB8E6">
+<div><span style="color: #B6FF3B; font-weight: 700">Online</span> while the app is open. Close it and you're offline at once.</div>
+<div><span style="color: #22E3FF; font-weight: 700">Traveling</span> from Depart to arrival. Everyone sees the same glyph travel.</div>
+<div><span style="color: #F4F2FF; font-weight: 700">Offline</span> people wait at their home desk as a dim tag.</div>
+</div>
+</div>
+
+<aside aria-label="People" style="position: absolute; right: 40px; top: 48px; width: 400px; height: 804px; display: flex; flex-direction: column; gap: 14px; padding: 22px; box-sizing: border-box; border-radius: 30px; background: rgba(20,18,44,0.92); border: 1px solid rgba(190,180,255,0.16); box-shadow: 0 30px 80px rgba(0,0,0,0.6); backdrop-filter: blur(18px); overflow: hidden">
+<div style="display: flex; justify-content: space-between; align-items: center"><h2 style="margin: 0; font: 700 26px/30px 'Unbounded', sans-serif">People</h2><span style="font: 700 13px 'Geist Mono', monospace; color: #8A84BA">50</span></div>
+<label for="ppl" style="position: absolute; left: -9999px">Find someone</label>
+<div style="display: flex; align-items: center; gap: 10px; height: 46px; padding: 0 14px; border-radius: 14px; background: rgba(190,180,255,0.07)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BDB8E6" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg><input id="ppl" placeholder="Find someone" style="flex-grow: 1; border: 0; outline: 0; background: transparent; color: #F4F2FF; font: 400 14px 'Geist', sans-serif"></div>
+<div style="display: flex; gap: 6px">
+<span style="padding: 6px 12px; border-radius: 999px; background: #B6FF3B; color: #0B0B1A; font-size: 12px; font-weight: 700">Online 21</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: rgba(34,227,255,0.14); color: #22E3FF; font-size: 12px; font-weight: 700">Traveling 4</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: rgba(190,180,255,0.08); color: #BDB8E6; font-size: 12px; font-weight: 700">Offline 25</span>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px">
+<li style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 16px; background: rgba(182,255,59,0.08)"><dc-import name="Avatar" mode="bust" size="36" presence="online" skin="#E0B08A" hair="long" hair-color="#3A2517" outfit="#22E3FF" hint-size="36px,36px"></dc-import><div style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 14px; font-weight: 700">Meera</span><span style="font-size: 12px; color: #BDB8E6">At her desk · Office</span></div><a href="S04-Peek.dc.html" aria-label="Peek at Meera's area" style="width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,210,63,0.16); color: #FFD23F"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 10px"><dc-import name="Avatar" mode="bust" size="36" presence="online" skin="#E0B08A" hair="bob" hair-color="#6A4629" outfit="#22E3FF" hint-size="36px,36px"></dc-import><div style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 14px; font-weight: 700">Tara</span><span style="font-size: 12px; color: #BDB8E6">At her desk · your office</span></div></li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 10px"><dc-import name="Avatar" mode="bust" size="36" presence="online" skin="#F1D2B6" hair="bob" hair-color="#FFD23F" outfit="#9B5CFF" hint-size="36px,36px"></dc-import><div style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 14px; font-weight: 700">Lena</span><span style="font-size: 12px; color: #BDB8E6">On the deck · Andaman</span></div></li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 10px"><dc-import name="Avatar" mode="bust" size="36" presence="traveling" skin="#C68A62" hair="buzz" hair-color="#17120F" outfit="#3DDC97" hint-size="36px,36px"></dc-import><div style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 14px; font-weight: 700">Rohan</span><span style="font-size: 12px; color: #22E3FF">Flying to Andaman</span></div><span style="font: 700 12px 'Geist Mono', monospace; color: #22E3FF">0:03</span></li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 10px"><dc-import name="Avatar" mode="bust" size="36" presence="traveling" skin="#77492F" hair="short" hair-color="#17120F" outfit="#FF8A00" hint-size="36px,36px"></dc-import><div style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 14px; font-weight: 700">Vikram</span><span style="font-size: 12px; color: #22E3FF">Driving to an office</span></div><span style="font: 700 12px 'Geist Mono', monospace; color: #22E3FF">0:09</span></li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 10px"><dc-import name="Avatar" mode="bust" size="36" presence="offline" skin="#E0B08A" hair="short" hair-color="#3A2517" outfit="#9B5CFF" hint-size="36px,36px"></dc-import><div style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 14px; font-weight: 700; color: #BDB8E6">Jai</span><span style="font-size: 12px; color: #8A84BA">Home desk</span></div></li>
+</ul>
+</aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

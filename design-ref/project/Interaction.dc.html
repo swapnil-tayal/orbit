@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Navigation and interaction model</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Unbounded:wght@400..800&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B1A;font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#F4F2FF}
+@keyframes ripple{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.35);opacity:0}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1100px; box-sizing: border-box; padding: 52px 64px; background: radial-gradient(800px 500px at 50% -10%, rgba(34,227,255,0.16), rgba(11,11,26,0) 70%), #0B0B1A; display: flex; flex-direction: column; gap: 28px; font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; color: #F4F2FF">
+<header style="display: flex; flex-direction: column; gap: 14px">
+<div style="font: 700 12px/16px 'Geist Mono', monospace; letter-spacing: 0.14em; color: #FFD23F">03 · NAVIGATION &amp; INTERACTION</div>
+<h1 style="margin: 0; font: 800 40px/48px 'Unbounded', sans-serif; letter-spacing: -0.035em"><span style="color: #22E3FF">Where is everyone?</span> <span style="color: #4A4575">→</span> <span style="color: #FFD23F">I'll go there</span> <span style="color: #4A4575">→</span> <span style="color: #B6FF3B">I'll walk over</span> <span style="color: #4A4575">→</span> <span style="color: #FF3D9A; text-shadow: 0 0 30px rgba(255,61,154,0.5)">we're together.</span></h1>
+</header>
+
+<section style="display: grid; grid-template-columns: 1fr 70px 1fr 70px 1fr; align-items: stretch">
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 26px; background: rgba(34,227,255,0.07); border: 1px solid rgba(34,227,255,0.3)">
+<div style="display: flex; justify-content: space-between"><span style="font: 700 11px 'Geist Mono', monospace; color: #22E3FF">LAYER 1 · 3D</span><span style="font: 12px 'Geist Mono', monospace; color: #8A84BA">12,000 → 400 km</span></div>
+<svg width="100%" height="100" viewBox="0 0 300 100" aria-hidden="true"><defs><radialGradient id="ig1" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#1F5BFF"></stop><stop offset="1" stop-color="#0A1C7A"></stop></radialGradient></defs><circle cx="150" cy="50" r="44" fill="url(#ig1)" stroke="#22E3FF" stroke-width="2"></circle><path d="M126 34 q14 -10 30 0 q10 14 -4 24 q-18 6 -26 -6 z" fill="#1FBF71"></path><circle cx="140" cy="40" r="5" fill="#FF3D9A"></circle><circle cx="164" cy="60" r="4" fill="#B6FF3B"></circle><path d="M170 32 l4 7 -4 7 -4 -7z" fill="#FFD23F"></path><ellipse cx="150" cy="50" rx="70" ry="16" fill="none" stroke="#FF3D9A" stroke-opacity="0.6" stroke-dasharray="3 5" transform="rotate(-14 150 50)"></ellipse></svg>
+<h2 style="margin: 0; font: 700 20px/26px 'Unbounded', sans-serif">Orbit</h2>
+<p style="margin: 0; font-size: 14px; line-height: 21px; color: #BDB8E6">See all 50 people. Rotate, zoom, click someone to peek. You stay put.</p>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #8A84BA; font-size: 11px; text-align: center"><svg width="44" height="14" viewBox="0 0 44 14"><path d="M0 7h40M34 1l6 6-6 6" fill="none" stroke="#22E3FF" stroke-width="2"></path></svg>zoom · peek</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 26px; background: rgba(255,210,63,0.07); border: 1px solid rgba(255,210,63,0.3)">
+<div style="display: flex; justify-content: space-between"><span style="font: 700 11px 'Geist Mono', monospace; color: #FFD23F">LAYER 2 · 3D</span><span style="font: 12px 'Geist Mono', monospace; color: #8A84BA">down to 50 km</span></div>
+<svg width="100%" height="100" viewBox="0 0 300 100" aria-hidden="true"><path d="M10 30 Q150 4 290 30 L290 100 L10 100 Z" fill="#1FB877" fill-opacity="0.5"></path><path d="M10 30 Q150 4 290 30" fill="none" stroke="#22E3FF" stroke-width="2"></path><g stroke="#5CF2FF" stroke-opacity="0.5"><path d="M40 100 L80 40 M100 100 L118 40 M160 100 L156 40 M220 100 L194 40 M280 100 L232 40 M24 82 H290 M44 60 H270 M64 46 H250"></path></g><path d="M118 60 L156 60 L160 82 L100 82 Z" fill="rgba(255,210,63,0.4)" stroke="#FFD23F" stroke-width="2"></path></svg>
+<h2 style="margin: 0; font: 700 20px/26px 'Unbounded', sans-serif">Unit</h2>
+<p style="margin: 0; font-size: 14px; line-height: 21px; color: #BDB8E6">One 50 km area, tilted to show the curve. Who's there, local time, and <span style="color: #FF3D9A; font-weight: 700">Travel</span>.</p>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #FF3D9A; font-size: 11px; font-weight: 700; text-align: center"><svg width="44" height="14" viewBox="0 0 44 14"><path d="M0 7h40M34 1l6 6-6 6" fill="none" stroke="#FF3D9A" stroke-width="2"></path></svg>travel · arrive</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 26px; background: rgba(182,255,59,0.06); border: 1px solid rgba(182,255,59,0.3)">
+<div style="display: flex; justify-content: space-between"><span style="font: 700 11px 'Geist Mono', monospace; color: #B6FF3B">LAYER 3 · 2D</span><span style="font: 12px 'Geist Mono', monospace; color: #8A84BA">top-down floor</span></div>
+<div style="position: relative; height: 100px; border-radius: 16px; background: #15122E; background-image: radial-gradient(rgba(255,255,255,0.08) 1.2px, transparent 1.3px); background-size: 14px 14px; border: 1.5px solid #22E3FF; overflow: hidden">
+<div style="position: absolute; left: 30px; top: 16px; width: 60px; height: 16px; border-radius: 6px; background: #2B2658"></div><div style="position: absolute; left: 110px; top: 16px; width: 60px; height: 16px; border-radius: 6px; background: #2B2658"></div><div style="position: absolute; left: 190px; top: 16px; width: 60px; height: 16px; border-radius: 6px; background: #2B2658"></div>
+<div style="position: absolute; left: 106px; top: 4px; width: 68px; height: 68px; border-radius: 50%; border: 2px solid #B6FF3B; background: rgba(182,255,59,0.14); box-sizing: border-box"></div>
+<div style="position: absolute; left: 106px; top: 4px; width: 68px; height: 68px; border-radius: 50%; border: 2px solid #B6FF3B; box-sizing: border-box; animation: ripple 2.2s ease-out infinite"></div>
+<div style="position: absolute; left: 124px; top: 36px; width: 16px; height: 16px; border-radius: 50%; background: #22E3FF"></div><div style="position: absolute; left: 146px; top: 44px; width: 18px; height: 18px; border-radius: 50%; background: #FF3D9A; box-shadow: 0 0 10px #FF3D9A"></div>
+</div>
+<h2 style="margin: 0; font: 700 20px/26px 'Unbounded', sans-serif">Space</h2>
+<p style="margin: 0; font-size: 14px; line-height: 21px; color: #BDB8E6">A flat floor you walk around. Step inside a desk's ring and you're in that person's space.</p>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 22px; background: rgba(20,18,44,0.7)"><span style="font: 700 11px 'Geist Mono', monospace; color: #FFD23F">RULE 1</span><span style="font: 700 15px/21px 'Unbounded', sans-serif">Peek moves the camera</span><span style="font-size: 13px; line-height: 19px; color: #BDB8E6">A "Peeking" pill with Back to me. Others still see you at your desk.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 22px; background: rgba(20,18,44,0.7)"><span style="font: 700 11px 'Geist Mono', monospace; color: #FF3D9A">RULE 2</span><span style="font: 700 15px/21px 'Unbounded', sans-serif">Only Travel moves you</span><span style="font-size: 13px; line-height: 19px; color: #BDB8E6">Car or Flight, a short animation, then you land in the space.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 22px; background: rgba(20,18,44,0.7)"><span style="font: 700 11px 'Geist Mono', monospace; color: #B6FF3B">RULE 3</span><span style="font: 700 15px/21px 'Unbounded', sans-serif">Crossing a ring is joining</span><span style="font-size: 13px; line-height: 19px; color: #BDB8E6">No Join, no invite, no accept. Inside the ring means together.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 22px; background: rgba(20,18,44,0.7)"><span style="font: 700 11px 'Geist Mono', monospace; color: #22E3FF">RULE 4</span><span style="font: 700 15px/21px 'Unbounded', sans-serif">People are the labels</span><span style="font-size: 13px; line-height: 19px; color: #BDB8E6">No city names on the globe. Homes are 50 km areas, never addresses.</span></div>
+</section>
+
+<section style="display: grid; grid-template-columns: 500px 1fr; gap: 20px; flex-grow: 1">
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 26px; background: rgba(20,18,44,0.7)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Where controls live</h2>
+<div style="position: relative; height: 250px; border-radius: 18px; background: radial-gradient(150px 150px at 50% 52%, #1759F5 0%, #0A1C7A 50%, #0B0B1A 100%); border: 1px solid rgba(190,180,255,0.14)">
+<div style="position: absolute; left: 12px; top: 12px; padding: 5px 10px; border-radius: 999px; background: rgba(20,18,44,0.9); border: 1px solid rgba(255,61,154,0.5); font-size: 11px">You chip</div>
+<div style="position: absolute; right: 12px; top: 12px; padding: 5px 10px; border-radius: 999px; background: rgba(20,18,44,0.9); font-size: 11px">Presence count</div>
+<div style="position: absolute; left: 50%; top: 12px; transform: translateX(-50%); padding: 5px 10px; border-radius: 999px; background: rgba(20,18,44,0.9); border: 1px solid rgba(255,210,63,0.5); font-size: 11px">Mode pill</div>
+<div style="position: absolute; right: 12px; top: 86px; width: 26px; height: 70px; border-radius: 999px; background: rgba(20,18,44,0.9); border: 1px solid rgba(34,227,255,0.5)"></div>
+<div style="position: absolute; right: 12px; bottom: 58px; width: 130px; height: 64px; border-radius: 14px; background: rgba(20,18,44,0.9); font-size: 11px; display: flex; align-items: center; justify-content: center">Context card</div>
+<div style="position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); padding: 7px 18px; border-radius: 999px; background: rgba(20,18,44,0.9); font-size: 11px">Dock</div>
+<div style="position: absolute; left: 12px; bottom: 12px; padding: 5px 10px; border-radius: 999px; background: rgba(20,18,44,0.9); border: 1px solid rgba(182,255,59,0.5); font-size: 11px">Proximity</div>
+<div style="position: absolute; left: 50%; top: 52%; transform: translate(-50%,-50%); font: 700 16px 'Unbounded', sans-serif; color: #F4F2FF">the world</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 26px; background: rgba(20,18,44,0.7)">
+<h2 style="margin: 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">Input map</h2>
+<div style="display: grid; grid-template-columns: 170px 1fr 170px 1fr; row-gap: 10px; column-gap: 16px; font-size: 13px; line-height: 19px">
+<span style="color: #22E3FF; font-weight: 700">Drag</span><span>Rotate globe · pan floor</span>
+<span style="color: #22E3FF; font-weight: 700">Scroll / pinch</span><span>Zoom, stops at 50 km</span>
+<span style="color: #FFD23F; font-weight: 700">Click a person</span><span>Peek at their area</span>
+<span style="color: #FFD23F; font-weight: 700">Double-click land</span><span>Focus that unit</span>
+<span style="color: #FF3D9A; font-weight: 700">T</span><span>Travel while peeking</span>
+<span style="color: #FF3D9A; font-weight: 700">H</span><span>Home: travel back or Back to me</span>
+<span style="color: #B6FF3B; font-weight: 700">Click floor · WASD</span><span>Walk in a space</span>
+<span style="color: #B6FF3B; font-weight: 700">M</span><span>Mute / unmute</span>
+<span style="color: #BDB8E6; font-weight: 700">Esc</span><span>Up one layer</span>
+<span style="color: #BDB8E6; font-weight: 700">Click water / desert</span><span>"No spaces here"</span>
+</div>
+<h2 style="margin: 10px 0 0; font: 700 13px 'Unbounded', sans-serif; color: #BDB8E6">The core loop</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 600">
+<span style="padding: 6px 11px; border-radius: 999px; background: rgba(34,227,255,0.12); color: #22E3FF">1 Open · Landing</span>
+<span style="padding: 6px 11px; border-radius: 999px; background: rgba(34,227,255,0.12); color: #22E3FF">2–4 See Earth &amp; people · 3</span>
+<span style="padding: 6px 11px; border-radius: 999px; background: rgba(255,210,63,0.12); color: #FFD23F">5 Peek · 4</span>
+<span style="padding: 6px 11px; border-radius: 999px; background: rgba(255,61,154,0.14); color: #FF3D9A">6–8 Travel · 5, 6, 7</span>
+<span style="padding: 6px 11px; border-radius: 999px; background: rgba(182,255,59,0.12); color: #B6FF3B">9–11 Arrive, walk · 8</span>
+<span style="padding: 6px 11px; border-radius: 999px; background: #B6FF3B; color: #0B0B1A">12–13 Together · 14</span>
+</div>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
