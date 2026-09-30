@@ -100,7 +100,7 @@ export function PeekAside({ unitId, onClose, onTravel, onEnter }: PeekAsideProps
       )}
       {isMine ? (
         <Button height={56} onClick={onEnter}>
-          {destination ? "Walk onto the island" : inMyHome ? "Walk into your home" : "Walk into the office"} <Keycap>↵</Keycap>
+          {destination ? "Walk onto the island" : homeArea ? (inMyHome ? "Walk into your home" : "Walk into the home") : "Walk into the office"} <Keycap>↵</Keycap>
         </Button>
       ) : null}
       {switchLabel ? (
