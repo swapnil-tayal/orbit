@@ -1,4 +1,4 @@
-import { AVATAR_OPTIONS, BOTS, DEFAULT_AVATAR, normalizeAvatar, officeLayout } from "@orbit/shared";
+import { AVATAR_OPTIONS, BOTS, DEFAULT_AVATAR, normalizeAvatar, officeLayout, destinationLayout } from "@orbit/shared";
 import { OfficeFloor, type DeskVisual } from "../world/space/OfficeFloor.tsx";
 import { PlanViewport } from "../ui/PlanViewport.tsx";
 
@@ -6,6 +6,7 @@ const KIT_LAYOUT = officeLayout("250:500", 2);
 const KIT_DESKS: DeskVisual[] = KIT_LAYOUT.desks.map((desk, i) => ({ desk, state: i === 5 ? "selected" : "free", ownerColor: "#FF3D9A", ring: i === 5 ? "selected" : "free" }));
 import { Avatar } from "../ui/Avatar.tsx";
 import { CarSprite, PlaneSprite } from "./world/VehicleSprites.tsx";
+import { IslandFloor } from "../world/space/IslandFloor.tsx";
 import { Dock } from "../ui/Dock.tsx";
 import { Button, Keycap, Kbd, Waveform, StepBar, GlassPill, Eyebrow } from "../ui/primitives.tsx";
 import { IconCar, IconEye, IconPlane } from "../ui/Icons.tsx";
@@ -56,6 +57,14 @@ export function Kit() {
           <div style={{ position: "absolute", left: 300, top: 70 }}><PlaneSprite scale={1} /></div>
           <div style={{ position: "absolute", left: 480, top: 70, transform: "rotate(-30deg)" }}><PlaneSprite scale={0.5} pink /></div>
           <div style={{ position: "absolute", left: 620, top: 70 }}><CarSprite scale={0.5} pink /></div>
+        </div>
+      </section>
+      <section style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        <h2 style={{ margin: 0, font: "700 16px var(--font-display)", color: "#BDB8E6" }}>Island</h2>
+        <div style={{ width: 1440 * 0.6, height: 900 * 0.6, borderRadius: 14, overflow: "hidden", background: "radial-gradient(900px 620px at 50% 50%, #0F2A6B 0%, #0B0B1A 72%)" }}>
+          <div style={{ transform: "scale(0.6)", transformOrigin: "0 0" }}>
+            <IslandFloor layout={destinationLayout("bali", "181:650")} circles={[{ key: "fire", active: true, members: 2 }]} />
+          </div>
         </div>
       </section>
       {sheets.map((s) => (

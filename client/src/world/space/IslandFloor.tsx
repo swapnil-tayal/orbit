@@ -16,21 +16,23 @@ export interface IslandFloorProps {
 
 const SHORE = "M420 430 C430 300 600 200 800 210 C1000 220 1180 300 1200 450 C1220 600 1080 720 860 730 C640 740 440 680 420 560 Z";
 
-/** Neon palm: a dark trunk cap with stroked fronds, matching the office plants. */
+/** Top-down palm: six tapered leaves with a light rib, over a soft ground shadow. */
 function Palm({ x, y, sway }: { x: number; y: number; sway?: number }) {
-  const fronds = [0, 60, 120, 180, 240, 300];
+  const leaves = [0, 60, 120, 180, 240, 300];
   return (
     <g transform={`translate(${x} ${y})`}>
+      <ellipse cx="3" cy="4" rx="26" ry="20" fill="#000000" opacity="0.28" />
       <g>
-        {sway ? <animateTransform attributeName="transform" type="rotate" values="-4;4;-4" dur={`${sway}s`} repeatCount="indefinite" additive="sum" /> : null}
-        <circle r="30" fill="#1E7A4F" opacity="0.18" />
-        {fronds.map((deg) => (
-          <path key={deg} d="M0 0 Q14 -10 30 -4" fill="none" stroke="#3DDC97" strokeWidth="3.5" strokeLinecap="round" transform={`rotate(${deg})`} />
+        {sway ? <animateTransform attributeName="transform" type="rotate" values="-3;3;-3" dur={`${sway * 1.6}s`} repeatCount="indefinite" additive="sum" /> : null}
+        {leaves.map((deg) => (
+          <g key={deg} transform={`rotate(${deg})`}>
+            <path d="M0 0 C7 -9 20 -13 32 -7 C34 -5 34 -3 32 -1 C20 4 8 3 0 0 Z" fill="#1E9E5C" stroke="#0E0B1F" strokeWidth="1.2" strokeLinejoin="round" />
+            <path d="M3 -0.5 C12 -5 22 -7 30 -4" fill="none" stroke="#B6FF3B" strokeWidth="1.2" strokeLinecap="round" opacity="0.8" />
+            <path d="M0 0 C7 -9 20 -13 32 -7 C22 -8 12 -6 3 0 Z" fill="#3DDC97" opacity="0.45" />
+          </g>
         ))}
-        {fronds.map((deg) => (
-          <path key={`h${deg}`} d="M4 -1 Q14 -8 26 -4" fill="none" stroke="#B6FF3B" strokeWidth="1.4" strokeLinecap="round" opacity="0.7" transform={`rotate(${deg + 30})`} />
-        ))}
-        <circle r="6" fill="#2B2658" stroke="#B6FF3B" strokeWidth="1.5" />
+        <circle r="5.5" fill="#6B4A2B" stroke="#0E0B1F" strokeWidth="1.2" />
+        <circle cx="-1.5" cy="-1.5" r="1.6" fill="#FFD23F" opacity="0.7" />
       </g>
     </g>
   );
@@ -147,10 +149,18 @@ export function IslandFloor({ layout, circles, onFloorClick, children }: IslandF
           {[0, 60, 120, 180, 240, 300].map((deg) => (
             <rect key={deg} x="694" y="404" width="12" height="18" rx="4" fill="#2B2658" stroke="#FFFFFF" strokeOpacity="0.1" transform={`rotate(${deg} 700 480)`} />
           ))}
-          <path d="M700 494 C688 484 690 470 700 462 C703 470 708 472 710 466 C716 474 712 490 700 494 Z" fill="#FF8A00">
-            <animateTransform attributeName="transform" type="scale" values="1;1.12;0.96;1.08;1" dur="1.2s" repeatCount="indefinite" additive="sum" />
-          </path>
-          <path d="M700 490 C695 485 696 477 700 473 C703 478 706 480 705 484 C706 487 703 490 700 490 Z" fill="#FFD23F" />
+          <g transform="translate(700 494)">
+            <g>
+              <animateTransform attributeName="transform" type="scale" values="1 1;1.04 1.1;0.98 0.95;1.02 1.06;1 1" dur="2.6s" repeatCount="indefinite" />
+              <path d="M0 0 C-12 -10 -10 -24 0 -32 C3 -24 8 -22 10 -28 C16 -20 12 -4 0 0 Z" fill="#FF8A00" stroke="#0E0B1F" strokeWidth="1.2" strokeLinejoin="round" />
+              <path d="M0 -4 C-5 -9 -4 -17 0 -21 C3 -16 6 -14 5 -10 C6 -7 3 -4 0 -4 Z" fill="#FFD23F">
+                <animate attributeName="opacity" values="1;0.75;1;0.85;1" dur="1.8s" repeatCount="indefinite" />
+              </path>
+            </g>
+          </g>
+          <circle cx="700" cy="480" r="72" fill="url(#is-fire)" opacity="0.9">
+            <animate attributeName="opacity" values="0.9;0.7;0.9" dur="2.6s" repeatCount="indefinite" />
+          </circle>
           <ZoneLabel x={700} y={620} text="FIRE CIRCLE" />
         </g>
 
@@ -177,8 +187,10 @@ export function IslandFloor({ layout, circles, onFloorClick, children }: IslandF
           <circle cx="1100" cy="560" r="80" fill={hammocks ? "rgba(155,92,255,0.18)" : "rgba(155,92,255,0.08)"} stroke="#9B5CFF" strokeWidth="2.5" strokeDasharray="6 7" strokeOpacity={hammocks ? 1 : 0.7}>
             <animate attributeName="stroke-dashoffset" values="0;-26" dur="2s" repeatCount="indefinite" />
           </circle>
-          <path d="M1060 512 Q1100 560 1140 512" fill="none" stroke="#FF3D9A" strokeWidth="7" strokeLinecap="round" />
-          <path d="M1066 516 Q1100 552 1134 516" fill="none" stroke="#FFFFFF" strokeOpacity="0.35" strokeWidth="1.5" strokeDasharray="3 5" />
+          <path d="M1060 505 L1070 526 M1142 505 L1132 526" stroke="#C9C4E6" strokeWidth="1.6" strokeLinecap="round" opacity="0.8" />
+          <path d="M1070 526 C1080 552 1122 552 1132 526 C1122 540 1080 540 1070 526 Z" fill="#FF3D9A" stroke="#0E0B1F" strokeWidth="1.2" strokeLinejoin="round" />
+          <path d="M1078 531 L1082 545 M1088 535 L1090 548 M1101 537 L1101 549 M1114 535 L1112 548 M1124 531 L1120 545" stroke="#FFFFFF" strokeOpacity="0.45" strokeWidth="1" />
+          <path d="M1074 530 Q1101 546 1128 530 M1078 537 Q1101 550 1124 537" fill="none" stroke="#FFFFFF" strokeOpacity="0.35" strokeWidth="1" />
           <ZoneLabel x={1100} y={666} text="HAMMOCKS" />
         </g>
 
